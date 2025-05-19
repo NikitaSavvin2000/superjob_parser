@@ -17,7 +17,7 @@ cwd = os.getcwd()
 path_to_save_result = os.path.join(cwd, "src", "superjob", "results")
 
 # link = "https://russia.superjob.ru/vakansii/katalog/"
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+# driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 #
 # rusult_all_links_level_0 = []
 #
