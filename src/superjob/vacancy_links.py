@@ -207,7 +207,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from multiprocessing import Pool, Manager
 
 proxies = [
-    "111.26.171.143:10088",
+    "77.37.136.11:80",
     "176.118.239.90:3128",
     "43.163.118.162:7654",
     "43.156.100.107:7654"
@@ -219,7 +219,7 @@ import requests
 for proxy in proxies:
     try:
         response = requests.get(
-            "http://httpbin.org/ip",
+            "https://httpbin.org/ip",
             proxies={"http": f"http://{proxy}", "https": f"http://{proxy}"},
             timeout=5
         )
