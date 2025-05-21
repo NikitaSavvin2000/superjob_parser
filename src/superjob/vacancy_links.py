@@ -205,6 +205,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from multiprocessing import Pool, Manager
+from itertools import cycle
 
 proxies = [
     "212.60.20.208:8080",
