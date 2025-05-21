@@ -207,8 +207,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 from multiprocessing import Pool, Manager
 
 proxies = [
-    "77.37.136.11:80",
-    "176.118.239.90:3128",
+    "185.93.89.179:4572",
+    "213.24.238.111:3128",
     "43.163.118.162:7654",
     "43.156.100.107:7654"
 ]
