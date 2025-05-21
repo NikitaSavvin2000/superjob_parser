@@ -207,10 +207,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 from multiprocessing import Pool, Manager
 
 proxies = [
-    "185.93.89.179:4572",
+    "212.60.20.208:8080",
     "213.24.238.111:3128",
-    "43.163.118.162:7654",
-    "43.156.100.107:7654"
+    "185.10.129.14:3128",
 ]
 
 import requests
@@ -234,18 +233,8 @@ cwd = os.getcwd()
 path_to_save_result = os.path.join(cwd, "src", "superjob", "results")
 result_file = f'{path_to_save_result}/vacancy_links.csv'
 
-def read_existing_links():
-    if os.path.exists(result_file):
-        df = pd.read_csv(result_file)
-        return set(df['vacancy_links'].dropna().tolist())
-    return set()
 
-def append_links_to_csv(all_links):
-    existing_links = read_existing_links()
-    unique_links = list(set(all_links) - existing_links)
-    if unique_links:
-        df = pd.DataFrame(unique_links, columns=['vacancy_links'])
-        df.to_csv(result_file, mode='a', header=not os.path.exists(result_file), index=False)
+proxy_pool = cycle(proxies)
 
 def create_driver(proxy=None):
     options = webdriver.ChromeOptions()
@@ -284,11 +273,26 @@ def try_process_link(link, proxy):
     return all_links
 
 def process_level_0_link(link):
-    for proxy in [None] + proxies:
-        result = try_process_link(link, proxy)
-        if result is not None:
-            return result
-    return []
+    proxy = next(proxy_pool)
+    result = try_process_link(link, proxy)
+    return result or []
+
+cwd = os.getcwd()
+path_to_save_result = os.path.join(cwd, "src", "superjob", "results")
+result_file = f'{path_to_save_result}/vacancy_links.csv'
+
+def read_existing_links():
+    if os.path.exists(result_file):
+        df = pd.read_csv(result_file)
+        return set(df['vacancy_links'].dropna().tolist())
+    return set()
+
+def append_links_to_csv(all_links):
+    existing_links = read_existing_links()
+    unique_links = list(set(all_links) - existing_links)
+    if unique_links:
+        df = pd.DataFrame(unique_links, columns=['vacancy_links'])
+        df.to_csv(result_file, mode='a', header=not os.path.exists(result_file), index=False)
 
 def init_result_dir():
     if not os.path.exists(path_to_save_result):
