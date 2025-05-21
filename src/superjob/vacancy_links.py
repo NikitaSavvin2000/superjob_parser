@@ -207,8 +207,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 from multiprocessing import Pool, Manager
 
 proxies = [
-    "43.134.44.194:7654",
-    "43.133.42.27:7654",
+    "111.26.171.143:10088",
+    "176.118.239.90:3128",
     "43.163.118.162:7654",
     "43.156.100.107:7654"
 ]
@@ -223,8 +223,10 @@ for proxy in proxies:
             proxies={"http": f"http://{proxy}", "https": f"http://{proxy}"},
             timeout=5
         )
+        print('='*75)
         print(f"{proxy} OK:", response.json())
     except Exception as e:
+        print('='*75)
         print(f"{proxy} FAILED:", e)
 
 
