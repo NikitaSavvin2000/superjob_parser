@@ -24,7 +24,9 @@ def worker(driver, queue, results):
             time.sleep(0.1)
             card_block = driver.find_element(By.CSS_SELECTOR, "div._1_fPU.f-test-vacancy-base-info.MDSt4._30DTa._2V8dt._3puh1._1Fj7Y._13P8-._1zXvU")
 
-            # Извлекаем данные
+            location_block = driver.find_element(By.CSS_SELECTOR, "div._2rcpb._1g5wo._21gYL._2FiNT._33WVt._3Jhm2")
+
+
             job_name = card_block.find_element(By.CSS_SELECTOR, "h1._2liZK._30DTa._1t3-x._3puh1._25q4J._1jFZf._2BcMA._2mXDe").text
 
             try:
@@ -45,6 +47,11 @@ def worker(driver, queue, results):
                 except:
                     salary = None
 
+            try:
+                location = location_block.find_element(By.CSS_SELECTOR, "span._2YGgq._3PuGp._1fNUj._2Wgs5").text
+            except:
+                location = None
+
             description = card_block.find_element(By.CSS_SELECTOR, "span.mrLsm._295-0._1jFZf._5rADX._3d8Ma._2mXDe").text
             description = ' '.join(description.split())
 
@@ -54,6 +61,7 @@ def worker(driver, queue, results):
                 'Experience': experience,
                 'Short Info': short_info,
                 'Salary': salary,
+                'Location': location,
                 'Description': description
             })
 
