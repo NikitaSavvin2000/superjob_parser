@@ -62,8 +62,10 @@ def try_process_link(link, proxy):
     try:
         driver = create_driver(proxy)
         driver.get(link)
-        pagination_links = driver.find_elements(By.CSS_SELECTOR, "div._2rcpb.gATod a[title]")
-        numbers = [int(a.get_attribute('title')) for a in pagination_links if a.get_attribute('title') and a.get_attribute('title').isdigit()]
+        elem = driver.find_element(By.XPATH, "//*[contains(text(), 'Дальше')]")
+        parent_div = elem.find_element(By.XPATH, "./ancestor::div[1]")
+        titles = parent_div.find_elements(By.XPATH, ".//a[@title]")
+        numbers = [int(t.get_attribute("title")) for t in titles if t.get_attribute("title").isdigit()]
         max_page = max(numbers) if numbers else 1
         driver.quit()
     except:

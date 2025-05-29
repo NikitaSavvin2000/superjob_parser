@@ -38638,3 +38638,919 @@ Stacktrace:
 24  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
 
 2025-05-26 16:27:53,266 — INFO — LINKS_COUNT=16565, PAGE_COUNT=635, LINK=https://russia.superjob.ru/vakansii/menedzher-po-prodazhe-zagorodnoj-nedvizhimosti.html
+2025-05-29 16:10:47,805 — INFO — ====== WebDriver manager ======
+2025-05-29 16:10:48,014 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 16:10:48,325 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 16:10:48,502 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 16:10:48,879 — INFO — WebDriver version 136.0.7103.113 selected
+2025-05-29 16:10:48,882 — INFO — Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/136.0.7103.113/mac-arm64/chromedriver-mac-arm64.zip
+2025-05-29 16:10:48,883 — INFO — About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/136.0.7103.113/mac-arm64/chromedriver-mac-arm64.zip
+2025-05-29 16:10:48,989 — INFO — Driver downloading response is 200
+2025-05-29 16:10:50,052 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 16:10:50,344 — INFO — Driver has been saved in cache [/Users/nikitasavvin/.wdm/drivers/chromedriver/mac64/136.0.7103.113]
+2025-05-29 16:11:40,903 — INFO — ====== WebDriver manager ======
+2025-05-29 16:11:40,999 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 16:11:41,142 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 16:11:41,286 — INFO — There is no [mac64] chromedriver "136.0.7103.113" for browser google-chrome "136.0.7103" in cache
+2025-05-29 16:11:41,301 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 16:11:41,695 — INFO — WebDriver version 136.0.7103.113 selected
+2025-05-29 16:11:41,697 — INFO — Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/136.0.7103.113/mac-arm64/chromedriver-mac-arm64.zip
+2025-05-29 16:11:41,698 — INFO — About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/136.0.7103.113/mac-arm64/chromedriver-mac-arm64.zip
+2025-05-29 16:11:41,801 — INFO — Driver downloading response is 200
+2025-05-29 16:11:42,822 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 16:11:43,042 — INFO — Driver has been saved in cache [/Users/nikitasavvin/.wdm/drivers/chromedriver/mac64/136.0.7103.113]
+2025-05-29 16:12:12,888 — WARNING — Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x109785ee0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/3871a18d19d0285488bc42f43b5ec424
+2025-05-29 16:12:12,891 — WARNING — Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1097862d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/3871a18d19d0285488bc42f43b5ec424
+2025-05-29 16:12:12,892 — WARNING — Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x109786480>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/3871a18d19d0285488bc42f43b5ec424
+2025-05-29 16:12:12,893 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 47.90.205.231:33333, Error: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-05-29 16:12:23,363 — INFO — ====== WebDriver manager ======
+2025-05-29 16:12:23,501 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 16:12:23,657 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 16:12:23,801 — INFO — Driver [/Users/nikitasavvin/.wdm/drivers/chromedriver/mac64/136.0.7103.113/chromedriver-mac-arm64/chromedriver] found in cache
+2025-05-29 16:12:42,861 — WARNING — Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x109d7de80>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/a9d5feb8b7dbb4a14473840b1f06ad3d
+2025-05-29 16:12:42,862 — WARNING — Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x109d7dac0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/a9d5feb8b7dbb4a14473840b1f06ad3d
+2025-05-29 16:12:42,862 — WARNING — Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x109d7e060>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/a9d5feb8b7dbb4a14473840b1f06ad3d
+2025-05-29 16:12:42,863 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 47.90.205.231:33333, Error: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-05-29 16:12:43,502 — WARNING — Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104bdeab0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/13ea5122d6202c54586961962c64609c
+2025-05-29 16:12:45,255 — INFO — ====== WebDriver manager ======
+2025-05-29 16:12:45,390 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 16:12:45,538 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 16:12:45,723 — INFO — Driver [/Users/nikitasavvin/.wdm/drivers/chromedriver/mac64/136.0.7103.113/chromedriver-mac-arm64/chromedriver] found in cache
+2025-05-29 16:13:04,520 — WARNING — Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x109d7db20>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/fc4c5336047d5b78d29d18ab47cc865c
+2025-05-29 16:13:04,521 — WARNING — Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x109d7dbe0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/fc4c5336047d5b78d29d18ab47cc865c
+2025-05-29 16:13:04,522 — WARNING — Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x109d7dd30>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/fc4c5336047d5b78d29d18ab47cc865c
+2025-05-29 16:13:04,524 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 47.90.205.231:33333, Error: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-05-29 16:13:05,257 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 92.124.154.154:8080, Error: Message: unknown error: net::ERR_TUNNEL_CONNECTION_FAILED
+  (Session info: chrome=136.0.7103.114)
+Stacktrace:
+0   chromedriver                        0x0000000100a303e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x0000000100a286a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x0000000100565fbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x000000010055e5ac cxxbridge1$string$len + 58892
+4   chromedriver                        0x000000010055121c cxxbridge1$string$len + 4732
+5   chromedriver                        0x0000000100552c10 cxxbridge1$string$len + 11376
+6   chromedriver                        0x0000000100551684 cxxbridge1$string$len + 5860
+7   chromedriver                        0x0000000100550ff8 cxxbridge1$string$len + 4184
+8   chromedriver                        0x0000000100550d44 cxxbridge1$string$len + 3492
+9   chromedriver                        0x000000010054eb24 chromedriver + 191268
+10  chromedriver                        0x000000010054f580 chromedriver + 193920
+11  chromedriver                        0x0000000100569018 cxxbridge1$string$len + 102520
+12  chromedriver                        0x00000001005eeab0 cxxbridge1$string$len + 650000
+13  chromedriver                        0x00000001005ee044 cxxbridge1$string$len + 647332
+14  chromedriver                        0x00000001005a13f8 cxxbridge1$string$len + 332888
+15  chromedriver                        0x00000001009f4804 cxxbridge1$str$ptr + 2585200
+16  chromedriver                        0x00000001009f7ad4 cxxbridge1$str$ptr + 2598208
+17  chromedriver                        0x00000001009d5dd8 cxxbridge1$str$ptr + 2459716
+18  chromedriver                        0x00000001009f834c cxxbridge1$str$ptr + 2600376
+19  chromedriver                        0x00000001009c7664 cxxbridge1$str$ptr + 2400464
+20  chromedriver                        0x0000000100a182b0 cxxbridge1$str$ptr + 2731292
+21  chromedriver                        0x0000000100a1843c cxxbridge1$str$ptr + 2731688
+22  chromedriver                        0x0000000100a282f4 cxxbridge1$str$ptr + 2796896
+23  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+24  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-05-29 16:13:07,960 — WARNING — Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10276aa20>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/f1b0d977a0d54f14acc2a628dc324597
+2025-05-29 16:13:18,157 — INFO — ====== WebDriver manager ======
+2025-05-29 16:13:18,291 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 16:13:18,438 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 16:13:18,573 — INFO — Driver [/Users/nikitasavvin/.wdm/drivers/chromedriver/mac64/136.0.7103.113/chromedriver-mac-arm64/chromedriver] found in cache
+2025-05-29 16:13:24,217 — WARNING — Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107d7ddc0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/47af0061fdb6bbf95f6e19b52ed80fa2
+2025-05-29 16:13:24,218 — WARNING — Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107d7dee0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/47af0061fdb6bbf95f6e19b52ed80fa2
+2025-05-29 16:13:24,219 — WARNING — Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107d7e060>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/47af0061fdb6bbf95f6e19b52ed80fa2
+2025-05-29 16:13:24,219 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 47.90.205.231:33333, Error: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-05-29 16:16:23,108 — INFO — ====== WebDriver manager ======
+2025-05-29 16:16:23,260 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 16:16:23,436 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 16:16:23,579 — INFO — Driver [/Users/nikitasavvin/.wdm/drivers/chromedriver/mac64/136.0.7103.113/chromedriver-mac-arm64/chromedriver] found in cache
+2025-05-29 16:16:54,562 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 47.90.205.231:33333, Error: Message: timeout: Timed out receiving message from renderer: -0.001
+  (Session info: chrome=136.0.7103.114)
+Stacktrace:
+0   chromedriver                        0x00000001028883e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x00000001028806a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x00000001023bdfbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x00000001023a8fcc cxxbridge1$string$len + 4140
+4   chromedriver                        0x00000001023a8d44 cxxbridge1$string$len + 3492
+5   chromedriver                        0x00000001023a6b24 chromedriver + 191268
+6   chromedriver                        0x00000001023a76b4 chromedriver + 194228
+7   chromedriver                        0x00000001023b4800 cxxbridge1$string$len + 51296
+8   chromedriver                        0x00000001023ca5d0 cxxbridge1$string$len + 140848
+9   chromedriver                        0x00000001023a7ce8 chromedriver + 195816
+10  chromedriver                        0x00000001023ca3d8 cxxbridge1$string$len + 140344
+11  chromedriver                        0x0000000102445f8c cxxbridge1$string$len + 647148
+12  chromedriver                        0x00000001023f93f8 cxxbridge1$string$len + 332888
+13  chromedriver                        0x000000010284c804 cxxbridge1$str$ptr + 2585200
+14  chromedriver                        0x000000010284fad4 cxxbridge1$str$ptr + 2598208
+15  chromedriver                        0x000000010282ddd8 cxxbridge1$str$ptr + 2459716
+16  chromedriver                        0x000000010285034c cxxbridge1$str$ptr + 2600376
+17  chromedriver                        0x000000010281f664 cxxbridge1$str$ptr + 2400464
+18  chromedriver                        0x00000001028702b0 cxxbridge1$str$ptr + 2731292
+19  chromedriver                        0x000000010287043c cxxbridge1$str$ptr + 2731688
+20  chromedriver                        0x00000001028802f4 cxxbridge1$str$ptr + 2796896
+21  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+22  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-05-29 16:16:55,566 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 92.124.154.154:8080, Error: Message: unknown error: net::ERR_TUNNEL_CONNECTION_FAILED
+  (Session info: chrome=136.0.7103.114)
+Stacktrace:
+0   chromedriver                        0x0000000104d8c3e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x0000000104d846a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x00000001048c1fbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x00000001048ba5ac cxxbridge1$string$len + 58892
+4   chromedriver                        0x00000001048ad21c cxxbridge1$string$len + 4732
+5   chromedriver                        0x00000001048aec10 cxxbridge1$string$len + 11376
+6   chromedriver                        0x00000001048ad684 cxxbridge1$string$len + 5860
+7   chromedriver                        0x00000001048acff8 cxxbridge1$string$len + 4184
+8   chromedriver                        0x00000001048acd44 cxxbridge1$string$len + 3492
+9   chromedriver                        0x00000001048aab24 chromedriver + 191268
+10  chromedriver                        0x00000001048ab580 chromedriver + 193920
+11  chromedriver                        0x00000001048c5018 cxxbridge1$string$len + 102520
+12  chromedriver                        0x000000010494aab0 cxxbridge1$string$len + 650000
+13  chromedriver                        0x000000010494a044 cxxbridge1$string$len + 647332
+14  chromedriver                        0x00000001048fd3f8 cxxbridge1$string$len + 332888
+15  chromedriver                        0x0000000104d50804 cxxbridge1$str$ptr + 2585200
+16  chromedriver                        0x0000000104d53ad4 cxxbridge1$str$ptr + 2598208
+17  chromedriver                        0x0000000104d31dd8 cxxbridge1$str$ptr + 2459716
+18  chromedriver                        0x0000000104d5434c cxxbridge1$str$ptr + 2600376
+19  chromedriver                        0x0000000104d23664 cxxbridge1$str$ptr + 2400464
+20  chromedriver                        0x0000000104d742b0 cxxbridge1$str$ptr + 2731292
+21  chromedriver                        0x0000000104d7443c cxxbridge1$str$ptr + 2731688
+22  chromedriver                        0x0000000104d842f4 cxxbridge1$str$ptr + 2796896
+23  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+24  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-05-29 16:17:08,096 — INFO — LINKS_COUNT=40, PAGE_COUNT=1, LINK=https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html
+2025-05-29 16:17:10,989 — WARNING — Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105f7ef90>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/dd07ab4e35a0ece2419cb75477eac59e
+2025-05-29 16:17:10,996 — WARNING — Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105f7f290>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/dd07ab4e35a0ece2419cb75477eac59e
+2025-05-29 16:17:11,004 — WARNING — Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105f7f4a0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/dd07ab4e35a0ece2419cb75477eac59e
+2025-05-29 16:17:11,010 — ERROR — Error on link: https://russia.superjob.ru/vakansii/fasadchik.html, Proxy: 47.90.205.231:33333, Error: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-05-29 16:17:11,706 — WARNING — Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1006eaab0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/aca88ee3fe769af6b8b1122b64223d56
+2025-05-29 16:18:36,782 — INFO — ====== WebDriver manager ======
+2025-05-29 16:18:36,938 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 16:18:37,116 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 16:18:37,255 — INFO — Driver [/Users/nikitasavvin/.wdm/drivers/chromedriver/mac64/136.0.7103.113/chromedriver-mac-arm64/chromedriver] found in cache
+2025-05-29 16:19:08,148 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 47.90.205.231:33333, Error: Message: timeout: Timed out receiving message from renderer: -0.005
+  (Session info: chrome=136.0.7103.114)
+Stacktrace:
+0   chromedriver                        0x00000001005543e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x000000010054c6a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x0000000100089fbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x0000000100074fcc cxxbridge1$string$len + 4140
+4   chromedriver                        0x0000000100074d44 cxxbridge1$string$len + 3492
+5   chromedriver                        0x0000000100072b24 chromedriver + 191268
+6   chromedriver                        0x00000001000736b4 chromedriver + 194228
+7   chromedriver                        0x0000000100080800 cxxbridge1$string$len + 51296
+8   chromedriver                        0x00000001000965d0 cxxbridge1$string$len + 140848
+9   chromedriver                        0x0000000100073ce8 chromedriver + 195816
+10  chromedriver                        0x00000001000963d8 cxxbridge1$string$len + 140344
+11  chromedriver                        0x0000000100111f8c cxxbridge1$string$len + 647148
+12  chromedriver                        0x00000001000c53f8 cxxbridge1$string$len + 332888
+13  chromedriver                        0x0000000100518804 cxxbridge1$str$ptr + 2585200
+14  chromedriver                        0x000000010051bad4 cxxbridge1$str$ptr + 2598208
+15  chromedriver                        0x00000001004f9dd8 cxxbridge1$str$ptr + 2459716
+16  chromedriver                        0x000000010051c34c cxxbridge1$str$ptr + 2600376
+17  chromedriver                        0x00000001004eb664 cxxbridge1$str$ptr + 2400464
+18  chromedriver                        0x000000010053c2b0 cxxbridge1$str$ptr + 2731292
+19  chromedriver                        0x000000010053c43c cxxbridge1$str$ptr + 2731688
+20  chromedriver                        0x000000010054c2f4 cxxbridge1$str$ptr + 2796896
+21  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+22  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-05-29 16:19:08,945 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 92.124.154.154:8080, Error: Message: unknown error: net::ERR_TUNNEL_CONNECTION_FAILED
+  (Session info: chrome=136.0.7103.114)
+Stacktrace:
+0   chromedriver                        0x000000010138c3e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x00000001013846a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x0000000100ec1fbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x0000000100eba5ac cxxbridge1$string$len + 58892
+4   chromedriver                        0x0000000100ead21c cxxbridge1$string$len + 4732
+5   chromedriver                        0x0000000100eaec10 cxxbridge1$string$len + 11376
+6   chromedriver                        0x0000000100ead684 cxxbridge1$string$len + 5860
+7   chromedriver                        0x0000000100eacff8 cxxbridge1$string$len + 4184
+8   chromedriver                        0x0000000100eacd44 cxxbridge1$string$len + 3492
+9   chromedriver                        0x0000000100eaab24 chromedriver + 191268
+10  chromedriver                        0x0000000100eab580 chromedriver + 193920
+11  chromedriver                        0x0000000100ec5018 cxxbridge1$string$len + 102520
+12  chromedriver                        0x0000000100f4aab0 cxxbridge1$string$len + 650000
+13  chromedriver                        0x0000000100f4a044 cxxbridge1$string$len + 647332
+14  chromedriver                        0x0000000100efd3f8 cxxbridge1$string$len + 332888
+15  chromedriver                        0x0000000101350804 cxxbridge1$str$ptr + 2585200
+16  chromedriver                        0x0000000101353ad4 cxxbridge1$str$ptr + 2598208
+17  chromedriver                        0x0000000101331dd8 cxxbridge1$str$ptr + 2459716
+18  chromedriver                        0x000000010135434c cxxbridge1$str$ptr + 2600376
+19  chromedriver                        0x0000000101323664 cxxbridge1$str$ptr + 2400464
+20  chromedriver                        0x00000001013742b0 cxxbridge1$str$ptr + 2731292
+21  chromedriver                        0x000000010137443c cxxbridge1$str$ptr + 2731688
+22  chromedriver                        0x00000001013842f4 cxxbridge1$str$ptr + 2796896
+23  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+24  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-05-29 16:19:13,886 — WARNING — Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x12117ea50>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae4bde63091496093a38727d1b4a4a3c
+2025-05-29 16:19:13,888 — WARNING — Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x12117e9f0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae4bde63091496093a38727d1b4a4a3c
+2025-05-29 16:19:13,889 — WARNING — Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x12117ebd0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae4bde63091496093a38727d1b4a4a3c
+2025-05-29 16:19:13,890 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 45.140.143.77:18080, Error: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-05-29 16:20:38,613 — INFO — ====== WebDriver manager ======
+2025-05-29 16:20:38,770 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 16:20:38,929 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 16:20:39,076 — INFO — Driver [/Users/nikitasavvin/.wdm/drivers/chromedriver/mac64/136.0.7103.113/chromedriver-mac-arm64/chromedriver] found in cache
+2025-05-29 16:21:10,013 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 47.90.205.231:33333, Error: Message: timeout: Timed out receiving message from renderer: -0.005
+  (Session info: chrome=136.0.7103.114)
+Stacktrace:
+0   chromedriver                        0x000000010304c3e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x00000001030446a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x0000000102b81fbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x0000000102b6cfcc cxxbridge1$string$len + 4140
+4   chromedriver                        0x0000000102b6cd44 cxxbridge1$string$len + 3492
+5   chromedriver                        0x0000000102b6ab24 chromedriver + 191268
+6   chromedriver                        0x0000000102b6b6b4 chromedriver + 194228
+7   chromedriver                        0x0000000102b78800 cxxbridge1$string$len + 51296
+8   chromedriver                        0x0000000102b8e5d0 cxxbridge1$string$len + 140848
+9   chromedriver                        0x0000000102b6bce8 chromedriver + 195816
+10  chromedriver                        0x0000000102b8e3d8 cxxbridge1$string$len + 140344
+11  chromedriver                        0x0000000102c09f8c cxxbridge1$string$len + 647148
+12  chromedriver                        0x0000000102bbd3f8 cxxbridge1$string$len + 332888
+13  chromedriver                        0x0000000103010804 cxxbridge1$str$ptr + 2585200
+14  chromedriver                        0x0000000103013ad4 cxxbridge1$str$ptr + 2598208
+15  chromedriver                        0x0000000102ff1dd8 cxxbridge1$str$ptr + 2459716
+16  chromedriver                        0x000000010301434c cxxbridge1$str$ptr + 2600376
+17  chromedriver                        0x0000000102fe3664 cxxbridge1$str$ptr + 2400464
+18  chromedriver                        0x00000001030342b0 cxxbridge1$str$ptr + 2731292
+19  chromedriver                        0x000000010303443c cxxbridge1$str$ptr + 2731688
+20  chromedriver                        0x00000001030442f4 cxxbridge1$str$ptr + 2796896
+21  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+22  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-05-29 16:21:11,082 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 92.124.154.154:8080, Error: Message: unknown error: net::ERR_TUNNEL_CONNECTION_FAILED
+  (Session info: chrome=136.0.7103.114)
+Stacktrace:
+0   chromedriver                        0x0000000104a143e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x0000000104a0c6a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x0000000104549fbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x00000001045425ac cxxbridge1$string$len + 58892
+4   chromedriver                        0x000000010453521c cxxbridge1$string$len + 4732
+5   chromedriver                        0x0000000104536c10 cxxbridge1$string$len + 11376
+6   chromedriver                        0x0000000104535684 cxxbridge1$string$len + 5860
+7   chromedriver                        0x0000000104534ff8 cxxbridge1$string$len + 4184
+8   chromedriver                        0x0000000104534d44 cxxbridge1$string$len + 3492
+9   chromedriver                        0x0000000104532b24 chromedriver + 191268
+10  chromedriver                        0x0000000104533580 chromedriver + 193920
+11  chromedriver                        0x000000010454d018 cxxbridge1$string$len + 102520
+12  chromedriver                        0x00000001045d2ab0 cxxbridge1$string$len + 650000
+13  chromedriver                        0x00000001045d2044 cxxbridge1$string$len + 647332
+14  chromedriver                        0x00000001045853f8 cxxbridge1$string$len + 332888
+15  chromedriver                        0x00000001049d8804 cxxbridge1$str$ptr + 2585200
+16  chromedriver                        0x00000001049dbad4 cxxbridge1$str$ptr + 2598208
+17  chromedriver                        0x00000001049b9dd8 cxxbridge1$str$ptr + 2459716
+18  chromedriver                        0x00000001049dc34c cxxbridge1$str$ptr + 2600376
+19  chromedriver                        0x00000001049ab664 cxxbridge1$str$ptr + 2400464
+20  chromedriver                        0x00000001049fc2b0 cxxbridge1$str$ptr + 2731292
+21  chromedriver                        0x00000001049fc43c cxxbridge1$str$ptr + 2731688
+22  chromedriver                        0x0000000104a0c2f4 cxxbridge1$str$ptr + 2796896
+23  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+24  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-05-29 16:21:19,162 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 45.140.143.77:18080, Error: name 'pagination_links' is not defined
+2025-05-29 16:21:33,879 — WARNING — Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10587f0b0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/561bd5c9cf8e1bf92063a42d4e73ed11
+2025-05-29 16:21:33,880 — WARNING — Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10587f3b0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/561bd5c9cf8e1bf92063a42d4e73ed11
+2025-05-29 16:21:33,880 — WARNING — Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10587f3e0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/561bd5c9cf8e1bf92063a42d4e73ed11
+2025-05-29 16:21:33,882 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 185.166.24.248:8080, Error: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-05-29 16:21:34,886 — WARNING — Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10044ea20>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ebae443f31206ac9aa54586f10028f34
+2025-05-29 16:21:34,889 — WARNING — Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1049e6de0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ebae443f31206ac9aa54586f10028f34
+2025-05-29 16:21:34,894 — WARNING — Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10044eba0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ebae443f31206ac9aa54586f10028f34
+2025-05-29 16:21:34,895 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 213.24.238.111:3128, Error: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-05-29 16:22:52,995 — INFO — ====== WebDriver manager ======
+2025-05-29 16:22:53,147 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 16:22:53,366 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 16:22:53,508 — INFO — Driver [/Users/nikitasavvin/.wdm/drivers/chromedriver/mac64/136.0.7103.113/chromedriver-mac-arm64/chromedriver] found in cache
+2025-05-29 16:23:24,445 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 47.90.205.231:33333, Error: Message: timeout: Timed out receiving message from renderer: -0.005
+  (Session info: chrome=136.0.7103.114)
+Stacktrace:
+0   chromedriver                        0x00000001014f83e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x00000001014f06a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x000000010102dfbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x0000000101018fcc cxxbridge1$string$len + 4140
+4   chromedriver                        0x0000000101018d44 cxxbridge1$string$len + 3492
+5   chromedriver                        0x0000000101016b24 chromedriver + 191268
+6   chromedriver                        0x00000001010176b4 chromedriver + 194228
+7   chromedriver                        0x0000000101024800 cxxbridge1$string$len + 51296
+8   chromedriver                        0x000000010103a5d0 cxxbridge1$string$len + 140848
+9   chromedriver                        0x0000000101017ce8 chromedriver + 195816
+10  chromedriver                        0x000000010103a3d8 cxxbridge1$string$len + 140344
+11  chromedriver                        0x00000001010b5f8c cxxbridge1$string$len + 647148
+12  chromedriver                        0x00000001010693f8 cxxbridge1$string$len + 332888
+13  chromedriver                        0x00000001014bc804 cxxbridge1$str$ptr + 2585200
+14  chromedriver                        0x00000001014bfad4 cxxbridge1$str$ptr + 2598208
+15  chromedriver                        0x000000010149ddd8 cxxbridge1$str$ptr + 2459716
+16  chromedriver                        0x00000001014c034c cxxbridge1$str$ptr + 2600376
+17  chromedriver                        0x000000010148f664 cxxbridge1$str$ptr + 2400464
+18  chromedriver                        0x00000001014e02b0 cxxbridge1$str$ptr + 2731292
+19  chromedriver                        0x00000001014e043c cxxbridge1$str$ptr + 2731688
+20  chromedriver                        0x00000001014f02f4 cxxbridge1$str$ptr + 2796896
+21  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+22  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-05-29 16:23:25,229 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 92.124.154.154:8080, Error: Message: unknown error: net::ERR_TUNNEL_CONNECTION_FAILED
+  (Session info: chrome=136.0.7103.114)
+Stacktrace:
+0   chromedriver                        0x00000001033683e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x00000001033606a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x0000000102e9dfbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x0000000102e965ac cxxbridge1$string$len + 58892
+4   chromedriver                        0x0000000102e8921c cxxbridge1$string$len + 4732
+5   chromedriver                        0x0000000102e8ac10 cxxbridge1$string$len + 11376
+6   chromedriver                        0x0000000102e89684 cxxbridge1$string$len + 5860
+7   chromedriver                        0x0000000102e88ff8 cxxbridge1$string$len + 4184
+8   chromedriver                        0x0000000102e88d44 cxxbridge1$string$len + 3492
+9   chromedriver                        0x0000000102e86b24 chromedriver + 191268
+10  chromedriver                        0x0000000102e87580 chromedriver + 193920
+11  chromedriver                        0x0000000102ea1018 cxxbridge1$string$len + 102520
+12  chromedriver                        0x0000000102f26ab0 cxxbridge1$string$len + 650000
+13  chromedriver                        0x0000000102f26044 cxxbridge1$string$len + 647332
+14  chromedriver                        0x0000000102ed93f8 cxxbridge1$string$len + 332888
+15  chromedriver                        0x000000010332c804 cxxbridge1$str$ptr + 2585200
+16  chromedriver                        0x000000010332fad4 cxxbridge1$str$ptr + 2598208
+17  chromedriver                        0x000000010330ddd8 cxxbridge1$str$ptr + 2459716
+18  chromedriver                        0x000000010333034c cxxbridge1$str$ptr + 2600376
+19  chromedriver                        0x00000001032ff664 cxxbridge1$str$ptr + 2400464
+20  chromedriver                        0x00000001033502b0 cxxbridge1$str$ptr + 2731292
+21  chromedriver                        0x000000010335043c cxxbridge1$str$ptr + 2731688
+22  chromedriver                        0x00000001033602f4 cxxbridge1$str$ptr + 2796896
+23  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+24  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-05-29 16:23:31,470 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 45.140.143.77:18080, Error: name 'pagination_links' is not defined
+2025-05-29 16:23:36,511 — WARNING — Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x122c7f050>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/56d3eb47f2a2c732b4bf5580b9ae292a
+2025-05-29 16:23:36,513 — WARNING — Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x122c7f560>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/56d3eb47f2a2c732b4bf5580b9ae292a
+2025-05-29 16:23:36,513 — WARNING — Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x122c7f590>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/56d3eb47f2a2c732b4bf5580b9ae292a
+2025-05-29 16:23:36,514 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 185.166.24.248:8080, Error: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-05-29 16:23:43,986 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 213.24.238.111:3128, Error: name 'pagination_links' is not defined
+2025-05-29 16:23:44,700 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 95.47.238.102:3128, Error: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[contains(text(), 'Дальше')]"}
+  (Session info: chrome=136.0.7103.114); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x00000001014243e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x000000010141c6a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x0000000100f59fbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x0000000100fa11bc cxxbridge1$string$len + 381468
+4   chromedriver                        0x0000000100fe2044 cxxbridge1$string$len + 647332
+5   chromedriver                        0x0000000100f953f8 cxxbridge1$string$len + 332888
+6   chromedriver                        0x00000001013e8804 cxxbridge1$str$ptr + 2585200
+7   chromedriver                        0x00000001013ebad4 cxxbridge1$str$ptr + 2598208
+8   chromedriver                        0x00000001013c9dd8 cxxbridge1$str$ptr + 2459716
+9   chromedriver                        0x00000001013ec34c cxxbridge1$str$ptr + 2600376
+10  chromedriver                        0x00000001013bb664 cxxbridge1$str$ptr + 2400464
+11  chromedriver                        0x000000010140c2b0 cxxbridge1$str$ptr + 2731292
+12  chromedriver                        0x000000010140c43c cxxbridge1$str$ptr + 2731688
+13  chromedriver                        0x000000010141c2f4 cxxbridge1$str$ptr + 2796896
+14  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-05-29 16:23:53,257 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 52.67.117.187:3128, Error: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[contains(text(), 'Дальше')]"}
+  (Session info: chrome=136.0.7103.114); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x0000000104c983e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x0000000104c906a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x00000001047cdfbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x00000001048151bc cxxbridge1$string$len + 381468
+4   chromedriver                        0x0000000104856044 cxxbridge1$string$len + 647332
+5   chromedriver                        0x00000001048093f8 cxxbridge1$string$len + 332888
+6   chromedriver                        0x0000000104c5c804 cxxbridge1$str$ptr + 2585200
+7   chromedriver                        0x0000000104c5fad4 cxxbridge1$str$ptr + 2598208
+8   chromedriver                        0x0000000104c3ddd8 cxxbridge1$str$ptr + 2459716
+9   chromedriver                        0x0000000104c6034c cxxbridge1$str$ptr + 2600376
+10  chromedriver                        0x0000000104c2f664 cxxbridge1$str$ptr + 2400464
+11  chromedriver                        0x0000000104c802b0 cxxbridge1$str$ptr + 2731292
+12  chromedriver                        0x0000000104c8043c cxxbridge1$str$ptr + 2731688
+13  chromedriver                        0x0000000104c902f4 cxxbridge1$str$ptr + 2796896
+14  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-05-29 16:24:01,907 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 54.155.127.16:8888, Error: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[contains(text(), 'Дальше')]"}
+  (Session info: chrome=136.0.7103.114); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x0000000102bb83e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x0000000102bb06a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x00000001026edfbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x00000001027351bc cxxbridge1$string$len + 381468
+4   chromedriver                        0x0000000102776044 cxxbridge1$string$len + 647332
+5   chromedriver                        0x00000001027293f8 cxxbridge1$string$len + 332888
+6   chromedriver                        0x0000000102b7c804 cxxbridge1$str$ptr + 2585200
+7   chromedriver                        0x0000000102b7fad4 cxxbridge1$str$ptr + 2598208
+8   chromedriver                        0x0000000102b5ddd8 cxxbridge1$str$ptr + 2459716
+9   chromedriver                        0x0000000102b8034c cxxbridge1$str$ptr + 2600376
+10  chromedriver                        0x0000000102b4f664 cxxbridge1$str$ptr + 2400464
+11  chromedriver                        0x0000000102ba02b0 cxxbridge1$str$ptr + 2731292
+12  chromedriver                        0x0000000102ba043c cxxbridge1$str$ptr + 2731688
+13  chromedriver                        0x0000000102bb02f4 cxxbridge1$str$ptr + 2796896
+14  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-05-29 16:24:03,367 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 47.91.65.23:3128, Error: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[contains(text(), 'Дальше')]"}
+  (Session info: chrome=136.0.7103.114); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x00000001008a83e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x00000001008a06a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x00000001003ddfbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x00000001004251bc cxxbridge1$string$len + 381468
+4   chromedriver                        0x0000000100466044 cxxbridge1$string$len + 647332
+5   chromedriver                        0x00000001004193f8 cxxbridge1$string$len + 332888
+6   chromedriver                        0x000000010086c804 cxxbridge1$str$ptr + 2585200
+7   chromedriver                        0x000000010086fad4 cxxbridge1$str$ptr + 2598208
+8   chromedriver                        0x000000010084ddd8 cxxbridge1$str$ptr + 2459716
+9   chromedriver                        0x000000010087034c cxxbridge1$str$ptr + 2600376
+10  chromedriver                        0x000000010083f664 cxxbridge1$str$ptr + 2400464
+11  chromedriver                        0x00000001008902b0 cxxbridge1$str$ptr + 2731292
+12  chromedriver                        0x000000010089043c cxxbridge1$str$ptr + 2731688
+13  chromedriver                        0x00000001008a02f4 cxxbridge1$str$ptr + 2796896
+14  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-05-29 16:24:05,850 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 47.89.184.18:3128, Error: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[contains(text(), 'Дальше')]"}
+  (Session info: chrome=136.0.7103.114); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x0000000100e1c3e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x0000000100e146a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x0000000100951fbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x00000001009991bc cxxbridge1$string$len + 381468
+4   chromedriver                        0x00000001009da044 cxxbridge1$string$len + 647332
+5   chromedriver                        0x000000010098d3f8 cxxbridge1$string$len + 332888
+6   chromedriver                        0x0000000100de0804 cxxbridge1$str$ptr + 2585200
+7   chromedriver                        0x0000000100de3ad4 cxxbridge1$str$ptr + 2598208
+8   chromedriver                        0x0000000100dc1dd8 cxxbridge1$str$ptr + 2459716
+9   chromedriver                        0x0000000100de434c cxxbridge1$str$ptr + 2600376
+10  chromedriver                        0x0000000100db3664 cxxbridge1$str$ptr + 2400464
+11  chromedriver                        0x0000000100e042b0 cxxbridge1$str$ptr + 2731292
+12  chromedriver                        0x0000000100e0443c cxxbridge1$str$ptr + 2731688
+13  chromedriver                        0x0000000100e142f4 cxxbridge1$str$ptr + 2796896
+14  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-05-29 16:24:15,215 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 47.243.92.199:3128, Error: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[contains(text(), 'Дальше')]"}
+  (Session info: chrome=136.0.7103.114); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x0000000104a883e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x0000000104a806a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x00000001045bdfbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x00000001046051bc cxxbridge1$string$len + 381468
+4   chromedriver                        0x0000000104646044 cxxbridge1$string$len + 647332
+5   chromedriver                        0x00000001045f93f8 cxxbridge1$string$len + 332888
+6   chromedriver                        0x0000000104a4c804 cxxbridge1$str$ptr + 2585200
+7   chromedriver                        0x0000000104a4fad4 cxxbridge1$str$ptr + 2598208
+8   chromedriver                        0x0000000104a2ddd8 cxxbridge1$str$ptr + 2459716
+9   chromedriver                        0x0000000104a5034c cxxbridge1$str$ptr + 2600376
+10  chromedriver                        0x0000000104a1f664 cxxbridge1$str$ptr + 2400464
+11  chromedriver                        0x0000000104a702b0 cxxbridge1$str$ptr + 2731292
+12  chromedriver                        0x0000000104a7043c cxxbridge1$str$ptr + 2731688
+13  chromedriver                        0x0000000104a802f4 cxxbridge1$str$ptr + 2796896
+14  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-05-29 16:24:45,801 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 120.25.199.3:10001, Error: Message: timeout: Timed out receiving message from renderer: -0.001
+  (Session info: chrome=136.0.7103.114)
+Stacktrace:
+0   chromedriver                        0x0000000104e2c3e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x0000000104e246a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x0000000104961fbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x000000010494cfcc cxxbridge1$string$len + 4140
+4   chromedriver                        0x000000010494cd44 cxxbridge1$string$len + 3492
+5   chromedriver                        0x000000010494ab24 chromedriver + 191268
+6   chromedriver                        0x000000010494b6b4 chromedriver + 194228
+7   chromedriver                        0x0000000104958800 cxxbridge1$string$len + 51296
+8   chromedriver                        0x000000010496e5d0 cxxbridge1$string$len + 140848
+9   chromedriver                        0x000000010494bce8 chromedriver + 195816
+10  chromedriver                        0x000000010496e3d8 cxxbridge1$string$len + 140344
+11  chromedriver                        0x00000001049e9f8c cxxbridge1$string$len + 647148
+12  chromedriver                        0x000000010499d3f8 cxxbridge1$string$len + 332888
+13  chromedriver                        0x0000000104df0804 cxxbridge1$str$ptr + 2585200
+14  chromedriver                        0x0000000104df3ad4 cxxbridge1$str$ptr + 2598208
+15  chromedriver                        0x0000000104dd1dd8 cxxbridge1$str$ptr + 2459716
+16  chromedriver                        0x0000000104df434c cxxbridge1$str$ptr + 2600376
+17  chromedriver                        0x0000000104dc3664 cxxbridge1$str$ptr + 2400464
+18  chromedriver                        0x0000000104e142b0 cxxbridge1$str$ptr + 2731292
+19  chromedriver                        0x0000000104e1443c cxxbridge1$str$ptr + 2731688
+20  chromedriver                        0x0000000104e242f4 cxxbridge1$str$ptr + 2796896
+21  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+22  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-05-29 16:24:46,481 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 51.91.76.186:8080, Error: Message: unknown error: net::ERR_PROXY_CONNECTION_FAILED
+  (Session info: chrome=136.0.7103.114)
+Stacktrace:
+0   chromedriver                        0x00000001012083e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x00000001012006a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x0000000100d3dfbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x0000000100d365ac cxxbridge1$string$len + 58892
+4   chromedriver                        0x0000000100d2921c cxxbridge1$string$len + 4732
+5   chromedriver                        0x0000000100d2ac10 cxxbridge1$string$len + 11376
+6   chromedriver                        0x0000000100d29684 cxxbridge1$string$len + 5860
+7   chromedriver                        0x0000000100d28ff8 cxxbridge1$string$len + 4184
+8   chromedriver                        0x0000000100d28d44 cxxbridge1$string$len + 3492
+9   chromedriver                        0x0000000100d26b24 chromedriver + 191268
+10  chromedriver                        0x0000000100d27580 chromedriver + 193920
+11  chromedriver                        0x0000000100d41018 cxxbridge1$string$len + 102520
+12  chromedriver                        0x0000000100dc6ab0 cxxbridge1$string$len + 650000
+13  chromedriver                        0x0000000100dc6044 cxxbridge1$string$len + 647332
+14  chromedriver                        0x0000000100d793f8 cxxbridge1$string$len + 332888
+15  chromedriver                        0x00000001011cc804 cxxbridge1$str$ptr + 2585200
+16  chromedriver                        0x00000001011cfad4 cxxbridge1$str$ptr + 2598208
+17  chromedriver                        0x00000001011addd8 cxxbridge1$str$ptr + 2459716
+18  chromedriver                        0x00000001011d034c cxxbridge1$str$ptr + 2600376
+19  chromedriver                        0x000000010119f664 cxxbridge1$str$ptr + 2400464
+20  chromedriver                        0x00000001011f02b0 cxxbridge1$str$ptr + 2731292
+21  chromedriver                        0x00000001011f043c cxxbridge1$str$ptr + 2731688
+22  chromedriver                        0x00000001012002f4 cxxbridge1$str$ptr + 2796896
+23  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+24  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-05-29 16:24:49,623 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 119.23.78.172:3128, Error: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[contains(text(), 'Дальше')]"}
+  (Session info: chrome=136.0.7103.114); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x000000010473c3e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x00000001047346a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x0000000104271fbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x00000001042b91bc cxxbridge1$string$len + 381468
+4   chromedriver                        0x00000001042fa044 cxxbridge1$string$len + 647332
+5   chromedriver                        0x00000001042ad3f8 cxxbridge1$string$len + 332888
+6   chromedriver                        0x0000000104700804 cxxbridge1$str$ptr + 2585200
+7   chromedriver                        0x0000000104703ad4 cxxbridge1$str$ptr + 2598208
+8   chromedriver                        0x00000001046e1dd8 cxxbridge1$str$ptr + 2459716
+9   chromedriver                        0x000000010470434c cxxbridge1$str$ptr + 2600376
+10  chromedriver                        0x00000001046d3664 cxxbridge1$str$ptr + 2400464
+11  chromedriver                        0x00000001047242b0 cxxbridge1$str$ptr + 2731292
+12  chromedriver                        0x000000010472443c cxxbridge1$str$ptr + 2731688
+13  chromedriver                        0x00000001047342f4 cxxbridge1$str$ptr + 2796896
+14  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-05-29 16:24:58,218 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 157.20.252.211:3126, Error: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[contains(text(), 'Дальше')]"}
+  (Session info: chrome=136.0.7103.114); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x00000001028e03e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x00000001028d86a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x0000000102415fbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x000000010245d1bc cxxbridge1$string$len + 381468
+4   chromedriver                        0x000000010249e044 cxxbridge1$string$len + 647332
+5   chromedriver                        0x00000001024513f8 cxxbridge1$string$len + 332888
+6   chromedriver                        0x00000001028a4804 cxxbridge1$str$ptr + 2585200
+7   chromedriver                        0x00000001028a7ad4 cxxbridge1$str$ptr + 2598208
+8   chromedriver                        0x0000000102885dd8 cxxbridge1$str$ptr + 2459716
+9   chromedriver                        0x00000001028a834c cxxbridge1$str$ptr + 2600376
+10  chromedriver                        0x0000000102877664 cxxbridge1$str$ptr + 2400464
+11  chromedriver                        0x00000001028c82b0 cxxbridge1$str$ptr + 2731292
+12  chromedriver                        0x00000001028c843c cxxbridge1$str$ptr + 2731688
+13  chromedriver                        0x00000001028d82f4 cxxbridge1$str$ptr + 2796896
+14  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-05-29 16:25:00,564 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 39.105.27.30:3128, Error: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[contains(text(), 'Дальше')]"}
+  (Session info: chrome=136.0.7103.114); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x00000001030bc3e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x00000001030b46a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x0000000102bf1fbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x0000000102c391bc cxxbridge1$string$len + 381468
+4   chromedriver                        0x0000000102c7a044 cxxbridge1$string$len + 647332
+5   chromedriver                        0x0000000102c2d3f8 cxxbridge1$string$len + 332888
+6   chromedriver                        0x0000000103080804 cxxbridge1$str$ptr + 2585200
+7   chromedriver                        0x0000000103083ad4 cxxbridge1$str$ptr + 2598208
+8   chromedriver                        0x0000000103061dd8 cxxbridge1$str$ptr + 2459716
+9   chromedriver                        0x000000010308434c cxxbridge1$str$ptr + 2600376
+10  chromedriver                        0x0000000103053664 cxxbridge1$str$ptr + 2400464
+11  chromedriver                        0x00000001030a42b0 cxxbridge1$str$ptr + 2731292
+12  chromedriver                        0x00000001030a443c cxxbridge1$str$ptr + 2731688
+13  chromedriver                        0x00000001030b42f4 cxxbridge1$str$ptr + 2796896
+14  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-05-29 16:25:07,032 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 39.100.160.54:6379, Error: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[contains(text(), 'Дальше')]"}
+  (Session info: chrome=136.0.7103.114); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x000000010334c3e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x00000001033446a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x0000000102e81fbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x0000000102ec91bc cxxbridge1$string$len + 381468
+4   chromedriver                        0x0000000102f0a044 cxxbridge1$string$len + 647332
+5   chromedriver                        0x0000000102ebd3f8 cxxbridge1$string$len + 332888
+6   chromedriver                        0x0000000103310804 cxxbridge1$str$ptr + 2585200
+7   chromedriver                        0x0000000103313ad4 cxxbridge1$str$ptr + 2598208
+8   chromedriver                        0x00000001032f1dd8 cxxbridge1$str$ptr + 2459716
+9   chromedriver                        0x000000010331434c cxxbridge1$str$ptr + 2600376
+10  chromedriver                        0x00000001032e3664 cxxbridge1$str$ptr + 2400464
+11  chromedriver                        0x00000001033342b0 cxxbridge1$str$ptr + 2731292
+12  chromedriver                        0x000000010333443c cxxbridge1$str$ptr + 2731688
+13  chromedriver                        0x00000001033442f4 cxxbridge1$str$ptr + 2796896
+14  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-05-29 16:25:16,797 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 8.140.235.207:9001, Error: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[contains(text(), 'Дальше')]"}
+  (Session info: chrome=136.0.7103.114); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x0000000102f103e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x0000000102f086a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x0000000102a45fbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x0000000102a8d1bc cxxbridge1$string$len + 381468
+4   chromedriver                        0x0000000102ace044 cxxbridge1$string$len + 647332
+5   chromedriver                        0x0000000102a813f8 cxxbridge1$string$len + 332888
+6   chromedriver                        0x0000000102ed4804 cxxbridge1$str$ptr + 2585200
+7   chromedriver                        0x0000000102ed7ad4 cxxbridge1$str$ptr + 2598208
+8   chromedriver                        0x0000000102eb5dd8 cxxbridge1$str$ptr + 2459716
+9   chromedriver                        0x0000000102ed834c cxxbridge1$str$ptr + 2600376
+10  chromedriver                        0x0000000102ea7664 cxxbridge1$str$ptr + 2400464
+11  chromedriver                        0x0000000102ef82b0 cxxbridge1$str$ptr + 2731292
+12  chromedriver                        0x0000000102ef843c cxxbridge1$str$ptr + 2731688
+13  chromedriver                        0x0000000102f082f4 cxxbridge1$str$ptr + 2796896
+14  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-05-29 16:25:20,822 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 95.47.239.221:3128, Error: name 'pagination_links' is not defined
+2025-05-29 16:25:45,428 — WARNING — Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104672a20>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/c6e2afb9cc3b3208b823b0e99eec1a15
+2025-05-29 16:25:45,431 — WARNING — Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1222368a0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/c6e2afb9cc3b3208b823b0e99eec1a15
+2025-05-29 16:25:48,358 — INFO — ====== WebDriver manager ======
+2025-05-29 16:25:48,494 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 16:25:48,639 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 16:25:48,791 — INFO — Driver [/Users/nikitasavvin/.wdm/drivers/chromedriver/mac64/136.0.7103.113/chromedriver-mac-arm64/chromedriver] found in cache
+2025-05-29 16:26:19,554 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 47.90.205.231:33333, Error: Message: timeout: Timed out receiving message from renderer: -0.005
+  (Session info: chrome=136.0.7103.114)
+Stacktrace:
+0   chromedriver                        0x0000000102d9c3e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x0000000102d946a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x00000001028d1fbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x00000001028bcfcc cxxbridge1$string$len + 4140
+4   chromedriver                        0x00000001028bcd44 cxxbridge1$string$len + 3492
+5   chromedriver                        0x00000001028bab24 chromedriver + 191268
+6   chromedriver                        0x00000001028bb6b4 chromedriver + 194228
+7   chromedriver                        0x00000001028c8800 cxxbridge1$string$len + 51296
+8   chromedriver                        0x00000001028de5d0 cxxbridge1$string$len + 140848
+9   chromedriver                        0x00000001028bbce8 chromedriver + 195816
+10  chromedriver                        0x00000001028de3d8 cxxbridge1$string$len + 140344
+11  chromedriver                        0x0000000102959f8c cxxbridge1$string$len + 647148
+12  chromedriver                        0x000000010290d3f8 cxxbridge1$string$len + 332888
+13  chromedriver                        0x0000000102d60804 cxxbridge1$str$ptr + 2585200
+14  chromedriver                        0x0000000102d63ad4 cxxbridge1$str$ptr + 2598208
+15  chromedriver                        0x0000000102d41dd8 cxxbridge1$str$ptr + 2459716
+16  chromedriver                        0x0000000102d6434c cxxbridge1$str$ptr + 2600376
+17  chromedriver                        0x0000000102d33664 cxxbridge1$str$ptr + 2400464
+18  chromedriver                        0x0000000102d842b0 cxxbridge1$str$ptr + 2731292
+19  chromedriver                        0x0000000102d8443c cxxbridge1$str$ptr + 2731688
+20  chromedriver                        0x0000000102d942f4 cxxbridge1$str$ptr + 2796896
+21  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+22  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-05-29 16:26:20,240 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 92.124.154.154:8080, Error: Message: unknown error: net::ERR_TUNNEL_CONNECTION_FAILED
+  (Session info: chrome=136.0.7103.114)
+Stacktrace:
+0   chromedriver                        0x00000001008143e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x000000010080c6a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x0000000100349fbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x00000001003425ac cxxbridge1$string$len + 58892
+4   chromedriver                        0x000000010033521c cxxbridge1$string$len + 4732
+5   chromedriver                        0x0000000100336c10 cxxbridge1$string$len + 11376
+6   chromedriver                        0x0000000100335684 cxxbridge1$string$len + 5860
+7   chromedriver                        0x0000000100334ff8 cxxbridge1$string$len + 4184
+8   chromedriver                        0x0000000100334d44 cxxbridge1$string$len + 3492
+9   chromedriver                        0x0000000100332b24 chromedriver + 191268
+10  chromedriver                        0x0000000100333580 chromedriver + 193920
+11  chromedriver                        0x000000010034d018 cxxbridge1$string$len + 102520
+12  chromedriver                        0x00000001003d2ab0 cxxbridge1$string$len + 650000
+13  chromedriver                        0x00000001003d2044 cxxbridge1$string$len + 647332
+14  chromedriver                        0x00000001003853f8 cxxbridge1$string$len + 332888
+15  chromedriver                        0x00000001007d8804 cxxbridge1$str$ptr + 2585200
+16  chromedriver                        0x00000001007dbad4 cxxbridge1$str$ptr + 2598208
+17  chromedriver                        0x00000001007b9dd8 cxxbridge1$str$ptr + 2459716
+18  chromedriver                        0x00000001007dc34c cxxbridge1$str$ptr + 2600376
+19  chromedriver                        0x00000001007ab664 cxxbridge1$str$ptr + 2400464
+20  chromedriver                        0x00000001007fc2b0 cxxbridge1$str$ptr + 2731292
+21  chromedriver                        0x00000001007fc43c cxxbridge1$str$ptr + 2731688
+22  chromedriver                        0x000000010080c2f4 cxxbridge1$str$ptr + 2796896
+23  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+24  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-05-29 16:26:26,209 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 45.140.143.77:18080, Error: name 'max_page' is not defined
+2025-05-29 16:26:43,438 — WARNING — Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10797f3b0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/1f256960637488e78e2dd8080b15f8f0
+2025-05-29 16:26:43,441 — WARNING — Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10797f740>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/1f256960637488e78e2dd8080b15f8f0
+2025-05-29 16:26:43,442 — WARNING — Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10797f770>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/1f256960637488e78e2dd8080b15f8f0
+2025-05-29 16:26:43,443 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 185.166.24.248:8080, Error: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-05-29 16:28:11,857 — INFO — ====== WebDriver manager ======
+2025-05-29 16:28:11,993 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 16:28:12,140 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 16:28:12,353 — INFO — Driver [/Users/nikitasavvin/.wdm/drivers/chromedriver/mac64/136.0.7103.113/chromedriver-mac-arm64/chromedriver] found in cache
+2025-05-29 16:28:19,913 — WARNING — Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x11ca7de80>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/a5185c92cca7cf9bf3c821ebe9e68c35
+2025-05-29 16:28:19,914 — WARNING — Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x11ca7da90>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/a5185c92cca7cf9bf3c821ebe9e68c35
+2025-05-29 16:28:19,915 — WARNING — Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x11ca7e060>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/a5185c92cca7cf9bf3c821ebe9e68c35
+2025-05-29 16:28:19,916 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 47.90.205.231:33333, Error: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-05-29 16:28:20,675 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 92.124.154.154:8080, Error: Message: unknown error: net::ERR_TUNNEL_CONNECTION_FAILED
+  (Session info: chrome=136.0.7103.114)
+Stacktrace:
+0   chromedriver                        0x00000001047e83e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x00000001047e06a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x000000010431dfbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x00000001043165ac cxxbridge1$string$len + 58892
+4   chromedriver                        0x000000010430921c cxxbridge1$string$len + 4732
+5   chromedriver                        0x000000010430ac10 cxxbridge1$string$len + 11376
+6   chromedriver                        0x0000000104309684 cxxbridge1$string$len + 5860
+7   chromedriver                        0x0000000104308ff8 cxxbridge1$string$len + 4184
+8   chromedriver                        0x0000000104308d44 cxxbridge1$string$len + 3492
+9   chromedriver                        0x0000000104306b24 chromedriver + 191268
+10  chromedriver                        0x0000000104307580 chromedriver + 193920
+11  chromedriver                        0x0000000104321018 cxxbridge1$string$len + 102520
+12  chromedriver                        0x00000001043a6ab0 cxxbridge1$string$len + 650000
+13  chromedriver                        0x00000001043a6044 cxxbridge1$string$len + 647332
+14  chromedriver                        0x00000001043593f8 cxxbridge1$string$len + 332888
+15  chromedriver                        0x00000001047ac804 cxxbridge1$str$ptr + 2585200
+16  chromedriver                        0x00000001047afad4 cxxbridge1$str$ptr + 2598208
+17  chromedriver                        0x000000010478ddd8 cxxbridge1$str$ptr + 2459716
+18  chromedriver                        0x00000001047b034c cxxbridge1$str$ptr + 2600376
+19  chromedriver                        0x000000010477f664 cxxbridge1$str$ptr + 2400464
+20  chromedriver                        0x00000001047d02b0 cxxbridge1$str$ptr + 2731292
+21  chromedriver                        0x00000001047d043c cxxbridge1$str$ptr + 2731688
+22  chromedriver                        0x00000001047e02f4 cxxbridge1$str$ptr + 2796896
+23  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+24  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-05-29 16:28:34,603 — WARNING — Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104508aa0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/bedea546e38d50e47d235670fb767530
+2025-05-29 16:28:34,605 — WARNING — Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10450aa80>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/bedea546e38d50e47d235670fb767530
+2025-05-29 16:28:34,606 — WARNING — Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10450acc0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/bedea546e38d50e47d235670fb767530
+2025-05-29 16:28:36,809 — INFO — ====== WebDriver manager ======
+2025-05-29 16:28:36,946 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 16:28:37,088 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 16:28:37,226 — INFO — Driver [/Users/nikitasavvin/.wdm/drivers/chromedriver/mac64/136.0.7103.113/chromedriver-mac-arm64/chromedriver] found in cache
+2025-05-29 16:29:07,983 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 47.90.205.231:33333, Error: Message: timeout: Timed out receiving message from renderer: -0.004
+  (Session info: chrome=136.0.7103.114)
+Stacktrace:
+0   chromedriver                        0x00000001045783e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x00000001045706a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x00000001040adfbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x0000000104098fcc cxxbridge1$string$len + 4140
+4   chromedriver                        0x0000000104098d44 cxxbridge1$string$len + 3492
+5   chromedriver                        0x0000000104096b24 chromedriver + 191268
+6   chromedriver                        0x00000001040976b4 chromedriver + 194228
+7   chromedriver                        0x00000001040a4800 cxxbridge1$string$len + 51296
+8   chromedriver                        0x00000001040ba5d0 cxxbridge1$string$len + 140848
+9   chromedriver                        0x0000000104097ce8 chromedriver + 195816
+10  chromedriver                        0x00000001040ba3d8 cxxbridge1$string$len + 140344
+11  chromedriver                        0x0000000104135f8c cxxbridge1$string$len + 647148
+12  chromedriver                        0x00000001040e93f8 cxxbridge1$string$len + 332888
+13  chromedriver                        0x000000010453c804 cxxbridge1$str$ptr + 2585200
+14  chromedriver                        0x000000010453fad4 cxxbridge1$str$ptr + 2598208
+15  chromedriver                        0x000000010451ddd8 cxxbridge1$str$ptr + 2459716
+16  chromedriver                        0x000000010454034c cxxbridge1$str$ptr + 2600376
+17  chromedriver                        0x000000010450f664 cxxbridge1$str$ptr + 2400464
+18  chromedriver                        0x00000001045602b0 cxxbridge1$str$ptr + 2731292
+19  chromedriver                        0x000000010456043c cxxbridge1$str$ptr + 2731688
+20  chromedriver                        0x00000001045702f4 cxxbridge1$str$ptr + 2796896
+21  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+22  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-05-29 16:29:08,922 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 92.124.154.154:8080, Error: Message: unknown error: net::ERR_TUNNEL_CONNECTION_FAILED
+  (Session info: chrome=136.0.7103.114)
+Stacktrace:
+0   chromedriver                        0x00000001045a43e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x000000010459c6a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x00000001040d9fbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x00000001040d25ac cxxbridge1$string$len + 58892
+4   chromedriver                        0x00000001040c521c cxxbridge1$string$len + 4732
+5   chromedriver                        0x00000001040c6c10 cxxbridge1$string$len + 11376
+6   chromedriver                        0x00000001040c5684 cxxbridge1$string$len + 5860
+7   chromedriver                        0x00000001040c4ff8 cxxbridge1$string$len + 4184
+8   chromedriver                        0x00000001040c4d44 cxxbridge1$string$len + 3492
+9   chromedriver                        0x00000001040c2b24 chromedriver + 191268
+10  chromedriver                        0x00000001040c3580 chromedriver + 193920
+11  chromedriver                        0x00000001040dd018 cxxbridge1$string$len + 102520
+12  chromedriver                        0x0000000104162ab0 cxxbridge1$string$len + 650000
+13  chromedriver                        0x0000000104162044 cxxbridge1$string$len + 647332
+14  chromedriver                        0x00000001041153f8 cxxbridge1$string$len + 332888
+15  chromedriver                        0x0000000104568804 cxxbridge1$str$ptr + 2585200
+16  chromedriver                        0x000000010456bad4 cxxbridge1$str$ptr + 2598208
+17  chromedriver                        0x0000000104549dd8 cxxbridge1$str$ptr + 2459716
+18  chromedriver                        0x000000010456c34c cxxbridge1$str$ptr + 2600376
+19  chromedriver                        0x000000010453b664 cxxbridge1$str$ptr + 2400464
+20  chromedriver                        0x000000010458c2b0 cxxbridge1$str$ptr + 2731292
+21  chromedriver                        0x000000010458c43c cxxbridge1$str$ptr + 2731688
+22  chromedriver                        0x000000010459c2f4 cxxbridge1$str$ptr + 2796896
+23  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+24  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-05-29 16:29:20,721 — WARNING — Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1074acf50>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/acdb406795523ab0418108b6a9b57e54
+2025-05-29 16:29:20,722 — WARNING — Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1074ad010>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/acdb406795523ab0418108b6a9b57e54
+2025-05-29 16:29:20,723 — WARNING — Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1074ad130>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/acdb406795523ab0418108b6a9b57e54
+2025-05-29 16:29:20,724 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 45.140.143.77:18080, Error: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-05-29 16:29:38,984 — WARNING — Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x100ff6ab0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/551e26a51a61ba1d957736fdfa687550
+2025-05-29 16:29:38,986 — WARNING — Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x100ff6b70>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/551e26a51a61ba1d957736fdfa687550
+2025-05-29 16:29:41,541 — INFO — ====== WebDriver manager ======
+2025-05-29 16:29:41,758 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 16:29:41,937 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 16:29:42,080 — INFO — Driver [/Users/nikitasavvin/.wdm/drivers/chromedriver/mac64/136.0.7103.113/chromedriver-mac-arm64/chromedriver] found in cache
+2025-05-29 16:30:12,990 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 47.90.205.231:33333, Error: Message: timeout: Timed out receiving message from renderer: -0.003
+  (Session info: chrome=136.0.7103.114)
+Stacktrace:
+0   chromedriver                        0x00000001027c83e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x00000001027c06a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x00000001022fdfbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x00000001022e8fcc cxxbridge1$string$len + 4140
+4   chromedriver                        0x00000001022e8d44 cxxbridge1$string$len + 3492
+5   chromedriver                        0x00000001022e6b24 chromedriver + 191268
+6   chromedriver                        0x00000001022e76b4 chromedriver + 194228
+7   chromedriver                        0x00000001022f4800 cxxbridge1$string$len + 51296
+8   chromedriver                        0x000000010230a5d0 cxxbridge1$string$len + 140848
+9   chromedriver                        0x00000001022e7ce8 chromedriver + 195816
+10  chromedriver                        0x000000010230a3d8 cxxbridge1$string$len + 140344
+11  chromedriver                        0x0000000102385f8c cxxbridge1$string$len + 647148
+12  chromedriver                        0x00000001023393f8 cxxbridge1$string$len + 332888
+13  chromedriver                        0x000000010278c804 cxxbridge1$str$ptr + 2585200
+14  chromedriver                        0x000000010278fad4 cxxbridge1$str$ptr + 2598208
+15  chromedriver                        0x000000010276ddd8 cxxbridge1$str$ptr + 2459716
+16  chromedriver                        0x000000010279034c cxxbridge1$str$ptr + 2600376
+17  chromedriver                        0x000000010275f664 cxxbridge1$str$ptr + 2400464
+18  chromedriver                        0x00000001027b02b0 cxxbridge1$str$ptr + 2731292
+19  chromedriver                        0x00000001027b043c cxxbridge1$str$ptr + 2731688
+20  chromedriver                        0x00000001027c02f4 cxxbridge1$str$ptr + 2796896
+21  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+22  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-05-29 16:30:13,746 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 92.124.154.154:8080, Error: Message: unknown error: net::ERR_TUNNEL_CONNECTION_FAILED
+  (Session info: chrome=136.0.7103.114)
+Stacktrace:
+0   chromedriver                        0x00000001030603e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x00000001030586a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x0000000102b95fbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x0000000102b8e5ac cxxbridge1$string$len + 58892
+4   chromedriver                        0x0000000102b8121c cxxbridge1$string$len + 4732
+5   chromedriver                        0x0000000102b82c10 cxxbridge1$string$len + 11376
+6   chromedriver                        0x0000000102b81684 cxxbridge1$string$len + 5860
+7   chromedriver                        0x0000000102b80ff8 cxxbridge1$string$len + 4184
+8   chromedriver                        0x0000000102b80d44 cxxbridge1$string$len + 3492
+9   chromedriver                        0x0000000102b7eb24 chromedriver + 191268
+10  chromedriver                        0x0000000102b7f580 chromedriver + 193920
+11  chromedriver                        0x0000000102b99018 cxxbridge1$string$len + 102520
+12  chromedriver                        0x0000000102c1eab0 cxxbridge1$string$len + 650000
+13  chromedriver                        0x0000000102c1e044 cxxbridge1$string$len + 647332
+14  chromedriver                        0x0000000102bd13f8 cxxbridge1$string$len + 332888
+15  chromedriver                        0x0000000103024804 cxxbridge1$str$ptr + 2585200
+16  chromedriver                        0x0000000103027ad4 cxxbridge1$str$ptr + 2598208
+17  chromedriver                        0x0000000103005dd8 cxxbridge1$str$ptr + 2459716
+18  chromedriver                        0x000000010302834c cxxbridge1$str$ptr + 2600376
+19  chromedriver                        0x0000000102ff7664 cxxbridge1$str$ptr + 2400464
+20  chromedriver                        0x00000001030482b0 cxxbridge1$str$ptr + 2731292
+21  chromedriver                        0x000000010304843c cxxbridge1$str$ptr + 2731688
+22  chromedriver                        0x00000001030582f4 cxxbridge1$str$ptr + 2796896
+23  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+24  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-05-29 16:30:41,256 — WARNING — Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105d82ed0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cbb19fc6b3dc493c919f83cadc854ebe
+2025-05-29 16:30:41,257 — WARNING — Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105d83140>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cbb19fc6b3dc493c919f83cadc854ebe
+2025-05-29 16:30:41,258 — WARNING — Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105dacfb0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cbb19fc6b3dc493c919f83cadc854ebe
+2025-05-29 16:30:41,259 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 45.140.143.77:18080, Error: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-05-29 18:50:58,134 — INFO — ====== WebDriver manager ======
+2025-05-29 18:50:58,228 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 18:50:58,395 — INFO — Get LATEST chromedriver version for google-chrome
+2025-05-29 18:50:58,531 — INFO — Driver [/Users/nikitasavvin/.wdm/drivers/chromedriver/mac64/136.0.7103.113/chromedriver-mac-arm64/chromedriver] found in cache
+2025-05-29 18:51:29,262 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 47.90.205.231:33333, Error: Message: timeout: Timed out receiving message from renderer: -0.003
+  (Session info: chrome=136.0.7103.114)
+Stacktrace:
+0   chromedriver                        0x0000000100b883e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x0000000100b806a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x00000001006bdfbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x00000001006a8fcc cxxbridge1$string$len + 4140
+4   chromedriver                        0x00000001006a8d44 cxxbridge1$string$len + 3492
+5   chromedriver                        0x00000001006a6b24 chromedriver + 191268
+6   chromedriver                        0x00000001006a76b4 chromedriver + 194228
+7   chromedriver                        0x00000001006b4800 cxxbridge1$string$len + 51296
+8   chromedriver                        0x00000001006ca5d0 cxxbridge1$string$len + 140848
+9   chromedriver                        0x00000001006a7ce8 chromedriver + 195816
+10  chromedriver                        0x00000001006ca3d8 cxxbridge1$string$len + 140344
+11  chromedriver                        0x0000000100745f8c cxxbridge1$string$len + 647148
+12  chromedriver                        0x00000001006f93f8 cxxbridge1$string$len + 332888
+13  chromedriver                        0x0000000100b4c804 cxxbridge1$str$ptr + 2585200
+14  chromedriver                        0x0000000100b4fad4 cxxbridge1$str$ptr + 2598208
+15  chromedriver                        0x0000000100b2ddd8 cxxbridge1$str$ptr + 2459716
+16  chromedriver                        0x0000000100b5034c cxxbridge1$str$ptr + 2600376
+17  chromedriver                        0x0000000100b1f664 cxxbridge1$str$ptr + 2400464
+18  chromedriver                        0x0000000100b702b0 cxxbridge1$str$ptr + 2731292
+19  chromedriver                        0x0000000100b7043c cxxbridge1$str$ptr + 2731688
+20  chromedriver                        0x0000000100b802f4 cxxbridge1$str$ptr + 2796896
+21  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+22  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-05-29 18:51:29,977 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 92.124.154.154:8080, Error: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[contains(text(), 'Дальше')]"}
+  (Session info: chrome=136.0.7103.114); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x0000000104f583e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x0000000104f506a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x0000000104a8dfbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x0000000104ad51bc cxxbridge1$string$len + 381468
+4   chromedriver                        0x0000000104b16044 cxxbridge1$string$len + 647332
+5   chromedriver                        0x0000000104ac93f8 cxxbridge1$string$len + 332888
+6   chromedriver                        0x0000000104f1c804 cxxbridge1$str$ptr + 2585200
+7   chromedriver                        0x0000000104f1fad4 cxxbridge1$str$ptr + 2598208
+8   chromedriver                        0x0000000104efddd8 cxxbridge1$str$ptr + 2459716
+9   chromedriver                        0x0000000104f2034c cxxbridge1$str$ptr + 2600376
+10  chromedriver                        0x0000000104eef664 cxxbridge1$str$ptr + 2400464
+11  chromedriver                        0x0000000104f402b0 cxxbridge1$str$ptr + 2731292
+12  chromedriver                        0x0000000104f4043c cxxbridge1$str$ptr + 2731688
+13  chromedriver                        0x0000000104f502f4 cxxbridge1$str$ptr + 2796896
+14  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-05-29 18:52:15,142 — WARNING — Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107d86d20>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/b589421df70b10ea57a428e7e95cd920
+2025-05-29 18:52:15,143 — WARNING — Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107d86060>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/b589421df70b10ea57a428e7e95cd920
+2025-05-29 18:52:15,143 — WARNING — Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107db10a0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/b589421df70b10ea57a428e7e95cd920
+2025-05-29 18:52:15,144 — ERROR — Error on link: https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html, Proxy: 45.140.143.77:18080, Error: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-05-29 18:52:16,375 — WARNING — Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10248ac30>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/10d6ff081537686fbef2a0f014a7bc0f
+2025-05-29 18:52:16,378 — WARNING — Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10248ad20>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/10d6ff081537686fbef2a0f014a7bc0f
