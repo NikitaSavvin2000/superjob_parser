@@ -208,6 +208,7 @@ def save_progress(processed_links):
     df.to_csv(progress_file, index=False)
 
 def process_level_0_link(link):
+    update_proxies()
     proxy = next(proxy_cycle)
     return link, try_process_link(link, proxy)
 
