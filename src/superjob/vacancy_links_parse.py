@@ -495,10 +495,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-    append_links_to_csv(all_results)
-    logging.info(f"Total links scraped: {LINK_COUNT}")
-
-if __name__ == '__main__':
-    main()
