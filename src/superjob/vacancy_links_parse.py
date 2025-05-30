@@ -17,6 +17,7 @@ import requests
 import time
 
 proxy_cycle = None
+last_proxy_update = 0
 
 def update_proxies():
     global proxy_cycle
