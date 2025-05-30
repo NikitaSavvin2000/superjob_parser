@@ -236,8 +236,7 @@ def main():
 
     all_results = []
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-
-        futures = {executor.submit(process_level_0_link, link): link for link in to_process}
+        futures = {executor.submit(process_level_0_link, link, proxy_cycle, proxy_lock): link for link in to_process}
         for future in tqdm(as_completed(futures), total=len(futures)):
             link, links = future.result()
             all_results.extend(links)
