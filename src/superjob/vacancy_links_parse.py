@@ -224,9 +224,8 @@ def process_level_0_link(link, proxy_cycle):
     return link, try_process_link(link, proxy)
 
 def main():
-    update_proxies()
     init_result_dir()
-    proxy_cycle = update_proxies()
+    update_proxies()
     links_df = pd.read_csv(os.path.join(path_to_save_result, "level_0_links.csv"))
     level_0_links = links_df["level_0_link"].dropna().tolist()
 
