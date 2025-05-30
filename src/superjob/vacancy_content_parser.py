@@ -18,7 +18,7 @@ driver_path = ChromeDriverManager().install()
 
 
 def init_city_pattern():
-    path_to_city = os.path.join(cwd, "src", "superjob", "data", "city.csv")
+    path_to_city = os.path.join(cwd, "data", "city.csv")
     df_city = pd.read_csv(path_to_city)
 
     subset = df_city[df_city['city'].isna()]['address']
