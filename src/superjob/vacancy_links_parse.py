@@ -35,7 +35,7 @@ def update_proxies():
         logging.error(f"Ошибка при обновлении прокси: {e}")
 
 
-    update_proxies()
+update_proxies()
 
 cwd = os.getcwd()
 path_to_save_result = os.path.join(cwd, "results")
