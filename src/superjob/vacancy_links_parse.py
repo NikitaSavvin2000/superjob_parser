@@ -14,6 +14,7 @@ import logging
 from vacancy_content_parser import parse_job_info, init_city_pattern
 import shutil
 import requests
+import time
 
 
 def update_proxies():
@@ -34,6 +35,17 @@ def update_proxies():
             return proxy_cycle
     except Exception as e:
         logging.error(f"Ошибка при обновлении прокси: {e}")
+
+PROXY_UPDATE_INTERVAL = 300
+proxy_lock = threading.Lock()
+
+def get_proxy_cycle():
+    global proxy_cycle, last_proxy_update
+    with proxy_lock:
+        if proxy_cycle is None or (time.time() - last_proxy_update) > PROXY_UPDATE_INTERVAL:
+            proxy_cycle = update_proxies()
+            last_proxy_update = time.time()
+        return proxy_cycle
 
 cwd = os.getcwd()
 path_to_save_result = os.path.join(cwd, "results")
@@ -109,7 +121,7 @@ def save_vacancy_data(data, link, path_to_save_result):
 def try_process_link(link, proxy):
     global LINK_COUNT
     global CURRENT_DF_LEN
-    update_proxies()
+    proxy_cycle = get_proxy_cycle()
     all_links = set()
     retries = 0
     while retries < MAX_RETRIES:
