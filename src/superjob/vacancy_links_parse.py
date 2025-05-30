@@ -17,7 +17,7 @@ import requests
 
 
 cwd = os.getcwd()
-path_to_save_result = os.path.join(cwd, "src", "superjob", "results")
+path_to_save_result = os.path.join(cwd, "results")
 
 vacancy_path = os.path.join(path_to_save_result, "vacancy.csv")
 
