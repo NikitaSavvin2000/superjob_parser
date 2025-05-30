@@ -31,12 +31,11 @@ def update_proxies():
             df = df.sort_values(by="good checks", ascending=False).head(500)
             proxies = [f"{ip}:{port}" for ip, port in zip(df["ip"], df["port"])]
             proxy_cycle = cycle(proxies if proxies else [None])
+            return proxy_cycle
     except Exception as e:
         logging.error(f"Ошибка при обновлении прокси: {e}")
 
-
-update_proxies()
-
+proxy_cycle = update_proxies()
 cwd = os.getcwd()
 path_to_save_result = os.path.join(cwd, "results")
 
@@ -66,7 +65,7 @@ logger = setup_logger(log_path=log_path, to_console=False)
 
 
 MAX_RETRIES = 50
-MAX_WORKERS = 1
+MAX_WORKERS = 5
 USE_PROXY = True
 
 
@@ -224,6 +223,7 @@ def main():
 
     all_results = []
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+
         futures = {executor.submit(process_level_0_link, link): link for link in to_process}
         for future in tqdm(as_completed(futures), total=len(futures)):
             link, links = future.result()
