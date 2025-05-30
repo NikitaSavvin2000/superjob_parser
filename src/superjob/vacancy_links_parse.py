@@ -11,7 +11,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from itertools import cycle
 import threading
 import logging
-from superjob.vacancy_content_parser import parse_job_info, init_city_pattern
+from vacancy_content_parser import parse_job_info, init_city_pattern
 import shutil
 import requests
 
