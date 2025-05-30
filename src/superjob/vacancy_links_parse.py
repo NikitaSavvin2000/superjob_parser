@@ -16,6 +16,27 @@ import shutil
 import requests
 
 
+def update_proxies():
+    global proxy_cycle
+    try:
+        key = os.getenv("KEY")
+        proxy_url = f"https://api.best-proxies.ru/proxylist.csv?key={key}&type=https&country=ru&limit=1000"
+        proxy_path = os.path.join(cwd, "src", "proxylist.csv")
+        r = requests.get(proxy_url)
+        if r.ok:
+            print("Обновили прокси")
+            with open(proxy_path, "wb") as f:
+                f.write(r.content)
+            df = pd.read_csv(proxy_path, sep=";", encoding="cp1251")
+            df = df.sort_values(by="good checks", ascending=False).head(500)
+            proxies = [f"{ip}:{port}" for ip, port in zip(df["ip"], df["port"])]
+            proxy_cycle = cycle(proxies if proxies else [None])
+    except Exception as e:
+        logging.error(f"Ошибка при обновлении прокси: {e}")
+
+
+    update_proxies()
+
 cwd = os.getcwd()
 path_to_save_result = os.path.join(cwd, "results")
 
@@ -51,25 +72,6 @@ USE_PROXY = True
 
 result_file = os.path.join(path_to_save_result, "vacancy_links.csv")
 progress_file = os.path.join(path_to_save_result, "progress_links.csv")
-
-def update_proxies():
-    global proxy_cycle
-    try:
-        key = os.getenv("KEY")
-        proxy_url = f"https://api.best-proxies.ru/proxylist.csv?key={key}&type=https&country=ru&limit=1000"
-        proxy_path = os.path.join(cwd, "src", "proxylist.csv")
-        r = requests.get(proxy_url)
-        if r.ok:
-            print("Обновили прокси")
-            with open(proxy_path, "wb") as f:
-                f.write(r.content)
-            df = pd.read_csv(proxy_path, sep=";", encoding="cp1251")
-            df = df.sort_values(by="good checks", ascending=False).head(500)
-            proxies = [f"{ip}:{port}" for ip, port in zip(df["ip"], df["port"])]
-            proxy_cycle = cycle(proxies if proxies else [None])
-    except Exception as e:
-        logging.error(f"Ошибка при обновлении прокси: {e}")
-
 
 driver_path = ChromeDriverManager().install()
 
@@ -208,15 +210,12 @@ def save_progress(processed_links):
     df.to_csv(progress_file, index=False)
 
 def process_level_0_link(link):
-    update_proxies()
     proxy = next(proxy_cycle)
     return link, try_process_link(link, proxy)
 
 def main():
-    init_result_dir()
-    init_city_pattern()
     update_proxies()
-
+    init_result_dir()
     links_df = pd.read_csv(os.path.join(path_to_save_result, "level_0_links.csv"))
     level_0_links = links_df["level_0_link"].dropna().tolist()
 
