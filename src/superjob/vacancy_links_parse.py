@@ -219,7 +219,7 @@ def save_progress(processed_links):
     df = pd.DataFrame(processed_links, columns=['link'])
     df.to_csv(progress_file, index=False)
 
-def process_level_0_link(link, proxy_cycle):
+def process_level_0_link(link):
     proxy = next(proxy_cycle)
     return link, try_process_link(link, proxy)
 
