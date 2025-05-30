@@ -32,6 +32,7 @@ MAX_RETRIES = 5
 
 result_file = os.path.join(path_to_save_result, "resume_links.csv")
 progress_file = os.path.join(path_to_save_result, "progress.csv")
+
 df_proxies = pd.read_csv(os.path.join(cwd, "src", "proxylist.csv"), sep=";", encoding="cp1251")
 df_proxies = df_proxies.sort_values(by="good checks", ascending=False).head(50)
 proxies = [f"{ip}:{port}" for ip, port in zip(df_proxies["ip"], df_proxies["port"])]

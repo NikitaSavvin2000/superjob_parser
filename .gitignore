@@ -1,3 +1,4 @@
 src/superjob/results/*.log
 src/superjob/results/*.csv
 .DS_Store
+src/superjob/results/*.log

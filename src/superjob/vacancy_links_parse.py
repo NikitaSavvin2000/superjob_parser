@@ -1,4 +1,3 @@
-
 import os
 import re
 import tempfile
@@ -13,32 +12,70 @@ from itertools import cycle
 import threading
 import logging
 from superjob.vacancy_content_parser import parse_job_info, init_city_pattern
+import shutil
+import requests
+
 
 cwd = os.getcwd()
 path_to_save_result = os.path.join(cwd, "src", "superjob", "results")
 
-log_path = os.path.join(path_to_save_result, "logfile_links_parser.log")
-file_handler = logging.FileHandler(log_path, encoding='utf-8')
-file_handler.setLevel(logging.INFO)
-formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-file_handler.setFormatter(formatter)
-logging.getLogger().addHandler(file_handler)
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+vacancy_path = os.path.join(path_to_save_result, "vacancy.csv")
 
-MAX_RETRIES = 5
-MAX_WORKERS = 3
+log_path = os.path.join(path_to_save_result, "vacancy_parser.log")
+
+def setup_logger(log_path: str, to_console: bool) -> logging.Logger:
+    logger = logging.getLogger()
+    logger.setLevel(logging.INFO)
+    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+
+    file_handler = logging.FileHandler(log_path, encoding='utf-8')
+    file_handler.setFormatter(formatter)
+
+    logger.handlers = []
+    logger.addHandler(file_handler)
+
+    if to_console:
+        console_handler = logging.StreamHandler()
+        console_handler.setFormatter(formatter)
+        logger.addHandler(console_handler)
+
+    return logger
+
+logger = setup_logger(log_path=log_path, to_console=False)
+
+
+MAX_RETRIES = 50
+MAX_WORKERS = 1
+USE_PROXY = True
+
 
 result_file = os.path.join(path_to_save_result, "vacancy_links.csv")
 progress_file = os.path.join(path_to_save_result, "progress_links.csv")
 
-df_proxies = pd.read_csv(os.path.join(cwd, "src", "proxylist.csv"), sep=';', encoding='cp1251')
-df_proxies = df_proxies.sort_values(by="good checks", ascending=False).head(50)
-proxies = [f"{ip}:{port}" for ip, port in zip(df_proxies["ip"], df_proxies["port"])]
-proxy_cycle = cycle(proxies)
+def update_proxies():
+    global proxy_cycle
+    try:
+        key = os.getenv("KEY")
+        proxy_url = f"https://api.best-proxies.ru/proxylist.csv?key={key}&type=https&country=ru&limit=1000"
+        proxy_path = os.path.join(cwd, "src", "proxylist.csv")
+        r = requests.get(proxy_url)
+        if r.ok:
+            print("Обновили прокси")
+            with open(proxy_path, "wb") as f:
+                f.write(r.content)
+            df = pd.read_csv(proxy_path, sep=";", encoding="cp1251")
+            df = df.sort_values(by="good checks", ascending=False).head(500)
+            proxies = [f"{ip}:{port}" for ip, port in zip(df["ip"], df["port"])]
+            proxy_cycle = cycle(proxies if proxies else [None])
+    except Exception as e:
+        logging.error(f"Ошибка при обновлении прокси: {e}")
+
+
 driver_path = ChromeDriverManager().install()
 
 link_count_lock = threading.Lock()
 LINK_COUNT = 0
+CURRENT_DF_LEN = 0
 
 def create_driver(proxy=None):
     options = webdriver.ChromeOptions()
@@ -53,12 +90,26 @@ def create_driver(proxy=None):
     options.add_experimental_option("prefs", prefs)
     if proxy:
         options.add_argument(f'--proxy-server=http://{proxy}')
-    driver = webdriver.Chrome(service=Service(driver_path), options=options)
-    driver.set_page_load_timeout(30)
-    return driver
+    return webdriver.Chrome(service=Service(driver_path), options=options)
+
+
+def save_vacancy_data(data, link, path_to_save_result):
+    vacancy_path = os.path.join(path_to_save_result, "vacancy.csv")
+    data['link'] = link
+    df = pd.DataFrame([data])
+    if os.path.exists(vacancy_path):
+        df.to_csv(vacancy_path, mode='a', index=False, header=False)
+        current_len = len(pd.read_csv(vacancy_path))
+    else:
+        df.to_csv(vacancy_path, index=False)
+        current_len = 1
+    return current_len
+
 
 def try_process_link(link, proxy):
     global LINK_COUNT
+    global CURRENT_DF_LEN
+    update_proxies()
     all_links = set()
     retries = 0
     while retries < MAX_RETRIES:
@@ -71,10 +122,12 @@ def try_process_link(link, proxy):
             numbers = [int(t.get_attribute("title")) for t in titles if t.get_attribute("title").isdigit()]
             max_page = max(numbers) if numbers else 1
             driver.quit()
+            # shutil.rmtree(driver.temp_profile, ignore_errors=True)
             break
         except Exception as e:
             logging.error(f"Error fetching max page for link: {link} with proxy {proxy}: {e}")
             driver.quit()
+            # shutil.rmtree(driver.temp_profile, ignore_errors=True)
             retries += 1
             proxy = next(proxy_cycle)
     else:
@@ -97,12 +150,13 @@ def try_process_link(link, proxy):
                     while not link_parse_success:
                         try:
                             link_content = parse_job_info(driver, link)
-                            print(link)
-                            print(link_content)
+                            save_vacancy_data(link_content, link, path_to_save_result)
+                            CURRENT_DF_LEN += 1
                             link_parse_success = True
                         except Exception as e:
-                            logging.error(f"Error processing page {page} for link {link} with proxy {proxy}: {e}")
+                            # logging.error(f"Error processing page {page} for link {link} with proxy {proxy}: {e}")
                             driver.quit()
+                            shutil.rmtree(driver.temp_profile, ignore_errors=True)
                             page_retries += 1
                             proxy = next(proxy_cycle)
 
@@ -110,10 +164,15 @@ def try_process_link(link, proxy):
                 with link_count_lock:
                     LINK_COUNT += len(filtered)
                 driver.quit()
+                shutil.rmtree(driver.temp_profile, ignore_errors=True)
                 success = True
+                massage = f"Current vacancy.csv length: {CURRENT_DF_LEN} должно быть равно LINK_COUNT = {LINK_COUNT}"
+                logging.info(massage)
+                print(massage)
             except Exception as e:
-                logging.error(f"Error processing page {page} for link {link} with proxy {proxy}: {e}")
+                # logging.error(f"Error processing page {page} for link {link} with proxy {proxy}: {e}")
                 driver.quit()
+                shutil.rmtree(driver.temp_profile, ignore_errors=True)
                 page_retries += 1
                 proxy = next(proxy_cycle)
 
@@ -155,6 +214,8 @@ def process_level_0_link(link):
 def main():
     init_result_dir()
     init_city_pattern()
+    update_proxies()
+
     links_df = pd.read_csv(os.path.join(path_to_save_result, "level_0_links.csv"))
     level_0_links = links_df["level_0_link"].dropna().tolist()
 
