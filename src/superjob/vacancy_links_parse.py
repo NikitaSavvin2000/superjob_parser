@@ -32,10 +32,16 @@ def update_proxies():
             df = pd.read_csv(proxy_path, sep=";", encoding="cp1251")
             df = df.sort_values(by="good checks", ascending=False).head(500)
             proxies = [f"{ip}:{port}" for ip, port in zip(df["ip"], df["port"])]
-            proxy_cycle = cycle(proxies if proxies else [None])
+            if proxies:
+                proxy_cycle = cycle(proxies)
+            else:
+                proxy_cycle = cycle([None])
             return proxy_cycle
     except Exception as e:
         logging.error(f"Ошибка при обновлении прокси: {e}")
+    if proxy_cycle is None:
+        proxy_cycle = cycle([None])
+    return proxy_cycle
 
 PROXY_UPDATE_INTERVAL = 300
 proxy_lock = threading.Lock()
