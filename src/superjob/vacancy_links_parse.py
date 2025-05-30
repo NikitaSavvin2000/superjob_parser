@@ -16,6 +16,7 @@ import shutil
 import requests
 import time
 
+proxy_cycle = None
 
 def update_proxies():
     global proxy_cycle
@@ -224,8 +225,10 @@ def process_level_0_link(link, proxy_cycle):
     return link, try_process_link(link, proxy)
 
 def main():
+    global proxy_cycle
     init_result_dir()
-    update_proxies()
+    proxy_cycle = update_proxies()
+
     links_df = pd.read_csv(os.path.join(path_to_save_result, "level_0_links.csv"))
     level_0_links = links_df["level_0_link"].dropna().tolist()
 
