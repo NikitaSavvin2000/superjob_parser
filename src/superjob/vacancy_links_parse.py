@@ -219,8 +219,7 @@ def save_progress(processed_links):
     df = pd.DataFrame(processed_links, columns=['link'])
     df.to_csv(progress_file, index=False)
 
-def process_level_0_link(link):
-    global proxy_cycle
+def process_level_0_link(link, proxy_cycle):
     proxy = next(proxy_cycle)
     return link, try_process_link(link, proxy)
 
@@ -236,7 +235,7 @@ def main():
 
     all_results = []
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        futures = {executor.submit(process_level_0_link, link, proxy_cycle, proxy_lock): link for link in to_process}
+        futures = {executor.submit(process_level_0_link, link, proxy_cycle): link for link in to_process}
         for future in tqdm(as_completed(futures), total=len(futures)):
             link, links = future.result()
             all_results.extend(links)
