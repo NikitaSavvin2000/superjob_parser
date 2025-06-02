@@ -1,0 +1,8 @@
+2025-06-02 10:26:45,936 - INFO - ====== WebDriver manager ======
+2025-06-02 10:26:46,028 - INFO - Get LATEST chromedriver version for google-chrome
+2025-06-02 10:26:46,155 - INFO - Get LATEST chromedriver version for google-chrome
+2025-06-02 10:26:46,293 - INFO - Driver [/Users/nikitasavvin/.wdm/drivers/chromedriver/mac64/136.0.7103.113/chromedriver-mac-arm64/chromedriver] found in cache
+2025-06-02 10:28:08,574 - INFO - ====== WebDriver manager ======
+2025-06-02 10:28:08,691 - INFO - Get LATEST chromedriver version for google-chrome
+2025-06-02 10:28:08,815 - INFO - Get LATEST chromedriver version for google-chrome
+2025-06-02 10:28:08,943 - INFO - Driver [/Users/nikitasavvin/.wdm/drivers/chromedriver/mac64/136.0.7103.113/chromedriver-mac-arm64/chromedriver] found in cache

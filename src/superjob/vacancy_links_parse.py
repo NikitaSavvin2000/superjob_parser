@@ -3,74 +3,42 @@ import re
 import tempfile
 import pandas as pd
 from tqdm import tqdm
-from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from itertools import cycle
 import threading
 import logging
-from vacancy_content_parser import parse_job_info, init_city_pattern
 import shutil
 import requests
 import time
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+from vacancy_content_parser import parse_job_info
 
-proxy_cycle = None
+# Configuration
+MAX_WORKERS = 4
+USE_PROXY = True
+PROXY_UPDATE_INTERVAL = 600
+BATCH_SIZE = 50
+LINK_COUNT = 0
+CURRENT_DF_LEN = 0
+TIMEOUT_PER_LINK = 600
+
+# Proxy pool
+proxy_pool = []
+proxy_lock = threading.Lock()
 last_proxy_update = 0
 
-def update_proxies():
-    global proxy_cycle
-    try:
-        key = os.getenv("KEY")
-        proxy_url = f"https://api.best-proxies.ru/proxylist.csv?key={key}&type=https&country=ru&limit=1000"
-        proxy_path = os.path.join(cwd, "src", "proxylist.csv")
-        r = requests.get(proxy_url)
-        if r.ok:
-            print("Обновили прокси")
-            with open(proxy_path, "wb") as f:
-                f.write(r.content)
-            df = pd.read_csv(proxy_path, sep=";", encoding="cp1251")
-            df = df.sort_values(by="good checks", ascending=False).head(500)
-            proxies = [f"{ip}:{port}" for ip, port in zip(df["ip"], df["port"])]
-            if proxies:
-                proxy_cycle = cycle(proxies)
-            else:
-                proxy_cycle = cycle([None])
-            return proxy_cycle
-    except Exception as e:
-        logging.error(f"Ошибка при обновлении прокси: {e}")
-    if proxy_cycle is None:
-        proxy_cycle = cycle([None])
-    return proxy_cycle
-
-PROXY_UPDATE_INTERVAL = 300
-proxy_lock = threading.Lock()
-
-def get_proxy_cycle():
-    global proxy_cycle, last_proxy_update
-    with proxy_lock:
-        if proxy_cycle is None or (time.time() - last_proxy_update) > PROXY_UPDATE_INTERVAL:
-            proxy_cycle = update_proxies()
-            last_proxy_update = time.time()
-        return proxy_cycle
-
-cwd = os.getcwd()
-path_to_save_result = os.path.join(cwd, "results")
-
-vacancy_path = os.path.join(path_to_save_result, "vacancy.csv")
-
-log_path = os.path.join(path_to_save_result, "vacancy_parser.log")
-
+# Logging setup with thread name
 def setup_logger(log_path: str, to_console: bool) -> logging.Logger:
-    logger = logging.getLogger()
+    logger = logging.getLogger('vacancy_parser')
     logger.setLevel(logging.INFO)
-    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-
-    file_handler = logging.FileHandler(log_path, encoding='utf-8')
-    file_handler.setFormatter(formatter)
+    formatter = logging.Formatter('%(asctime)s - %(threadName)s - %(levelname)s - %(message)s')
 
     logger.handlers = []
+    file_handler = logging.FileHandler(log_path, encoding='utf-8')
+    file_handler.setFormatter(formatter)
     logger.addHandler(file_handler)
 
     if to_console:
@@ -80,123 +48,222 @@ def setup_logger(log_path: str, to_console: bool) -> logging.Logger:
 
     return logger
 
-logger = setup_logger(log_path=log_path, to_console=False)
+# Paths
+cwd = os.getcwd()
+path_to_save_result = os.path.join(cwd, "src", "superjob", "results")
+path_to_save_logs = os.path.join(cwd, "src", "superjob", "logs")
+os.makedirs(path_to_save_result, exist_ok=True)
+os.makedirs(path_to_save_logs, exist_ok=True)
 
-
-MAX_RETRIES = 50
-MAX_WORKERS = 5
-USE_PROXY = True
-
-
+vacancy_path = os.path.join(path_to_save_result, "vacancy.csv")
+log_path = os.path.join(path_to_save_logs, "vacancy_parser.log")
 result_file = os.path.join(path_to_save_result, "vacancy_links.csv")
 progress_file = os.path.join(path_to_save_result, "progress_links.csv")
 
-driver_path = ChromeDriverManager().install()
+logger = setup_logger(log_path=log_path, to_console=True)
 
-link_count_lock = threading.Lock()
-LINK_COUNT = 0
-CURRENT_DF_LEN = 0
+def update_proxies():
+    global proxy_pool, last_proxy_update
+    try:
+        key = os.getenv("KEY")
+        proxy_url = f"https://api.best-proxies.ru/proxylist.csv?key={key}&type=https&limit=1000"
+        proxy_path = os.path.join(cwd, "src", "proxylist.csv")
+        r = requests.get(proxy_url)
+        if r.ok:
+            with open(proxy_path, "wb") as f:
+                f.write(r.content)
+            df = pd.read_csv(proxy_path, sep=";", encoding="cp1251")
+            df = df.sort_values(by="good checks", ascending=False).head(100)
+            proxies = [f"{ip}:{port}" for ip, port in zip(df["ip"], df["port"])]
+            if proxies:
+                with proxy_lock:
+                    proxy_pool = proxies
+                    last_proxy_update = time.time()
+                logger.info(f"Updated proxy pool with {len(proxies)} proxies")
+            else:
+                logger.warning("No proxies retrieved, using no proxy")
+                proxy_pool = [None]
+        else:
+            logger.error(f"Failed to fetch proxies: HTTP {r.status_code}")
+            proxy_pool = [None]
+    except Exception as e:
+        logger.error(f"Error updating proxies: {e}")
+        proxy_pool = [None]
+    return cycle(proxy_pool)
+
+def get_proxy():
+    global proxy_pool, last_proxy_update
+    with proxy_lock:
+        if not proxy_pool or (time.time() - last_proxy_update) > PROXY_UPDATE_INTERVAL:
+            logger.info("Refreshing proxy pool")
+            return next(update_proxies())
+        return next(cycle(proxy_pool))
 
 def create_driver(proxy=None):
     options = webdriver.ChromeOptions()
     options.add_argument("--headless=new")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
-    options.add_argument(f"--user-data-dir={tempfile.mkdtemp()}")
+    user_data_dir = tempfile.mkdtemp()  # Store user-data-dir explicitly
+    options.add_argument(f"--user-data-dir={user_data_dir}")
     prefs = {
         "profile.managed_default_content_settings.images": 2,
         "profile.managed_default_content_settings.fonts": 2
     }
     options.add_experimental_option("prefs", prefs)
-    if proxy:
+    if proxy and USE_PROXY:
         options.add_argument(f'--proxy-server=http://{proxy}')
-    return webdriver.Chrome(service=Service(driver_path), options=options)
-
-
-def save_vacancy_data(data, link, path_to_save_result):
-    vacancy_path = os.path.join(path_to_save_result, "vacancy.csv")
-    data['link'] = link
-    df = pd.DataFrame([data])
-    if os.path.exists(vacancy_path):
-        df.to_csv(vacancy_path, mode='a', index=False, header=False)
-        current_len = len(pd.read_csv(vacancy_path))
+        logger.info(f"Created driver with proxy: {proxy}")
     else:
-        df.to_csv(vacancy_path, index=False)
-        current_len = 1
-    return current_len
+        logger.info("Created driver without proxy")
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    return driver, user_data_dir  # Return both driver and user_data_dir
 
+link_count_lock = threading.Lock()
+vacancy_data_lock = threading.Lock()
+batch_data = []
+
+def save_vacancy_data(data, link):
+    global CURRENT_DF_LEN
+    with vacancy_data_lock:
+        data_with_link = {**data, 'link': link}
+        df = pd.DataFrame([data_with_link])
+        if os.path.exists(vacancy_path):
+            df.to_csv(vacancy_path, mode='a', index=False, header=False)
+        else:
+            df.to_csv(vacancy_path, index=False)
+        CURRENT_DF_LEN += 1
+        logger.info(f"Saved vacancy data for {link}, total: {CURRENT_DF_LEN}")
+    return CURRENT_DF_LEN
+
+def flush_batch():
+    global batch_data, CURRENT_DF_LEN
+    with vacancy_data_lock:
+        if batch_data:
+            df = pd.DataFrame(batch_data)
+            if os.path.exists(vacancy_path):
+                df.to_csv(vacancy_path, mode='a', index=False, header=False)
+            else:
+                df.to_csv(vacancy_path, index=False)
+            CURRENT_DF_LEN += len(batch_data)
+            logger.info(f"Flushed final batch of {len(batch_data)} vacancies, total: {CURRENT_DF_LEN}")
+            batch_data.clear()
 
 def try_process_link(link, proxy):
     global LINK_COUNT
-    global CURRENT_DF_LEN
-    proxy_cycle = get_proxy_cycle()
     all_links = set()
-    retries = 0
-    while retries < MAX_RETRIES:
+    start_time = time.time()
+    attempt = 0
+
+    while time.time() - start_time < TIMEOUT_PER_LINK:
+        attempt += 1
+        driver = None
+        user_data_dir = None
         try:
-            driver = create_driver(proxy)
+            driver, user_data_dir = create_driver(proxy)
+            logger.info(f"Attempt {attempt}: Fetching {link} with proxy {proxy}")
             driver.get(link)
-            elem = driver.find_element(By.XPATH, "//*[contains(text(), 'Дальше')]")
-            parent_div = elem.find_element(By.XPATH, "./ancestor::div[1]")
-            titles = parent_div.find_elements(By.XPATH, ".//a[@title]")
-            numbers = [int(t.get_attribute("title")) for t in titles if t.get_attribute("title").isdigit()]
-            max_page = max(numbers) if numbers else 1
-            driver.quit()
-            # shutil.rmtree(driver.temp_profile, ignore_errors=True)
+            try:
+                elem = driver.find_element(By.XPATH, "//*[contains(text(), 'Дальше')]")
+                parent_div = elem.find_element(By.XPATH, "./ancestor::div[1]")
+                titles = parent_div.find_elements(By.XPATH, ".//a[@title]")
+                numbers = [int(t.get_attribute("title")) for t in titles if t.get_attribute("title").isdigit()]
+                max_page = max(numbers) if numbers else 1
+                logger.info(f"Attempt {attempt}: Successfully fetched max page {max_page} for {link} with proxy {proxy}")
+            except Exception:
+                max_page = 1
+                logger.info(f"Attempt {attempt}: No pagination found for {link}, assuming single page")
             break
         except Exception as e:
-            logging.error(f"Error fetching max page for link: {link} with proxy {proxy}: {e}")
-            driver.quit()
-            # shutil.rmtree(driver.temp_profile, ignore_errors=True)
-            retries += 1
-            proxy = next(proxy_cycle)
+            logger.error(f"Attempt {attempt}: Failed to fetch {link} with proxy {proxy}: {e}")
+            if driver:
+                driver.quit()
+                if user_data_dir:
+                    shutil.rmtree(user_data_dir, ignore_errors=True)
+            proxy = get_proxy()
+            time.sleep(1)
+            continue
     else:
+        logger.error(f"Timed out after {TIMEOUT_PER_LINK}s for {link}, no vacancies collected")
         return []
 
     for page in range(1, max_page + 1):
-        page_retries = 0
-        success = False
-        while not success:
+        page_success = False
+        page_attempt = 0
+        while not page_success and (time.time() - start_time < TIMEOUT_PER_LINK):
+            page_attempt += 1
             try:
-                driver = create_driver(proxy)
-                url = f"{link}/?page={page}"
+                if not driver:
+                    driver, user_data_dir = create_driver(proxy)
+                url = f"{link}?page={page}"
+                logger.info(f"Attempt {attempt}, page {page}, page_attempt {page_attempt}: Processing {url} with proxy {proxy}")
                 driver.get(url)
                 vacancy_links = driver.find_elements(By.CSS_SELECTOR, 'a[href*="/vakansii/"]')
                 hrefs = [a.get_attribute('href') for a in vacancy_links if a.get_attribute('href')]
                 filtered = [h for h in set(hrefs) if re.search(r'\d+\.html$', h)]
+                logger.info(f"Attempt {attempt}, page {page}: Found {len(filtered)} vacancy links")
 
-                for link in filtered:
-                    link_parse_success = False
-                    while not link_parse_success:
+                if not filtered:
+                    logger.warning(f"Attempt {attempt}, page {page}: No vacancies found, retrying")
+                    driver.quit()
+                    if user_data_dir:
+                        shutil.rmtree(user_data_dir, ignore_errors=True)
+                    proxy = get_proxy()
+                    driver = None
+                    user_data_dir = None
+                    time.sleep(1)
+                    continue
+
+                for vacancy_link in filtered:
+                    link_success = False
+                    link_attempt = 0
+                    while not link_success and (time.time() - start_time < TIMEOUT_PER_LINK):
+                        link_attempt += 1
                         try:
-                            link_content = parse_job_info(driver, link)
-                            save_vacancy_data(link_content, link, path_to_save_result)
-                            CURRENT_DF_LEN += 1
-                            link_parse_success = True
+                            link_content = parse_job_info(driver, vacancy_link)
+                            save_vacancy_data(link_content, vacancy_link)
+                            link_success = True
+                            logger.info(f"Attempt {attempt}, page {page}: Successfully parsed vacancy {vacancy_link}")
                         except Exception as e:
-                            # logging.error(f"Error processing page {page} for link {link} with proxy {proxy}: {e}")
+                            logger.error(f"Attempt {attempt}, page {page}, link_attempt {link_attempt}: Failed to parse {vacancy_link}: {e}")
                             driver.quit()
-                            shutil.rmtree(driver.temp_profile, ignore_errors=True)
-                            page_retries += 1
-                            proxy = next(proxy_cycle)
+                            if user_data_dir:
+                                shutil.rmtree(user_data_dir, ignore_errors=True)
+                            proxy = get_proxy()
+                            driver, user_data_dir = create_driver(proxy)
+                            time.sleep(1)
+                    if not link_success:
+                        logger.warning(f"Attempt {attempt}, page {page}: Failed to parse {vacancy_link} within timeout")
 
-                all_links.update(filtered)
                 with link_count_lock:
                     LINK_COUNT += len(filtered)
-                driver.quit()
-                shutil.rmtree(driver.temp_profile, ignore_errors=True)
-                success = True
-                massage = f"Current vacancy.csv length: {CURRENT_DF_LEN} должно быть равно LINK_COUNT = {LINK_COUNT}"
-                logging.info(massage)
-                print(massage)
+                all_links.update(filtered)
+                page_success = True
+                logger.info(f"Attempt {attempt}: Completed page {page} of {link}, total links: {LINK_COUNT}")
             except Exception as e:
-                # logging.error(f"Error processing page {page} for link {link} with proxy {proxy}: {e}")
-                driver.quit()
-                shutil.rmtree(driver.temp_profile, ignore_errors=True)
-                page_retries += 1
-                proxy = next(proxy_cycle)
+                logger.error(f"Attempt {attempt}, page {page}, page_attempt {page_attempt}: Failed to process {url}: {e}")
+                if driver:
+                    driver.quit()
+                    if user_data_dir:
+                        shutil.rmtree(user_data_dir, ignore_errors=True)
+                proxy = get_proxy()
+                driver = None
+                user_data_dir = None
+                time.sleep(1)
 
-    logging.info(f"LINK_COUNT={LINK_COUNT} for link={link}")
+        if not page_success:
+            logger.warning(f"Attempt {attempt}: Failed to process page {page} of {link} within timeout")
+            continue
+
+    if driver:
+        driver.quit()
+        if user_data_dir:
+            shutil.rmtree(user_data_dir, ignore_errors=True)
+
+    if not all_links:
+        logger.error(f"No vacancies collected for {link} after timeout")
+    else:
+        logger.info(f"Completed processing {link}, collected {len(all_links)} vacancy links")
     return list(all_links)
 
 def read_existing_links():
@@ -211,10 +278,9 @@ def append_links_to_csv(links):
     if unique:
         df = pd.DataFrame(unique, columns=['vacancy_links'])
         df.to_csv(result_file, mode='a', header=not os.path.exists(result_file), index=False)
-        logging.info(f"Appended {len(unique)} new links")
-
-def init_result_dir():
-    os.makedirs(path_to_save_result, exist_ok=True)
+        logger.info(f"Appended {len(unique)} new vacancy links to {result_file}")
+    else:
+        logger.info("No new links to append")
 
 def read_progress():
     if os.path.exists(progress_file):
@@ -226,34 +292,34 @@ def read_progress():
 def save_progress(processed_links):
     df = pd.DataFrame(processed_links, columns=['link'])
     df.to_csv(progress_file, index=False)
+    logger.info(f"Saved progress for {len(processed_links)} processed links")
 
-def process_level_0_link(link, proxy_cycle):
-    proxy = next(proxy_cycle)
+def process_level_0_link(link):
+    proxy = get_proxy()
     return link, try_process_link(link, proxy)
 
 def main():
-    global proxy_cycle
-    init_result_dir()
-    proxy_cycle = update_proxies()
+    global proxy_pool
+    proxy_pool = update_proxies()
 
     links_df = pd.read_csv(os.path.join(path_to_save_result, "level_0_links.csv"))
     level_0_links = links_df["level_0_link"].dropna().tolist()
-
     processed_links = read_progress()
     to_process = [l for l in level_0_links if l not in processed_links]
 
     all_results = []
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        futures = {executor.submit(process_level_0_link, link, proxy_cycle): link for link in to_process}
-        for future in tqdm(as_completed(futures), total=len(futures)):
+        futures = {executor.submit(process_level_0_link, link): link for link in to_process}
+        for future in tqdm(as_completed(futures), total=len(futures), desc="Processing level 0 links"):
             link, links = future.result()
             all_results.extend(links)
             processed_links.append(link)
             save_progress(processed_links)
+            logger.info(f"Processed level 0 link {link}, collected {len(links)} vacancy links")
 
-
+    flush_batch()
     append_links_to_csv(all_results)
-    logging.info(f"Total links scraped: {LINK_COUNT}")
+    logger.info(f"Total vacancy links scraped: {LINK_COUNT}, vacancy.csv length: {CURRENT_DF_LEN}")
 
 if __name__ == '__main__':
     main()

@@ -1,0 +1,11 @@
+2025-06-02 18:10:01,947 - MainThread - INFO - Updated proxy pool with 100 proxies
+2025-06-02 18:10:01,969 - ThreadPoolExecutor-0_3 - INFO - Created driver with proxy: 45.140.143.77:18080
+2025-06-02 18:10:01,969 - ThreadPoolExecutor-0_0 - INFO - Created driver with proxy: 47.90.205.231:33333
+2025-06-02 18:10:01,969 - ThreadPoolExecutor-0_2 - INFO - Created driver with proxy: 92.124.154.154:8080
+2025-06-02 18:10:01,969 - ThreadPoolExecutor-0_1 - INFO - Created driver with proxy: 47.251.43.115:33333
+2025-06-02 18:10:03,774 - ThreadPoolExecutor-0_1 - INFO - Attempt 1: Fetching https://russia.superjob.ru/vakansii/fasadchik.html with proxy 47.251.43.115:33333
+2025-06-02 18:10:03,774 - ThreadPoolExecutor-0_0 - INFO - Attempt 1: Fetching https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html with proxy 47.90.205.231:33333
+2025-06-02 18:10:08,619 - ThreadPoolExecutor-0_1 - ERROR - Attempt 1: Failed to fetch https://russia.superjob.ru/vakansii/fasadchik.html with proxy 47.251.43.115:33333: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-06-02 18:10:08,623 - ThreadPoolExecutor-0_0 - ERROR - Attempt 1: Failed to fetch https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html with proxy 47.90.205.231:33333: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-06-02 18:10:09,725 - ThreadPoolExecutor-0_0 - INFO - Created driver with proxy: 185.10.129.14:3128
+2025-06-02 18:10:09,728 - ThreadPoolExecutor-0_1 - INFO - Created driver with proxy: 185.166.24.248:8080
