@@ -106,7 +106,6 @@ def create_driver(proxy=None):
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
 
-    # Remove --user-data-dir to avoid creating a temporary profile
     prefs = {
         "profile.managed_default_content_settings.images": 2,
         "profile.managed_default_content_settings.fonts": 2
