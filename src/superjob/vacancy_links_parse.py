@@ -100,12 +100,16 @@ def get_proxy():
             return next(update_proxies())
         return next(cycle(proxy_pool))
 
+
+
+
 def create_driver(proxy=None):
     options = webdriver.ChromeOptions()
     options.add_argument("--headless=new")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
 
+    # Remove --user-data-dir to avoid creating a temporary profile
     prefs = {
         "profile.managed_default_content_settings.images": 2,
         "profile.managed_default_content_settings.fonts": 2
@@ -119,7 +123,6 @@ def create_driver(proxy=None):
 
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
     return driver, None
-
 
 link_count_lock = threading.Lock()
 vacancy_data_lock = threading.Lock()
