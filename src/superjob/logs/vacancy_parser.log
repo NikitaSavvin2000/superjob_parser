@@ -9,3 +9,55 @@
 2025-06-02 18:10:08,623 - ThreadPoolExecutor-0_0 - ERROR - Attempt 1: Failed to fetch https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html with proxy 47.90.205.231:33333: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
 2025-06-02 18:10:09,725 - ThreadPoolExecutor-0_0 - INFO - Created driver with proxy: 185.10.129.14:3128
 2025-06-02 18:10:09,728 - ThreadPoolExecutor-0_1 - INFO - Created driver with proxy: 185.166.24.248:8080
+2025-06-02 18:21:38,969 - MainThread - INFO - Updated proxy pool with 100 proxies
+2025-06-02 18:21:38,977 - ThreadPoolExecutor-0_0 - INFO - Created driver with proxy: 92.124.154.154:8080
+2025-06-02 18:21:38,977 - ThreadPoolExecutor-0_1 - INFO - Created driver with proxy: 45.140.143.77:18080
+2025-06-02 18:21:38,977 - ThreadPoolExecutor-0_2 - INFO - Created driver with proxy: 185.10.129.14:3128
+2025-06-02 18:21:38,978 - ThreadPoolExecutor-0_3 - INFO - Created driver with proxy: 185.166.24.248:8080
+2025-06-02 18:21:40,642 - ThreadPoolExecutor-0_3 - INFO - Attempt 1: Fetching https://russia.superjob.ru/vakansii/metallurg.html with proxy 185.166.24.248:8080
+2025-06-02 18:21:40,647 - ThreadPoolExecutor-0_2 - INFO - Attempt 1: Fetching https://russia.superjob.ru/vakansii/kuzovschik-malyar.html with proxy 185.10.129.14:3128
+2025-06-02 18:21:40,647 - ThreadPoolExecutor-0_0 - INFO - Attempt 1: Fetching https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html with proxy 92.124.154.154:8080
+2025-06-02 18:21:40,901 - ThreadPoolExecutor-0_0 - ERROR - Attempt 1: Failed to fetch https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html with proxy 92.124.154.154:8080: Message: unknown error: net::ERR_TUNNEL_CONNECTION_FAILED
+  (Session info: chrome=136.0.7103.114)
+Stacktrace:
+0   chromedriver                        0x00000001054943e0 cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x000000010548c6a8 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x0000000104fc9fbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x0000000104fc25ac cxxbridge1$string$len + 58892
+4   chromedriver                        0x0000000104fb521c cxxbridge1$string$len + 4732
+5   chromedriver                        0x0000000104fb6c10 cxxbridge1$string$len + 11376
+6   chromedriver                        0x0000000104fb5684 cxxbridge1$string$len + 5860
+7   chromedriver                        0x0000000104fb4ff8 cxxbridge1$string$len + 4184
+8   chromedriver                        0x0000000104fb4d44 cxxbridge1$string$len + 3492
+9   chromedriver                        0x0000000104fb2b24 chromedriver + 191268
+10  chromedriver                        0x0000000104fb3580 chromedriver + 193920
+11  chromedriver                        0x0000000104fcd018 cxxbridge1$string$len + 102520
+12  chromedriver                        0x0000000105052ab0 cxxbridge1$string$len + 650000
+13  chromedriver                        0x0000000105052044 cxxbridge1$string$len + 647332
+14  chromedriver                        0x00000001050053f8 cxxbridge1$string$len + 332888
+15  chromedriver                        0x0000000105458804 cxxbridge1$str$ptr + 2585200
+16  chromedriver                        0x000000010545bad4 cxxbridge1$str$ptr + 2598208
+17  chromedriver                        0x0000000105439dd8 cxxbridge1$str$ptr + 2459716
+18  chromedriver                        0x000000010545c34c cxxbridge1$str$ptr + 2600376
+19  chromedriver                        0x000000010542b664 cxxbridge1$str$ptr + 2400464
+20  chromedriver                        0x000000010547c2b0 cxxbridge1$str$ptr + 2731292
+21  chromedriver                        0x000000010547c43c cxxbridge1$str$ptr + 2731688
+22  chromedriver                        0x000000010548c2f4 cxxbridge1$str$ptr + 2796896
+23  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+24  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-06-02 18:21:40,941 - ThreadPoolExecutor-0_2 - INFO - Attempt 1: No pagination found for https://russia.superjob.ru/vakansii/kuzovschik-malyar.html, assuming single page
+2025-06-02 18:21:40,941 - ThreadPoolExecutor-0_2 - INFO - Attempt 1, page 1, page_attempt 1: Processing https://russia.superjob.ru/vakansii/kuzovschik-malyar.html?page=1 with proxy 185.10.129.14:3128
+2025-06-02 18:21:40,997 - ThreadPoolExecutor-0_1 - INFO - Attempt 1: Fetching https://russia.superjob.ru/vakansii/fasadchik.html with proxy 45.140.143.77:18080
+2025-06-02 18:21:41,032 - ThreadPoolExecutor-0_2 - INFO - Attempt 1, page 1: Found 0 vacancy links
+2025-06-02 18:21:41,032 - ThreadPoolExecutor-0_2 - WARNING - Attempt 1, page 1: No vacancies found, retrying
+2025-06-02 18:21:41,997 - ThreadPoolExecutor-0_0 - INFO - Created driver with proxy: 213.24.238.111:3128
+2025-06-02 18:21:42,115 - ThreadPoolExecutor-0_2 - INFO - Created driver with proxy: 54.155.127.16:8888
+2025-06-02 18:21:43,232 - ThreadPoolExecutor-0_0 - INFO - Attempt 2: Fetching https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html with proxy 213.24.238.111:3128
+2025-06-02 18:21:43,271 - ThreadPoolExecutor-0_2 - INFO - Attempt 1, page 1, page_attempt 2: Processing https://russia.superjob.ru/vakansii/kuzovschik-malyar.html?page=1 with proxy 54.155.127.16:8888
+2025-06-02 18:21:46,629 - ThreadPoolExecutor-0_3 - ERROR - Attempt 1: Failed to fetch https://russia.superjob.ru/vakansii/metallurg.html with proxy 185.166.24.248:8080: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-06-02 18:21:46,635 - ThreadPoolExecutor-0_0 - ERROR - Attempt 2: Failed to fetch https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html with proxy 213.24.238.111:3128: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-06-02 18:21:46,635 - ThreadPoolExecutor-0_1 - INFO - Attempt 1: No pagination found for https://russia.superjob.ru/vakansii/fasadchik.html, assuming single page
+2025-06-02 18:21:46,639 - ThreadPoolExecutor-0_2 - ERROR - Attempt 1, page 1, page_attempt 2: Failed to process https://russia.superjob.ru/vakansii/kuzovschik-malyar.html?page=1: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-06-02 18:21:46,658 - ThreadPoolExecutor-0_1 - INFO - Attempt 1, page 1, page_attempt 1: Processing https://russia.superjob.ru/vakansii/fasadchik.html?page=1 with proxy 45.140.143.77:18080
+2025-06-02 18:21:46,668 - ThreadPoolExecutor-0_1 - ERROR - Attempt 1, page 1, page_attempt 1: Failed to process https://russia.superjob.ru/vakansii/fasadchik.html?page=1: HTTPConnectionPool(host='localhost', port=56380): Max retries exceeded with url: /session/47f6d50a3457a734de5b98b451172df0/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105eae390>: Failed to establish a new connection: [Errno 61] Connection refused'))
