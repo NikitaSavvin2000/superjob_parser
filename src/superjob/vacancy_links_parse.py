@@ -52,6 +52,7 @@ def setup_logger(log_path: str, to_console: bool) -> logging.Logger:
 cwd = os.getcwd()
 path_to_save_result = os.path.join(cwd, "src", "superjob", "results")
 path_to_save_logs = os.path.join(cwd, "src", "superjob", "logs")
+
 os.makedirs(path_to_save_result, exist_ok=True)
 os.makedirs(path_to_save_logs, exist_ok=True)
 
@@ -104,8 +105,8 @@ def create_driver(proxy=None):
     options.add_argument("--headless=new")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
-    user_data_dir = tempfile.mkdtemp()  # Store user-data-dir explicitly
-    options.add_argument(f"--user-data-dir={user_data_dir}")
+
+    # Remove --user-data-dir to avoid creating a temporary profile
     prefs = {
         "profile.managed_default_content_settings.images": 2,
         "profile.managed_default_content_settings.fonts": 2
@@ -116,8 +117,10 @@ def create_driver(proxy=None):
         logger.info(f"Created driver with proxy: {proxy}")
     else:
         logger.info("Created driver without proxy")
+
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
-    return driver, user_data_dir  # Return both driver and user_data_dir
+    return driver, None
+
 
 link_count_lock = threading.Lock()
 vacancy_data_lock = threading.Lock()
