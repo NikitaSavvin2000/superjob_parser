@@ -18,7 +18,6 @@ driver_path = ChromeDriverManager().install()
 
 
 def init_city_pattern():
-    # path_to_save_result = os.path.join(cwd, "src", "superjob", "results")
     path_to_city = os.path.join(cwd, "src", "superjob", "data", "city.csv")
     df_city = pd.read_csv(path_to_city)
 
@@ -104,6 +103,7 @@ def parse_job_info(driver, link):
         raise e
 
 
+# Пример вызова
 # driver = create_driver(proxy=None)
 # link = "https://russia.superjob.ru/vakansii/menedzher-po-vnedreniyu-iskusstvennogo-intelekta-50704748.html"
 # content = parse_job_info(driver=driver, link=link)
