@@ -239,7 +239,7 @@ def try_process_link(link, proxy):
                 try:
                     logger.info(f"Page {page}, attempt {attempt + 1}: Processing {page_url}")
                     driver.get(page_url)
-                    WebDriverWait(driver, 10).until(
+                    WebDriverWait(driver, 60).until(
                         EC.presence_of_element_located((By.CSS_SELECTOR, 'a[href*="/vakansii/"]'))
                     )
                     vacancy_links = driver.find_elements(By.CSS_SELECTOR, 'a[href*="/vakansii/"]')
