@@ -21,7 +21,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from vacancy_content_parser import parse_job_info
 
 # Configuration
-MAX_WORKERS = 10
+MAX_WORKERS = 5
 USE_PROXY = True
 PROXY_UPDATE_INTERVAL = 300
 LINK_COUNT = 0

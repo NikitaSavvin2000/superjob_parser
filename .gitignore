@@ -1,4 +1,3 @@
 src/superjob/results/*.log
 .DS_Store
-src/superjob/results/*.log
 src/superjob/results/logfile_links_parser.log

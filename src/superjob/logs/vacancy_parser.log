@@ -61,3 +61,592 @@ Stacktrace:
 2025-06-02 18:21:46,639 - ThreadPoolExecutor-0_2 - ERROR - Attempt 1, page 1, page_attempt 2: Failed to process https://russia.superjob.ru/vakansii/kuzovschik-malyar.html?page=1: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
 2025-06-02 18:21:46,658 - ThreadPoolExecutor-0_1 - INFO - Attempt 1, page 1, page_attempt 1: Processing https://russia.superjob.ru/vakansii/fasadchik.html?page=1 with proxy 45.140.143.77:18080
 2025-06-02 18:21:46,668 - ThreadPoolExecutor-0_1 - ERROR - Attempt 1, page 1, page_attempt 1: Failed to process https://russia.superjob.ru/vakansii/fasadchik.html?page=1: HTTPConnectionPool(host='localhost', port=56380): Max retries exceeded with url: /session/47f6d50a3457a734de5b98b451172df0/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105eae390>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-06-06 09:30:40,513 - MainThread - INFO - STAGE: update_proxies
+2025-06-06 09:30:40,918 - MainThread - ERROR - Failed to fetch proxies: HTTP 400
+2025-06-06 09:30:40,925 - MainThread - INFO - STAGE: read_progress
+2025-06-06 09:30:40,926 - ThreadPoolExecutor-0_0 - INFO - STAGE: process_level_0_link
+2025-06-06 09:30:40,926 - ThreadPoolExecutor-0_1 - INFO - STAGE: process_level_0_link
+2025-06-06 09:30:40,926 - ThreadPoolExecutor-0_0 - INFO - STAGE: get_proxy
+2025-06-06 09:30:40,926 - ThreadPoolExecutor-0_2 - INFO - STAGE: process_level_0_link
+2025-06-06 09:30:40,926 - ThreadPoolExecutor-0_1 - INFO - STAGE: get_proxy
+2025-06-06 09:30:40,927 - ThreadPoolExecutor-0_3 - INFO - STAGE: process_level_0_link
+2025-06-06 09:30:40,927 - ThreadPoolExecutor-0_0 - INFO - Refreshing proxy pool
+2025-06-06 09:30:40,927 - ThreadPoolExecutor-0_4 - INFO - STAGE: process_level_0_link
+2025-06-06 09:30:40,927 - ThreadPoolExecutor-0_2 - INFO - STAGE: get_proxy
+2025-06-06 09:30:40,942 - ThreadPoolExecutor-0_3 - INFO - STAGE: get_proxy
+2025-06-06 09:30:40,942 - ThreadPoolExecutor-0_0 - INFO - STAGE: update_proxies
+2025-06-06 09:30:40,942 - ThreadPoolExecutor-0_4 - INFO - STAGE: get_proxy
+2025-06-06 09:30:41,148 - ThreadPoolExecutor-0_0 - ERROR - Failed to fetch proxies: HTTP 400
+2025-06-06 09:30:41,148 - ThreadPoolExecutor-0_0 - INFO - STAGE: try_process_link
+2025-06-06 09:30:41,148 - ThreadPoolExecutor-0_0 - INFO - STAGE: create_driver
+2025-06-06 09:30:41,148 - ThreadPoolExecutor-0_1 - INFO - Refreshing proxy pool
+2025-06-06 09:30:41,149 - ThreadPoolExecutor-0_1 - INFO - STAGE: update_proxies
+2025-06-06 09:30:41,149 - ThreadPoolExecutor-0_0 - INFO - Created driver without proxy
+2025-06-06 09:30:41,343 - ThreadPoolExecutor-0_1 - ERROR - Failed to fetch proxies: HTTP 400
+2025-06-06 09:30:41,344 - ThreadPoolExecutor-0_1 - INFO - STAGE: try_process_link
+2025-06-06 09:30:41,344 - ThreadPoolExecutor-0_1 - INFO - STAGE: create_driver
+2025-06-06 09:30:41,344 - ThreadPoolExecutor-0_1 - INFO - Created driver without proxy
+2025-06-06 09:30:41,344 - ThreadPoolExecutor-0_2 - INFO - Refreshing proxy pool
+2025-06-06 09:30:41,344 - ThreadPoolExecutor-0_2 - INFO - STAGE: update_proxies
+2025-06-06 09:30:41,532 - ThreadPoolExecutor-0_2 - ERROR - Failed to fetch proxies: HTTP 400
+2025-06-06 09:30:41,532 - ThreadPoolExecutor-0_2 - INFO - STAGE: try_process_link
+2025-06-06 09:30:41,532 - ThreadPoolExecutor-0_2 - INFO - STAGE: create_driver
+2025-06-06 09:30:41,532 - ThreadPoolExecutor-0_2 - INFO - Created driver without proxy
+2025-06-06 09:30:41,532 - ThreadPoolExecutor-0_3 - INFO - Refreshing proxy pool
+2025-06-06 09:30:41,532 - ThreadPoolExecutor-0_3 - INFO - STAGE: update_proxies
+2025-06-06 09:30:41,741 - ThreadPoolExecutor-0_3 - ERROR - Failed to fetch proxies: HTTP 400
+2025-06-06 09:30:41,741 - ThreadPoolExecutor-0_3 - INFO - STAGE: try_process_link
+2025-06-06 09:30:41,741 - ThreadPoolExecutor-0_3 - INFO - STAGE: create_driver
+2025-06-06 09:30:41,741 - ThreadPoolExecutor-0_3 - INFO - Created driver without proxy
+2025-06-06 09:30:41,742 - ThreadPoolExecutor-0_4 - INFO - Refreshing proxy pool
+2025-06-06 09:30:41,742 - ThreadPoolExecutor-0_4 - INFO - STAGE: update_proxies
+2025-06-06 09:30:41,927 - ThreadPoolExecutor-0_4 - ERROR - Failed to fetch proxies: HTTP 400
+2025-06-06 09:30:41,928 - ThreadPoolExecutor-0_4 - INFO - STAGE: try_process_link
+2025-06-06 09:30:41,928 - ThreadPoolExecutor-0_4 - INFO - STAGE: create_driver
+2025-06-06 09:30:41,928 - ThreadPoolExecutor-0_4 - INFO - Created driver without proxy
+2025-06-06 09:30:43,986 - ThreadPoolExecutor-0_0 - INFO - Attempt 1 to parse max page for https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html with proxy None
+2025-06-06 09:30:44,010 - ThreadPoolExecutor-0_2 - INFO - Attempt 1 to parse max page for https://russia.superjob.ru/vakansii/metallurg.html with proxy None
+2025-06-06 09:30:44,116 - ThreadPoolExecutor-0_1 - INFO - Attempt 1 to parse max page for https://russia.superjob.ru/vakansii/fasadchik.html with proxy None
+2025-06-06 09:30:44,872 - ThreadPoolExecutor-0_4 - INFO - Attempt 1 to parse max page for https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu.html with proxy None
+2025-06-06 09:30:45,069 - ThreadPoolExecutor-0_3 - INFO - Attempt 1 to parse max page for https://russia.superjob.ru/vakansii/voditel-ekspeditor-kategorii-e.html with proxy None
+2025-06-06 09:30:48,761 - ThreadPoolExecutor-0_2 - INFO - Found max page 2 for https://russia.superjob.ru/vakansii/metallurg.html
+2025-06-06 09:30:48,768 - ThreadPoolExecutor-0_2 - INFO - Page 1, attempt 1: Processing https://russia.superjob.ru/vakansii/metallurg.html?page=1
+2025-06-06 09:30:48,788 - ThreadPoolExecutor-0_4 - INFO - Found max page 3 for https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu.html
+2025-06-06 09:30:48,789 - ThreadPoolExecutor-0_4 - INFO - Page 1, attempt 1: Processing https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu.html?page=1
+2025-06-06 09:30:48,796 - ThreadPoolExecutor-0_0 - INFO - Found max page 38 for https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html
+2025-06-06 09:30:48,797 - ThreadPoolExecutor-0_0 - INFO - Page 1, attempt 1: Processing https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html?page=1
+2025-06-06 09:30:48,889 - ThreadPoolExecutor-0_3 - INFO - Found max page 7 for https://russia.superjob.ru/vakansii/voditel-ekspeditor-kategorii-e.html
+2025-06-06 09:30:48,890 - ThreadPoolExecutor-0_3 - INFO - Page 1, attempt 1: Processing https://russia.superjob.ru/vakansii/voditel-ekspeditor-kategorii-e.html?page=1
+2025-06-06 09:30:51,397 - ThreadPoolExecutor-0_2 - INFO - Page 1: Found 40 vacancy links
+2025-06-06 09:30:52,437 - ThreadPoolExecutor-0_4 - INFO - Page 1: Found 40 vacancy links
+2025-06-06 09:30:53,121 - ThreadPoolExecutor-0_3 - INFO - Page 1: Found 40 vacancy links
+2025-06-06 09:30:53,158 - ThreadPoolExecutor-0_0 - INFO - Page 1: Found 40 vacancy links
+2025-06-06 09:30:55,109 - ThreadPoolExecutor-0_2 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:30:55,115 - ThreadPoolExecutor-0_2 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/inzhener-tehnolog-litejnogo-proizvodstva-38437246.html, total: 1
+2025-06-06 09:30:55,115 - ThreadPoolExecutor-0_2 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/inzhener-tehnolog-litejnogo-proizvodstva-38437246.html
+2025-06-06 09:30:55,789 - ThreadPoolExecutor-0_4 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:30:55,791 - ThreadPoolExecutor-0_4 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50707188.html, total: 2
+2025-06-06 09:30:55,796 - ThreadPoolExecutor-0_4 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50707188.html
+2025-06-06 09:30:55,968 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:30:55,970 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/menedzher-po-prodazham-48564625.html, total: 3
+2025-06-06 09:30:55,970 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/menedzher-po-prodazham-48564625.html
+2025-06-06 09:30:56,079 - ThreadPoolExecutor-0_3 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:30:56,079 - ThreadPoolExecutor-0_3 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voditel-ekspeditor-kategorii-e-50717607.html, total: 4
+2025-06-06 09:30:56,079 - ThreadPoolExecutor-0_3 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voditel-ekspeditor-kategorii-e-50717607.html
+2025-06-06 09:30:56,335 - ThreadPoolExecutor-0_1 - ERROR - Failed to parse max page for https://russia.superjob.ru/vakansii/fasadchik.html, attempt 1: Message: 
+Stacktrace:
+0   chromedriver                        0x00000001034b6654 cxxbridge1$str$ptr + 2723108
+1   chromedriver                        0x00000001034ae8c8 cxxbridge1$str$ptr + 2690968
+2   chromedriver                        0x0000000103002714 cxxbridge1$string$len + 90428
+3   chromedriver                        0x00000001030497c0 cxxbridge1$string$len + 381416
+4   chromedriver                        0x000000010308ade8 cxxbridge1$string$len + 649232
+5   chromedriver                        0x000000010303d9c8 cxxbridge1$string$len + 332784
+6   chromedriver                        0x000000010347a278 cxxbridge1$str$ptr + 2476360
+7   chromedriver                        0x000000010347d50c cxxbridge1$str$ptr + 2489308
+8   chromedriver                        0x000000010345ba64 cxxbridge1$str$ptr + 2351412
+9   chromedriver                        0x000000010347dd94 cxxbridge1$str$ptr + 2491492
+10  chromedriver                        0x000000010344cd58 cxxbridge1$str$ptr + 2290728
+11  chromedriver                        0x000000010349dd60 cxxbridge1$str$ptr + 2622512
+12  chromedriver                        0x000000010349deec cxxbridge1$str$ptr + 2622908
+13  chromedriver                        0x00000001034ae514 cxxbridge1$str$ptr + 2690020
+14  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-06-06 09:30:58,086 - ThreadPoolExecutor-0_2 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:30:58,090 - ThreadPoolExecutor-0_2 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/uborschik-sluzhebnyh-pomeschenij-49149046.html, total: 5
+2025-06-06 09:30:58,090 - ThreadPoolExecutor-0_2 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/uborschik-sluzhebnyh-pomeschenij-49149046.html
+2025-06-06 09:30:58,340 - ThreadPoolExecutor-0_1 - INFO - STAGE: get_proxy
+2025-06-06 09:30:58,342 - ThreadPoolExecutor-0_1 - INFO - Refreshing proxy pool
+2025-06-06 09:30:58,343 - ThreadPoolExecutor-0_1 - INFO - STAGE: update_proxies
+2025-06-06 09:30:58,622 - ThreadPoolExecutor-0_1 - ERROR - Failed to fetch proxies: HTTP 400
+2025-06-06 09:30:58,933 - ThreadPoolExecutor-0_4 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:30:58,934 - ThreadPoolExecutor-0_4 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50718205.html, total: 6
+2025-06-06 09:30:58,934 - ThreadPoolExecutor-0_4 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50718205.html
+2025-06-06 09:30:59,265 - ThreadPoolExecutor-0_1 - INFO - STAGE: create_driver
+2025-06-06 09:30:59,265 - ThreadPoolExecutor-0_1 - INFO - Created driver without proxy
+2025-06-06 09:30:59,390 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:30:59,392 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/menedzher-po-prodazham-50291585.html, total: 7
+2025-06-06 09:30:59,393 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/menedzher-po-prodazham-50291585.html
+2025-06-06 09:31:00,012 - ThreadPoolExecutor-0_3 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:00,015 - ThreadPoolExecutor-0_3 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voditel-kategorii-e-49886097.html, total: 8
+2025-06-06 09:31:00,015 - ThreadPoolExecutor-0_3 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voditel-kategorii-e-49886097.html
+2025-06-06 09:31:00,723 - ThreadPoolExecutor-0_1 - INFO - Attempt 2 to parse max page for https://russia.superjob.ru/vakansii/fasadchik.html with proxy None
+2025-06-06 09:31:01,599 - ThreadPoolExecutor-0_2 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:01,605 - ThreadPoolExecutor-0_2 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/inzhener-tehnolog-otdela-glavnogo-metallurga-50641695.html, total: 9
+2025-06-06 09:31:01,605 - ThreadPoolExecutor-0_2 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/inzhener-tehnolog-otdela-glavnogo-metallurga-50641695.html
+2025-06-06 09:31:01,931 - ThreadPoolExecutor-0_4 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:01,932 - ThreadPoolExecutor-0_4 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50123673.html, total: 10
+2025-06-06 09:31:01,932 - ThreadPoolExecutor-0_4 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50123673.html
+2025-06-06 09:31:02,489 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:02,492 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/menedzher-po-prodazham-50701852.html, total: 11
+2025-06-06 09:31:02,493 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/menedzher-po-prodazham-50701852.html
+2025-06-06 09:31:05,905 - ThreadPoolExecutor-0_3 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:05,940 - ThreadPoolExecutor-0_3 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voditel-kategorii-e-49607934.html, total: 12
+2025-06-06 09:31:05,940 - ThreadPoolExecutor-0_3 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voditel-kategorii-e-49607934.html
+2025-06-06 09:31:06,012 - ThreadPoolExecutor-0_2 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:06,015 - ThreadPoolExecutor-0_4 - ERROR - Page 1, link attempt 1: Failed to parse https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-svo-50724966.html: list.remove(x): x not in list
+2025-06-06 09:31:06,015 - ThreadPoolExecutor-0_2 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/motorist-dizelist-49691773.html, total: 13
+2025-06-06 09:31:06,018 - ThreadPoolExecutor-0_2 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/motorist-dizelist-49691773.html
+2025-06-06 09:31:06,097 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:06,099 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/veduschij-specialist-po-adaptacii-50387662.html, total: 14
+2025-06-06 09:31:06,100 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/veduschij-specialist-po-adaptacii-50387662.html
+2025-06-06 09:31:08,832 - ThreadPoolExecutor-0_3 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:08,880 - ThreadPoolExecutor-0_3 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voditel-ekspeditor-kategorii-v-50693257.html, total: 15
+2025-06-06 09:31:08,883 - ThreadPoolExecutor-0_3 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voditel-ekspeditor-kategorii-v-50693257.html
+2025-06-06 09:31:09,072 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:09,075 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/menedzher-po-optovym-prodazham-produktov-pitaniya-46159886.html, total: 16
+2025-06-06 09:31:09,076 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/menedzher-po-optovym-prodazham-produktov-pitaniya-46159886.html
+2025-06-06 09:31:09,750 - ThreadPoolExecutor-0_2 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:09,752 - ThreadPoolExecutor-0_2 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/slesar-44502315.html, total: 17
+2025-06-06 09:31:09,752 - ThreadPoolExecutor-0_2 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/slesar-44502315.html
+2025-06-06 09:31:10,536 - ThreadPoolExecutor-0_4 - ERROR - Page 1, link attempt 2: Failed to parse https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-svo-50724966.html: list.remove(x): x not in list
+2025-06-06 09:31:12,806 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:12,757 - ThreadPoolExecutor-0_3 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:12,837 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/menedzher-po-rabote-s-klientami-49465945.html, total: 18
+2025-06-06 09:31:12,838 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/menedzher-po-rabote-s-klientami-49465945.html
+2025-06-06 09:31:12,840 - ThreadPoolExecutor-0_3 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voditel-ekspeditor-kategorii-e-45956397.html, total: 19
+2025-06-06 09:31:12,841 - ThreadPoolExecutor-0_3 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voditel-ekspeditor-kategorii-e-45956397.html
+2025-06-06 09:31:13,575 - ThreadPoolExecutor-0_2 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:13,585 - ThreadPoolExecutor-0_2 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voditel-kategorii-e-50662725.html, total: 20
+2025-06-06 09:31:13,585 - ThreadPoolExecutor-0_2 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voditel-kategorii-e-50662725.html
+2025-06-06 09:31:15,795 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:15,838 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/finansovyj-menedzher-50697894.html, total: 21
+2025-06-06 09:31:15,838 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/finansovyj-menedzher-50697894.html
+2025-06-06 09:31:16,085 - ThreadPoolExecutor-0_1 - ERROR - Failed to parse max page for https://russia.superjob.ru/vakansii/fasadchik.html, attempt 2: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104f8a654 cxxbridge1$str$ptr + 2723108
+1   chromedriver                        0x0000000104f828c8 cxxbridge1$str$ptr + 2690968
+2   chromedriver                        0x0000000104ad6714 cxxbridge1$string$len + 90428
+3   chromedriver                        0x0000000104b1d7c0 cxxbridge1$string$len + 381416
+4   chromedriver                        0x0000000104b5ede8 cxxbridge1$string$len + 649232
+5   chromedriver                        0x0000000104b119c8 cxxbridge1$string$len + 332784
+6   chromedriver                        0x0000000104f4e278 cxxbridge1$str$ptr + 2476360
+7   chromedriver                        0x0000000104f5150c cxxbridge1$str$ptr + 2489308
+8   chromedriver                        0x0000000104f2fa64 cxxbridge1$str$ptr + 2351412
+9   chromedriver                        0x0000000104f51d94 cxxbridge1$str$ptr + 2491492
+10  chromedriver                        0x0000000104f20d58 cxxbridge1$str$ptr + 2290728
+11  chromedriver                        0x0000000104f71d60 cxxbridge1$str$ptr + 2622512
+12  chromedriver                        0x0000000104f71eec cxxbridge1$str$ptr + 2622908
+13  chromedriver                        0x0000000104f82514 cxxbridge1$str$ptr + 2690020
+14  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-06-06 09:31:17,841 - ThreadPoolExecutor-0_4 - ERROR - Page 1, link attempt 3: Failed to parse https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-svo-50724966.html: list.remove(x): x not in list
+2025-06-06 09:31:17,847 - ThreadPoolExecutor-0_4 - WARNING - Page 1: Skipped https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-svo-50724966.html after retries
+2025-06-06 09:31:17,904 - ThreadPoolExecutor-0_2 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:17,932 - ThreadPoolExecutor-0_2 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/inzhener-mehanik-po-metallurgicheskomu-oborudovaniyu-50673454.html, total: 22
+2025-06-06 09:31:17,932 - ThreadPoolExecutor-0_2 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/inzhener-mehanik-po-metallurgicheskomu-oborudovaniyu-50673454.html
+2025-06-06 09:31:18,080 - ThreadPoolExecutor-0_3 - ERROR - Page 1, link attempt 1: Failed to parse https://russia.superjob.ru/vakansii/vacancy-47921364.html: list.remove(x): x not in list
+2025-06-06 09:31:18,637 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:18,645 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/menedzher-po-kliningu-38867684.html, total: 23
+2025-06-06 09:31:18,645 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/menedzher-po-kliningu-38867684.html
+2025-06-06 09:31:20,094 - ThreadPoolExecutor-0_1 - INFO - STAGE: get_proxy
+2025-06-06 09:31:20,101 - ThreadPoolExecutor-0_1 - INFO - Refreshing proxy pool
+2025-06-06 09:31:20,108 - ThreadPoolExecutor-0_1 - INFO - STAGE: update_proxies
+2025-06-06 09:31:20,539 - ThreadPoolExecutor-0_1 - ERROR - Failed to fetch proxies: HTTP 400
+2025-06-06 09:31:20,963 - ThreadPoolExecutor-0_1 - INFO - STAGE: create_driver
+2025-06-06 09:31:20,963 - ThreadPoolExecutor-0_1 - INFO - Created driver without proxy
+2025-06-06 09:31:21,971 - ThreadPoolExecutor-0_2 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:22,020 - ThreadPoolExecutor-0_2 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/operator-stanka-s-chpu-45866847.html, total: 24
+2025-06-06 09:31:22,023 - ThreadPoolExecutor-0_2 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/operator-stanka-s-chpu-45866847.html
+2025-06-06 09:31:22,053 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:22,055 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/trener-specialist-po-obucheniyu-50697059.html, total: 25
+2025-06-06 09:31:22,055 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/trener-specialist-po-obucheniyu-50697059.html
+2025-06-06 09:31:22,175 - ThreadPoolExecutor-0_3 - ERROR - Page 1, link attempt 2: Failed to parse https://russia.superjob.ru/vakansii/vacancy-47921364.html: list.remove(x): x not in list
+2025-06-06 09:31:22,442 - ThreadPoolExecutor-0_4 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:22,443 - ThreadPoolExecutor-0_4 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50009477.html, total: 26
+2025-06-06 09:31:22,443 - ThreadPoolExecutor-0_4 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50009477.html
+2025-06-06 09:31:23,260 - ThreadPoolExecutor-0_1 - INFO - Attempt 3 to parse max page for https://russia.superjob.ru/vakansii/fasadchik.html with proxy None
+2025-06-06 09:31:25,117 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:25,123 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/menedzher-minimarketa-50297457.html, total: 27
+2025-06-06 09:31:25,123 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/menedzher-minimarketa-50297457.html
+2025-06-06 09:31:25,882 - ThreadPoolExecutor-0_2 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:25,892 - ThreadPoolExecutor-0_2 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/uchenik-operatora-stanka-s-chpu-45866953.html, total: 28
+2025-06-06 09:31:25,892 - ThreadPoolExecutor-0_2 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/uchenik-operatora-stanka-s-chpu-45866953.html
+2025-06-06 09:31:26,104 - ThreadPoolExecutor-0_4 - ERROR - Page 1, link attempt 1: Failed to parse https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50660310.html: list.remove(x): x not in list
+2025-06-06 09:31:28,271 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:28,275 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/pomoschnik-rukovoditelya-menedzher-po-snabzheniyu-50701808.html, total: 29
+2025-06-06 09:31:28,276 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/pomoschnik-rukovoditelya-menedzher-po-snabzheniyu-50701808.html
+2025-06-06 09:31:28,774 - ThreadPoolExecutor-0_3 - ERROR - Page 1, link attempt 3: Failed to parse https://russia.superjob.ru/vakansii/vacancy-47921364.html: list.remove(x): x not in list
+2025-06-06 09:31:28,774 - ThreadPoolExecutor-0_3 - WARNING - Page 1: Skipped https://russia.superjob.ru/vakansii/vacancy-47921364.html after retries
+2025-06-06 09:31:28,981 - ThreadPoolExecutor-0_2 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:28,982 - ThreadPoolExecutor-0_2 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/uborschik-ofisnogo-pomescheniya-46182488.html, total: 30
+2025-06-06 09:31:28,982 - ThreadPoolExecutor-0_2 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/uborschik-ofisnogo-pomescheniya-46182488.html
+2025-06-06 09:31:32,053 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:32,057 - ThreadPoolExecutor-0_4 - ERROR - Page 1, link attempt 2: Failed to parse https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50660310.html: list.remove(x): x not in list
+2025-06-06 09:31:32,071 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/menedzher-po-rabote-s-klientami-48798238.html, total: 31
+2025-06-06 09:31:32,076 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/menedzher-po-rabote-s-klientami-48798238.html
+2025-06-06 09:31:32,158 - ThreadPoolExecutor-0_3 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:32,159 - ThreadPoolExecutor-0_3 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voditel-ekspeditor-50678190.html, total: 32
+2025-06-06 09:31:32,162 - ThreadPoolExecutor-0_2 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:33,107 - ThreadPoolExecutor-0_3 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voditel-ekspeditor-50678190.html
+2025-06-06 09:31:33,109 - ThreadPoolExecutor-0_2 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/pekar-48768434.html, total: 33
+2025-06-06 09:31:33,109 - ThreadPoolExecutor-0_2 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/pekar-48768434.html
+2025-06-06 09:31:35,815 - ThreadPoolExecutor-0_3 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:35,824 - ThreadPoolExecutor-0_3 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voditel-ekspeditor-kategorii-e-na-avtomobilyah-man-48258231.html, total: 34
+2025-06-06 09:31:35,824 - ThreadPoolExecutor-0_3 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voditel-ekspeditor-kategorii-e-na-avtomobilyah-man-48258231.html
+2025-06-06 09:31:35,844 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:35,846 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/menedzher-magazina-46950649.html, total: 35
+2025-06-06 09:31:35,846 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/menedzher-magazina-46950649.html
+2025-06-06 09:31:35,995 - ThreadPoolExecutor-0_2 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:36,881 - ThreadPoolExecutor-0_2 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/inzhener-konstruktor-otdela-glavnogo-metallurga-50701905.html, total: 36
+2025-06-06 09:31:36,881 - ThreadPoolExecutor-0_2 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/inzhener-konstruktor-otdela-glavnogo-metallurga-50701905.html
+2025-06-06 09:31:37,560 - ThreadPoolExecutor-0_1 - ERROR - Failed to parse max page for https://russia.superjob.ru/vakansii/fasadchik.html, attempt 3: Message: 
+Stacktrace:
+0   chromedriver                        0x00000001047ee654 cxxbridge1$str$ptr + 2723108
+1   chromedriver                        0x00000001047e68c8 cxxbridge1$str$ptr + 2690968
+2   chromedriver                        0x000000010433a714 cxxbridge1$string$len + 90428
+3   chromedriver                        0x00000001043817c0 cxxbridge1$string$len + 381416
+4   chromedriver                        0x00000001043c2de8 cxxbridge1$string$len + 649232
+5   chromedriver                        0x00000001043759c8 cxxbridge1$string$len + 332784
+6   chromedriver                        0x00000001047b2278 cxxbridge1$str$ptr + 2476360
+7   chromedriver                        0x00000001047b550c cxxbridge1$str$ptr + 2489308
+8   chromedriver                        0x0000000104793a64 cxxbridge1$str$ptr + 2351412
+9   chromedriver                        0x00000001047b5d94 cxxbridge1$str$ptr + 2491492
+10  chromedriver                        0x0000000104784d58 cxxbridge1$str$ptr + 2290728
+11  chromedriver                        0x00000001047d5d60 cxxbridge1$str$ptr + 2622512
+12  chromedriver                        0x00000001047d5eec cxxbridge1$str$ptr + 2622908
+13  chromedriver                        0x00000001047e6514 cxxbridge1$str$ptr + 2690020
+14  libsystem_pthread.dylib             0x0000000189eae034 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000189ea8e3c thread_start + 8
+
+2025-06-06 09:31:37,669 - ThreadPoolExecutor-0_1 - WARNING - Exhausted max page retries for https://russia.superjob.ru/vakansii/fasadchik.html, defaulting to max_page = 1
+2025-06-06 09:31:37,669 - ThreadPoolExecutor-0_1 - INFO - Page 1, attempt 1: Processing https://russia.superjob.ru/vakansii/fasadchik.html?page=1
+2025-06-06 09:31:38,718 - ThreadPoolExecutor-0_3 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:38,723 - ThreadPoolExecutor-0_3 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voditel-ekspeditor-kategorii-v-50701822.html, total: 37
+2025-06-06 09:31:38,723 - ThreadPoolExecutor-0_3 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voditel-ekspeditor-kategorii-v-50701822.html
+2025-06-06 09:31:38,820 - ThreadPoolExecutor-0_4 - ERROR - Page 1, link attempt 3: Failed to parse https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50660310.html: list.remove(x): x not in list
+2025-06-06 09:31:38,820 - ThreadPoolExecutor-0_4 - WARNING - Page 1: Skipped https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50660310.html after retries
+2025-06-06 09:31:40,339 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:40,341 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/menedzher-kontaktnogo-centra-50584229.html, total: 38
+2025-06-06 09:31:40,341 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/menedzher-kontaktnogo-centra-50584229.html
+2025-06-06 09:31:40,463 - ThreadPoolExecutor-0_1 - INFO - Page 1: Found 10 vacancy links
+2025-06-06 09:31:40,525 - ThreadPoolExecutor-0_2 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:40,527 - ThreadPoolExecutor-0_2 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/slesar-po-remontu-dizelya-i-dizelnogo-oborudovaniya-49691798.html, total: 39
+2025-06-06 09:31:40,527 - ThreadPoolExecutor-0_2 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/slesar-po-remontu-dizelya-i-dizelnogo-oborudovaniya-49691798.html
+2025-06-06 09:31:41,919 - ThreadPoolExecutor-0_3 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:41,921 - ThreadPoolExecutor-0_3 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voditel-ekspeditor-gruzovogo-avtomobilya-47360755.html, total: 40
+2025-06-06 09:31:41,921 - ThreadPoolExecutor-0_3 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voditel-ekspeditor-gruzovogo-avtomobilya-47360755.html
+2025-06-06 09:31:42,206 - ThreadPoolExecutor-0_4 - ERROR - Page 1, link attempt 1: Failed to parse https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50398557.html: list.remove(x): x not in list
+2025-06-06 09:31:43,563 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:43,566 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/menedzher-po-prodazham-50465105.html, total: 41
+2025-06-06 09:31:43,566 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/menedzher-po-prodazham-50465105.html
+2025-06-06 09:31:43,630 - ThreadPoolExecutor-0_2 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:43,631 - ThreadPoolExecutor-0_2 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/kontroler-kachestva-produkcii-i-tehnologicheskogo-processa-50714582.html, total: 42
+2025-06-06 09:31:43,631 - ThreadPoolExecutor-0_2 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/kontroler-kachestva-produkcii-i-tehnologicheskogo-processa-50714582.html
+2025-06-06 09:31:43,867 - ThreadPoolExecutor-0_1 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:43,867 - ThreadPoolExecutor-0_1 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/montazhnik-fasadov-49937550.html, total: 43
+2025-06-06 09:31:43,867 - ThreadPoolExecutor-0_1 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/montazhnik-fasadov-49937550.html
+2025-06-06 09:31:44,626 - ThreadPoolExecutor-0_3 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:44,629 - ThreadPoolExecutor-0_3 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voditel-kategorii-v-50325494.html, total: 44
+2025-06-06 09:31:44,629 - ThreadPoolExecutor-0_3 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voditel-kategorii-v-50325494.html
+2025-06-06 09:31:46,805 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:46,885 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/regionalnyj-menedzher-50701812.html, total: 45
+2025-06-06 09:31:46,885 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/regionalnyj-menedzher-50701812.html
+2025-06-06 09:31:47,542 - ThreadPoolExecutor-0_1 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:47,551 - ThreadPoolExecutor-0_1 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/fasadchik-50674637.html, total: 46
+2025-06-06 09:31:47,551 - ThreadPoolExecutor-0_1 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/fasadchik-50674637.html
+2025-06-06 09:31:47,702 - ThreadPoolExecutor-0_2 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:47,703 - ThreadPoolExecutor-0_2 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/administrator-magazina-48460346.html, total: 47
+2025-06-06 09:31:47,703 - ThreadPoolExecutor-0_2 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/administrator-magazina-48460346.html
+2025-06-06 09:31:47,778 - ThreadPoolExecutor-0_3 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:47,780 - ThreadPoolExecutor-0_3 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voditel-kategorii-e-29416721.html, total: 48
+2025-06-06 09:31:47,780 - ThreadPoolExecutor-0_3 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voditel-kategorii-e-29416721.html
+2025-06-06 09:31:47,870 - ThreadPoolExecutor-0_4 - ERROR - Page 1, link attempt 2: Failed to parse https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50398557.html: list.remove(x): x not in list
+2025-06-06 09:31:50,362 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:50,387 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/pomoschnik-menedzhera-po-prodazham-50402600.html, total: 49
+2025-06-06 09:31:50,387 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/pomoschnik-menedzhera-po-prodazham-50402600.html
+2025-06-06 09:31:51,187 - ThreadPoolExecutor-0_2 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:51,196 - ThreadPoolExecutor-0_2 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/menedzher-otdela-prodazh-45866920.html, total: 50
+2025-06-06 09:31:51,196 - ThreadPoolExecutor-0_2 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/menedzher-otdela-prodazh-45866920.html
+2025-06-06 09:31:51,314 - ThreadPoolExecutor-0_3 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:51,317 - ThreadPoolExecutor-0_3 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voditel-kategorii-s-49138908.html, total: 51
+2025-06-06 09:31:51,317 - ThreadPoolExecutor-0_3 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voditel-kategorii-s-49138908.html
+2025-06-06 09:31:52,184 - ThreadPoolExecutor-0_1 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:52,192 - ThreadPoolExecutor-0_1 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/montazhnik-ventiliruemyh-fasadov-48252877.html, total: 52
+2025-06-06 09:31:52,192 - ThreadPoolExecutor-0_1 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/montazhnik-ventiliruemyh-fasadov-48252877.html
+2025-06-06 09:31:53,880 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:53,950 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/specialist-po-obucheniyu-i-razvitiyu-50681956.html, total: 53
+2025-06-06 09:31:53,951 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/specialist-po-obucheniyu-i-razvitiyu-50681956.html
+2025-06-06 09:31:54,353 - ThreadPoolExecutor-0_2 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:54,354 - ThreadPoolExecutor-0_2 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/inzhener-tehnolog-litejnogo-proizvodstva-48623404.html, total: 54
+2025-06-06 09:31:54,354 - ThreadPoolExecutor-0_2 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/inzhener-tehnolog-litejnogo-proizvodstva-48623404.html
+2025-06-06 09:31:54,807 - ThreadPoolExecutor-0_1 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:54,814 - ThreadPoolExecutor-0_1 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/fasadchik-50670436.html, total: 55
+2025-06-06 09:31:54,814 - ThreadPoolExecutor-0_1 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/fasadchik-50670436.html
+2025-06-06 09:31:55,500 - ThreadPoolExecutor-0_3 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:55,533 - ThreadPoolExecutor-0_3 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voditel-ekspeditor-kategoriya-s-47339316.html, total: 56
+2025-06-06 09:31:55,533 - ThreadPoolExecutor-0_3 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voditel-ekspeditor-kategoriya-s-47339316.html
+2025-06-06 09:31:55,650 - ThreadPoolExecutor-0_4 - ERROR - Page 1, link attempt 3: Failed to parse https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50398557.html: list.remove(x): x not in list
+2025-06-06 09:31:55,650 - ThreadPoolExecutor-0_4 - WARNING - Page 1: Skipped https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50398557.html after retries
+2025-06-06 09:31:56,879 - ThreadPoolExecutor-0_2 - ERROR - Page 1, link attempt 1: Failed to parse https://russia.superjob.ru/vakansii/laborant-probirnogo-analiza-4-razryada-50711231.html: list.remove(x): x not in list
+2025-06-06 09:31:56,880 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:56,883 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/menedzher-po-prodazham-50711737.html, total: 57
+2025-06-06 09:31:56,883 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/menedzher-po-prodazham-50711737.html
+2025-06-06 09:31:56,971 - ThreadPoolExecutor-0_1 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:56,976 - ThreadPoolExecutor-0_1 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/raznorabochij-50708704.html, total: 58
+2025-06-06 09:31:56,977 - ThreadPoolExecutor-0_1 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/raznorabochij-50708704.html
+2025-06-06 09:31:58,185 - ThreadPoolExecutor-0_3 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:58,188 - ThreadPoolExecutor-0_3 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voditel-kategorii-b-48555136.html, total: 59
+2025-06-06 09:31:58,188 - ThreadPoolExecutor-0_3 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voditel-kategorii-b-48555136.html
+2025-06-06 09:31:58,429 - ThreadPoolExecutor-0_4 - ERROR - Page 1, link attempt 1: Failed to parse https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50703884.html: list.remove(x): x not in list
+2025-06-06 09:31:59,857 - ThreadPoolExecutor-0_1 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:31:59,872 - ThreadPoolExecutor-0_1 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/shtukatur-fasadchik-33602346.html, total: 60
+2025-06-06 09:31:59,873 - ThreadPoolExecutor-0_1 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/shtukatur-fasadchik-33602346.html
+2025-06-06 09:32:00,698 - ThreadPoolExecutor-0_2 - ERROR - Page 1, link attempt 2: Failed to parse https://russia.superjob.ru/vakansii/laborant-probirnogo-analiza-4-razryada-50711231.html: list.remove(x): x not in list
+2025-06-06 09:32:01,619 - ThreadPoolExecutor-0_3 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:01,624 - ThreadPoolExecutor-0_3 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voditel-ekspeditor-kategorii-e-50595994.html, total: 61
+2025-06-06 09:32:01,624 - ThreadPoolExecutor-0_3 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voditel-ekspeditor-kategorii-e-50595994.html
+2025-06-06 09:32:01,674 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:01,675 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/menedzher-po-prodazham-50723696.html, total: 62
+2025-06-06 09:32:01,675 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/menedzher-po-prodazham-50723696.html
+2025-06-06 09:32:03,821 - ThreadPoolExecutor-0_1 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:03,910 - ThreadPoolExecutor-0_1 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/fasadchik-48276793.html, total: 63
+2025-06-06 09:32:03,910 - ThreadPoolExecutor-0_1 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/fasadchik-48276793.html
+2025-06-06 09:32:04,625 - ThreadPoolExecutor-0_4 - ERROR - Page 1, link attempt 2: Failed to parse https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50703884.html: list.remove(x): x not in list
+2025-06-06 09:32:05,699 - ThreadPoolExecutor-0_3 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:05,721 - ThreadPoolExecutor-0_3 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voditel-ekspeditor-50701948.html, total: 64
+2025-06-06 09:32:05,721 - ThreadPoolExecutor-0_3 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voditel-ekspeditor-50701948.html
+2025-06-06 09:32:05,843 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:05,844 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/menedzher-po-rabote-s-klientami-46529846.html, total: 65
+2025-06-06 09:32:07,009 - ThreadPoolExecutor-0_1 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:07,160 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/menedzher-po-rabote-s-klientami-46529846.html
+2025-06-06 09:32:07,165 - ThreadPoolExecutor-0_1 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/shtukatur-49609172.html, total: 66
+2025-06-06 09:32:07,166 - ThreadPoolExecutor-0_1 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/shtukatur-49609172.html
+2025-06-06 09:32:07,259 - ThreadPoolExecutor-0_2 - ERROR - Page 1, link attempt 3: Failed to parse https://russia.superjob.ru/vakansii/laborant-probirnogo-analiza-4-razryada-50711231.html: list.remove(x): x not in list
+2025-06-06 09:32:07,260 - ThreadPoolExecutor-0_2 - WARNING - Page 1: Skipped https://russia.superjob.ru/vakansii/laborant-probirnogo-analiza-4-razryada-50711231.html after retries
+2025-06-06 09:32:09,342 - ThreadPoolExecutor-0_3 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:09,366 - ThreadPoolExecutor-0_3 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voditel-ekspeditor-kategorii-e-50649593.html, total: 67
+2025-06-06 09:32:09,366 - ThreadPoolExecutor-0_3 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voditel-ekspeditor-kategorii-e-50649593.html
+2025-06-06 09:32:10,162 - ThreadPoolExecutor-0_1 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:10,164 - ThreadPoolExecutor-0_1 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/fasadchik-na-mokryj-fasad-50701795.html, total: 68
+2025-06-06 09:32:10,164 - ThreadPoolExecutor-0_1 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/fasadchik-na-mokryj-fasad-50701795.html
+2025-06-06 09:32:10,167 - ThreadPoolExecutor-0_2 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:10,168 - ThreadPoolExecutor-0_2 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/master-po-remontu-podvizhnogo-sostava-45605063.html, total: 69
+2025-06-06 09:32:10,168 - ThreadPoolExecutor-0_2 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/master-po-remontu-podvizhnogo-sostava-45605063.html
+2025-06-06 09:32:10,423 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:10,424 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/menedzher-po-prodazhe-nedvizhimosti-50687487.html, total: 70
+2025-06-06 09:32:10,424 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/menedzher-po-prodazhe-nedvizhimosti-50687487.html
+2025-06-06 09:32:11,049 - ThreadPoolExecutor-0_4 - ERROR - Page 1, link attempt 3: Failed to parse https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50703884.html: list.remove(x): x not in list
+2025-06-06 09:32:11,050 - ThreadPoolExecutor-0_4 - WARNING - Page 1: Skipped https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50703884.html after retries
+2025-06-06 09:32:12,831 - ThreadPoolExecutor-0_1 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:12,835 - ThreadPoolExecutor-0_1 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/fasadchik-50430536.html, total: 71
+2025-06-06 09:32:12,835 - ThreadPoolExecutor-0_1 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/fasadchik-50430536.html
+2025-06-06 09:32:12,835 - ThreadPoolExecutor-0_1 - INFO - Completed https://russia.superjob.ru/vakansii/fasadchik.html, collected 10 vacancy links
+2025-06-06 09:32:13,162 - ThreadPoolExecutor-0_1 - INFO - STAGE: process_level_0_link
+2025-06-06 09:32:13,163 - MainThread - INFO - STAGE: save_progress
+2025-06-06 09:32:13,164 - ThreadPoolExecutor-0_1 - INFO - STAGE: get_proxy
+2025-06-06 09:32:13,165 - ThreadPoolExecutor-0_1 - INFO - Refreshing proxy pool
+2025-06-06 09:32:13,166 - ThreadPoolExecutor-0_1 - INFO - STAGE: update_proxies
+2025-06-06 09:32:13,167 - MainThread - INFO - Saved progress for 2 processed links
+2025-06-06 09:32:13,168 - MainThread - INFO - Processed level 0 link https://russia.superjob.ru/vakansii/fasadchik.html, collected 10 vacancy links
+2025-06-06 09:32:13,183 - ThreadPoolExecutor-0_3 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:13,210 - ThreadPoolExecutor-0_3 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voditel-kategorii-e-50680737.html, total: 72
+2025-06-06 09:32:13,210 - ThreadPoolExecutor-0_3 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voditel-kategorii-e-50680737.html
+2025-06-06 09:32:13,402 - ThreadPoolExecutor-0_1 - ERROR - Failed to fetch proxies: HTTP 400
+2025-06-06 09:32:13,402 - ThreadPoolExecutor-0_1 - INFO - STAGE: try_process_link
+2025-06-06 09:32:13,402 - ThreadPoolExecutor-0_1 - INFO - STAGE: create_driver
+2025-06-06 09:32:13,402 - ThreadPoolExecutor-0_1 - INFO - Created driver without proxy
+2025-06-06 09:32:13,772 - ThreadPoolExecutor-0_2 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:13,775 - ThreadPoolExecutor-0_2 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/uchetchik-50717166.html, total: 73
+2025-06-06 09:32:13,775 - ThreadPoolExecutor-0_2 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/uchetchik-50717166.html
+2025-06-06 09:32:14,217 - ThreadPoolExecutor-0_4 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:14,219 - ThreadPoolExecutor-0_4 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50711671.html, total: 74
+2025-06-06 09:32:14,219 - ThreadPoolExecutor-0_4 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50711671.html
+2025-06-06 09:32:14,955 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:14,957 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/starshij-klientskij-menedzher-48765168.html, total: 75
+2025-06-06 09:32:14,957 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/starshij-klientskij-menedzher-48765168.html
+2025-06-06 09:32:15,088 - ThreadPoolExecutor-0_1 - INFO - Attempt 1 to parse max page for https://russia.superjob.ru/vakansii/inzhener-konstruktor-veduschij.html with proxy None
+2025-06-06 09:32:16,070 - ThreadPoolExecutor-0_3 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:16,071 - ThreadPoolExecutor-0_3 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voditel-kategorii-e-48630797.html, total: 76
+2025-06-06 09:32:16,071 - ThreadPoolExecutor-0_3 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voditel-kategorii-e-48630797.html
+2025-06-06 09:32:16,484 - ThreadPoolExecutor-0_2 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:16,485 - ThreadPoolExecutor-0_2 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/slesar-50696473.html, total: 77
+2025-06-06 09:32:16,486 - ThreadPoolExecutor-0_2 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/slesar-50696473.html
+2025-06-06 09:32:17,514 - ThreadPoolExecutor-0_4 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:17,515 - ThreadPoolExecutor-0_4 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-49914940.html, total: 78
+2025-06-06 09:32:17,515 - ThreadPoolExecutor-0_4 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-49914940.html
+2025-06-06 09:32:18,140 - ThreadPoolExecutor-0_1 - INFO - Found max page 2 for https://russia.superjob.ru/vakansii/inzhener-konstruktor-veduschij.html
+2025-06-06 09:32:18,140 - ThreadPoolExecutor-0_1 - INFO - Page 1, attempt 1: Processing https://russia.superjob.ru/vakansii/inzhener-konstruktor-veduschij.html?page=1
+2025-06-06 09:32:19,229 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:19,232 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/menedzher-po-optovym-prodazham-50689875.html, total: 79
+2025-06-06 09:32:19,232 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/menedzher-po-optovym-prodazham-50689875.html
+2025-06-06 09:32:19,498 - ThreadPoolExecutor-0_3 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:19,499 - ThreadPoolExecutor-0_3 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voditel-ekspeditor-50678192.html, total: 80
+2025-06-06 09:32:19,499 - ThreadPoolExecutor-0_3 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voditel-ekspeditor-50678192.html
+2025-06-06 09:32:20,287 - ThreadPoolExecutor-0_2 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:20,288 - ThreadPoolExecutor-0_2 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/inzhener-47202775.html, total: 81
+2025-06-06 09:32:20,289 - ThreadPoolExecutor-0_2 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/inzhener-47202775.html
+2025-06-06 09:32:20,876 - ThreadPoolExecutor-0_4 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:20,881 - ThreadPoolExecutor-0_4 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50699269.html, total: 82
+2025-06-06 09:32:20,882 - ThreadPoolExecutor-0_4 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50699269.html
+2025-06-06 09:32:21,810 - ThreadPoolExecutor-0_1 - INFO - Page 1: Found 40 vacancy links
+2025-06-06 09:32:22,591 - ThreadPoolExecutor-0_3 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:22,620 - ThreadPoolExecutor-0_3 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voditel-ekspeditor-kategorii-se-48789826.html, total: 83
+2025-06-06 09:32:22,620 - ThreadPoolExecutor-0_3 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voditel-ekspeditor-kategorii-se-48789826.html
+2025-06-06 09:32:23,173 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:23,177 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/menedzher-sklada-50701740.html, total: 84
+2025-06-06 09:32:23,178 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/menedzher-sklada-50701740.html
+2025-06-06 09:32:23,317 - ThreadPoolExecutor-0_2 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:23,318 - ThreadPoolExecutor-0_2 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/prodavec-kassir-48983898.html, total: 85
+2025-06-06 09:32:23,318 - ThreadPoolExecutor-0_2 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/prodavec-kassir-48983898.html
+2025-06-06 09:32:23,742 - ThreadPoolExecutor-0_4 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:23,743 - ThreadPoolExecutor-0_4 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50647698.html, total: 86
+2025-06-06 09:32:23,743 - ThreadPoolExecutor-0_4 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50647698.html
+2025-06-06 09:32:24,957 - ThreadPoolExecutor-0_1 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:24,958 - ThreadPoolExecutor-0_1 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/veduschij-inzhener-50708494.html, total: 87
+2025-06-06 09:32:24,958 - ThreadPoolExecutor-0_1 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/veduschij-inzhener-50708494.html
+2025-06-06 09:32:26,145 - ThreadPoolExecutor-0_3 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:26,272 - ThreadPoolExecutor-0_3 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voditel-ekspeditor-kategorii-e-50707957.html, total: 88
+2025-06-06 09:32:26,272 - ThreadPoolExecutor-0_3 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voditel-ekspeditor-kategorii-e-50707957.html
+2025-06-06 09:32:26,343 - ThreadPoolExecutor-0_2 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:26,345 - ThreadPoolExecutor-0_2 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/sborschik-zakazov-49046392.html, total: 89
+2025-06-06 09:32:26,345 - ThreadPoolExecutor-0_2 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/sborschik-zakazov-49046392.html
+2025-06-06 09:32:26,462 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:26,464 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/ofis-menedzher-50689677.html, total: 90
+2025-06-06 09:32:26,464 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/ofis-menedzher-50689677.html
+2025-06-06 09:32:26,739 - ThreadPoolExecutor-0_4 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:26,741 - ThreadPoolExecutor-0_4 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50476527.html, total: 91
+2025-06-06 09:32:26,741 - ThreadPoolExecutor-0_4 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50476527.html
+2025-06-06 09:32:27,635 - ThreadPoolExecutor-0_1 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:27,637 - ThreadPoolExecutor-0_1 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/inzhener-konstruktor-derevyannyh-konstrukcij-50145194.html, total: 92
+2025-06-06 09:32:27,637 - ThreadPoolExecutor-0_1 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/inzhener-konstruktor-derevyannyh-konstrukcij-50145194.html
+2025-06-06 09:32:29,205 - ThreadPoolExecutor-0_2 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:29,213 - ThreadPoolExecutor-0_2 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/inzhener-asutp-50672885.html, total: 93
+2025-06-06 09:32:29,213 - ThreadPoolExecutor-0_2 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/inzhener-asutp-50672885.html
+2025-06-06 09:32:29,471 - ThreadPoolExecutor-0_3 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:29,472 - ThreadPoolExecutor-0_3 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voditel-ekspeditor-kategoriya-e-37108120.html, total: 94
+2025-06-06 09:32:29,472 - ThreadPoolExecutor-0_3 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voditel-ekspeditor-kategoriya-e-37108120.html
+2025-06-06 09:32:29,708 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:29,710 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/veduschij-menedzher-po-prodazham-50689777.html, total: 95
+2025-06-06 09:32:29,710 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/veduschij-menedzher-po-prodazham-50689777.html
+2025-06-06 09:32:30,674 - ThreadPoolExecutor-0_4 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:30,675 - ThreadPoolExecutor-0_4 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50694243.html, total: 96
+2025-06-06 09:32:30,675 - ThreadPoolExecutor-0_4 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50694243.html
+2025-06-06 09:32:30,766 - ThreadPoolExecutor-0_1 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:30,767 - ThreadPoolExecutor-0_1 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/inzhener-konstruktor-44503953.html, total: 97
+2025-06-06 09:32:30,767 - ThreadPoolExecutor-0_1 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/inzhener-konstruktor-44503953.html
+2025-06-06 09:32:32,672 - ThreadPoolExecutor-0_2 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:32,679 - ThreadPoolExecutor-0_2 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/glavnyj-specialist-po-svarke-50401955.html, total: 98
+2025-06-06 09:32:32,679 - ThreadPoolExecutor-0_2 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/glavnyj-specialist-po-svarke-50401955.html
+2025-06-06 09:32:33,176 - ThreadPoolExecutor-0_3 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:33,177 - ThreadPoolExecutor-0_3 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voditel-na-kamaz-50362331.html, total: 99
+2025-06-06 09:32:33,177 - ThreadPoolExecutor-0_3 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voditel-na-kamaz-50362331.html
+2025-06-06 09:32:33,585 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:33,588 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/menedzher-po-rabote-s-regionalnymi-klientami-50354465.html, total: 100
+2025-06-06 09:32:33,588 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/menedzher-po-rabote-s-regionalnymi-klientami-50354465.html
+2025-06-06 09:32:33,892 - ThreadPoolExecutor-0_4 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:33,892 - ThreadPoolExecutor-0_4 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50692631.html, total: 101
+2025-06-06 09:32:33,892 - ThreadPoolExecutor-0_4 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50692631.html
+2025-06-06 09:32:33,939 - ThreadPoolExecutor-0_1 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:33,941 - ThreadPoolExecutor-0_1 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/veduschij-inzhener-50593103.html, total: 102
+2025-06-06 09:32:33,941 - ThreadPoolExecutor-0_1 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/veduschij-inzhener-50593103.html
+2025-06-06 09:32:35,873 - ThreadPoolExecutor-0_2 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:35,954 - ThreadPoolExecutor-0_2 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/elektrik-41225661.html, total: 103
+2025-06-06 09:32:35,955 - ThreadPoolExecutor-0_2 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/elektrik-41225661.html
+2025-06-06 09:32:36,343 - ThreadPoolExecutor-0_3 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:36,347 - ThreadPoolExecutor-0_3 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voditel-ekspeditor-50701951.html, total: 104
+2025-06-06 09:32:36,347 - ThreadPoolExecutor-0_3 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voditel-ekspeditor-50701951.html
+2025-06-06 09:32:36,583 - ThreadPoolExecutor-0_1 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:36,588 - ThreadPoolExecutor-0_1 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/veduschij-inzhener-konstruktor-30869553.html, total: 105
+2025-06-06 09:32:36,588 - ThreadPoolExecutor-0_1 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/veduschij-inzhener-konstruktor-30869553.html
+2025-06-06 09:32:36,811 - ThreadPoolExecutor-0_4 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:36,813 - ThreadPoolExecutor-0_4 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50724454.html, total: 106
+2025-06-06 09:32:36,813 - ThreadPoolExecutor-0_4 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50724454.html
+2025-06-06 09:32:37,418 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:37,445 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/menedzher-po-prodazham-i-rabote-s-klientami-50699631.html, total: 107
+2025-06-06 09:32:37,445 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/menedzher-po-prodazham-i-rabote-s-klientami-50699631.html
+2025-06-06 09:32:39,284 - ThreadPoolExecutor-0_2 - ERROR - Page 1, link attempt 1: Failed to parse https://russia.superjob.ru/vakansii/valcovschik-50682591.html: list.remove(x): x not in list
+2025-06-06 09:32:39,376 - ThreadPoolExecutor-0_4 - ERROR - Page 1, link attempt 1: Failed to parse https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50698394.html: list.remove(x): x not in list
+2025-06-06 09:32:39,429 - ThreadPoolExecutor-0_1 - ERROR - Page 1, link attempt 1: Failed to parse https://russia.superjob.ru/vakansii/inzhener-konstruktor-inzhenernyh-sistem-50714753.html: list.remove(x): x not in list
+2025-06-06 09:32:40,517 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:40,539 - ThreadPoolExecutor-0_3 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:40,544 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/menedzher-po-snabzheniyu-proizvodstva-50725551.html, total: 108
+2025-06-06 09:32:40,546 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/menedzher-po-snabzheniyu-proizvodstva-50725551.html
+2025-06-06 09:32:40,549 - ThreadPoolExecutor-0_3 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voditel-kategorii-c-50687539.html, total: 109
+2025-06-06 09:32:40,549 - ThreadPoolExecutor-0_3 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voditel-kategorii-c-50687539.html
+2025-06-06 09:32:44,257 - ThreadPoolExecutor-0_3 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:44,300 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:44,378 - ThreadPoolExecutor-0_3 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voditel-ekspeditor-kategorii-s-34947847.html, total: 110
+2025-06-06 09:32:44,378 - ThreadPoolExecutor-0_3 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voditel-ekspeditor-kategorii-s-34947847.html
+2025-06-06 09:32:44,387 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/menedzher-po-kachestvu-50701744.html, total: 111
+2025-06-06 09:32:44,387 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/menedzher-po-kachestvu-50701744.html
+2025-06-06 09:32:44,440 - ThreadPoolExecutor-0_4 - ERROR - Page 1, link attempt 2: Failed to parse https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50698394.html: list.remove(x): x not in list
+2025-06-06 09:32:44,443 - ThreadPoolExecutor-0_1 - ERROR - Page 1, link attempt 2: Failed to parse https://russia.superjob.ru/vakansii/inzhener-konstruktor-inzhenernyh-sistem-50714753.html: list.remove(x): x not in list
+2025-06-06 09:32:44,560 - ThreadPoolExecutor-0_2 - ERROR - Page 1, link attempt 2: Failed to parse https://russia.superjob.ru/vakansii/valcovschik-50682591.html: list.remove(x): x not in list
+2025-06-06 09:32:47,225 - ThreadPoolExecutor-0_3 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:47,238 - ThreadPoolExecutor-0_3 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voditel-ekspeditor-kategorii-se-50052822.html, total: 112
+2025-06-06 09:32:47,238 - ThreadPoolExecutor-0_3 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voditel-ekspeditor-kategorii-se-50052822.html
+2025-06-06 09:32:48,133 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:48,134 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/menedzher-po-prodazham-50636263.html, total: 113
+2025-06-06 09:32:48,134 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/menedzher-po-prodazham-50636263.html
+2025-06-06 09:32:50,804 - ThreadPoolExecutor-0_3 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:51,052 - ThreadPoolExecutor-0_3 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voditel-ekspeditor-50701949.html, total: 114
+2025-06-06 09:32:51,052 - ThreadPoolExecutor-0_3 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voditel-ekspeditor-50701949.html
+2025-06-06 09:32:51,191 - ThreadPoolExecutor-0_4 - ERROR - Page 1, link attempt 3: Failed to parse https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50698394.html: list.remove(x): x not in list
+2025-06-06 09:32:51,196 - ThreadPoolExecutor-0_4 - WARNING - Page 1: Skipped https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50698394.html after retries
+2025-06-06 09:32:51,305 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:51,313 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/menedzher-po-torgovomu-marketingu-50711039.html, total: 115
+2025-06-06 09:32:51,384 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/menedzher-po-torgovomu-marketingu-50711039.html
+2025-06-06 09:32:51,391 - ThreadPoolExecutor-0_1 - ERROR - Page 1, link attempt 3: Failed to parse https://russia.superjob.ru/vakansii/inzhener-konstruktor-inzhenernyh-sistem-50714753.html: list.remove(x): x not in list
+2025-06-06 09:32:51,391 - ThreadPoolExecutor-0_1 - WARNING - Page 1: Skipped https://russia.superjob.ru/vakansii/inzhener-konstruktor-inzhenernyh-sistem-50714753.html after retries
+2025-06-06 09:32:51,429 - ThreadPoolExecutor-0_2 - ERROR - Page 1, link attempt 3: Failed to parse https://russia.superjob.ru/vakansii/valcovschik-50682591.html: list.remove(x): x not in list
+2025-06-06 09:32:51,429 - ThreadPoolExecutor-0_2 - WARNING - Page 1: Skipped https://russia.superjob.ru/vakansii/valcovschik-50682591.html after retries
+2025-06-06 09:32:54,047 - ThreadPoolExecutor-0_4 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:54,061 - ThreadPoolExecutor-0_4 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-svo-50717847.html, total: 116
+2025-06-06 09:32:54,062 - ThreadPoolExecutor-0_4 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-svo-50717847.html
+2025-06-06 09:32:54,596 - ThreadPoolExecutor-0_2 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:54,627 - ThreadPoolExecutor-0_2 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/zamestitel-nachalnika-depo-po-remontu-43624567.html, total: 117
+2025-06-06 09:32:54,627 - ThreadPoolExecutor-0_2 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/zamestitel-nachalnika-depo-po-remontu-43624567.html
+2025-06-06 09:32:54,828 - ThreadPoolExecutor-0_1 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:54,930 - ThreadPoolExecutor-0_1 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/stazher-mladshij-inzhener-po-proverke-konstrukcii-cp-50523346.html, total: 118
+2025-06-06 09:32:54,945 - ThreadPoolExecutor-0_1 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/stazher-mladshij-inzhener-po-proverke-konstrukcii-cp-50523346.html
+2025-06-06 09:32:55,277 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:55,283 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/menedzher-po-prodazham-korporativnym-klientam-30587355.html, total: 119
+2025-06-06 09:32:55,283 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/menedzher-po-prodazham-korporativnym-klientam-30587355.html
+2025-06-06 09:32:55,402 - ThreadPoolExecutor-0_3 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:55,404 - ThreadPoolExecutor-0_3 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voditel-kurer-50345562.html, total: 120
+2025-06-06 09:32:55,404 - ThreadPoolExecutor-0_3 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voditel-kurer-50345562.html
+2025-06-06 09:32:59,148 - ThreadPoolExecutor-0_2 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:59,141 - ThreadPoolExecutor-0_4 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:59,207 - ThreadPoolExecutor-0_3 - ERROR - Page 1, link attempt 1: Failed to parse https://russia.superjob.ru/vakansii/voditel-50139634.html: list.remove(x): x not in list
+2025-06-06 09:32:59,226 - ThreadPoolExecutor-0_2 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/prodavec-konsultant-50697362.html, total: 121
+2025-06-06 09:32:59,226 - ThreadPoolExecutor-0_2 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/prodavec-konsultant-50697362.html
+2025-06-06 09:32:59,231 - ThreadPoolExecutor-0_4 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50695937.html, total: 122
+2025-06-06 09:32:59,232 - ThreadPoolExecutor-0_4 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50695937.html
+2025-06-06 09:32:59,313 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:59,315 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/specialist-po-obucheniyu-50714218.html, total: 123
+2025-06-06 09:32:59,315 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/specialist-po-obucheniyu-50714218.html
+2025-06-06 09:32:59,351 - ThreadPoolExecutor-0_1 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:32:59,359 - ThreadPoolExecutor-0_1 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/veduschij-inzhener-konstruktor-rea-50171127.html, total: 124
+2025-06-06 09:32:59,364 - ThreadPoolExecutor-0_1 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/veduschij-inzhener-konstruktor-rea-50171127.html
+2025-06-06 09:33:01,717 - ThreadPoolExecutor-0_4 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:33:01,724 - ThreadPoolExecutor-0_4 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50704267.html, total: 125
+2025-06-06 09:33:01,724 - ThreadPoolExecutor-0_4 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/voennosluzhaschij-po-kontraktu-50704267.html
+2025-06-06 09:33:02,691 - ThreadPoolExecutor-0_2 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:33:02,692 - ThreadPoolExecutor-0_2 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/kontroler-ohrannik-45982464.html, total: 126
+2025-06-06 09:33:02,692 - ThreadPoolExecutor-0_2 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/kontroler-ohrannik-45982464.html
+2025-06-06 09:33:02,736 - ThreadPoolExecutor-0_1 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:33:02,738 - ThreadPoolExecutor-0_1 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/veduschij-inzhener-konstruktor-50103370.html, total: 127
+2025-06-06 09:33:02,738 - ThreadPoolExecutor-0_1 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/veduschij-inzhener-konstruktor-50103370.html
+2025-06-06 09:33:02,787 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:33:02,788 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/menedzher-otdela-50484663.html, total: 128
+2025-06-06 09:33:02,788 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/menedzher-otdela-50484663.html
+2025-06-06 09:33:04,045 - ThreadPoolExecutor-0_3 - ERROR - Page 1, link attempt 2: Failed to parse https://russia.superjob.ru/vakansii/voditel-50139634.html: list.remove(x): x not in list
+2025-06-06 09:33:04,950 - ThreadPoolExecutor-0_4 - ERROR - Page 1, link attempt 1: Failed to parse https://russia.superjob.ru/vakansii/voennosluzhaschij-50457871.html: list.remove(x): x not in list
+2025-06-06 09:33:05,284 - ThreadPoolExecutor-0_0 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:33:05,345 - ThreadPoolExecutor-0_0 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/menedzher-vhodyaschih-obraschenij-50725642.html, total: 129
+2025-06-06 09:33:05,346 - ThreadPoolExecutor-0_0 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/menedzher-vhodyaschih-obraschenij-50725642.html
+2025-06-06 09:33:05,885 - ThreadPoolExecutor-0_1 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:33:05,886 - ThreadPoolExecutor-0_1 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/inzhener-konstruktor-otdela-glavnogo-metallurga-50701905.html, total: 130
+2025-06-06 09:33:05,887 - ThreadPoolExecutor-0_1 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/inzhener-konstruktor-otdela-glavnogo-metallurga-50701905.html
+2025-06-06 09:33:08,975 - ThreadPoolExecutor-0_1 - INFO - STAGE: save_vacancy_data path = /Users/nikitasavvin/Desktop/HSE_work/superjob_parser/src/superjob/results/vacancy.csv
+2025-06-06 09:33:09,012 - ThreadPoolExecutor-0_1 - INFO - Saved vacancy data for https://russia.superjob.ru/vakansii/veduschij-inzhener-konstruktor-50404749.html, total: 131
+2025-06-06 09:33:09,012 - ThreadPoolExecutor-0_1 - INFO - SUCCESS PARSED vacancy https://russia.superjob.ru/vakansii/veduschij-inzhener-konstruktor-50404749.html
+2025-06-06 09:33:09,836 - ThreadPoolExecutor-0_1 - ERROR - Page 1, link attempt 1: Failed to parse https://russia.superjob.ru/vakansii/veduschij-inzhener-konstruktor-50313236.html: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-06-06 09:33:09,849 - ThreadPoolExecutor-0_0 - ERROR - Page 1, link attempt 1: Failed to parse https://russia.superjob.ru/vakansii/specialist-po-obucheniyu-ohrany-truda-50708913.html: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-06-06 09:33:09,851 - ThreadPoolExecutor-0_2 - ERROR - Page 1, link attempt 1: Failed to parse https://russia.superjob.ru/vakansii/pomoschnik-montazhnika-stroitelnyh-lesov-50580582.html: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-06-06 09:33:09,866 - ThreadPoolExecutor-0_3 - ERROR - Page 1, link attempt 3: Failed to parse https://russia.superjob.ru/vakansii/voditel-50139634.html: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-06-06 09:33:09,891 - ThreadPoolExecutor-0_3 - WARNING - Page 1: Skipped https://russia.superjob.ru/vakansii/voditel-50139634.html after retries
+2025-06-06 09:33:09,890 - ThreadPoolExecutor-0_4 - ERROR - Page 1, link attempt 2: Failed to parse https://russia.superjob.ru/vakansii/voennosluzhaschij-50457871.html: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-06-06 09:33:09,912 - ThreadPoolExecutor-0_3 - ERROR - Page 1, link attempt 1: Failed to parse https://russia.superjob.ru/vakansii/voditel-ekspeditor-kategorii-e-50693067.html: HTTPConnectionPool(host='localhost', port=64849): Max retries exceeded with url: /session/00af3329f60da1c5bc4287981c882223/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x109a64110>: Failed to establish a new connection: [Errno 61] Connection refused'))
