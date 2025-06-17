@@ -14,10 +14,15 @@ import threading
 from itertools import cycle
 from requests.exceptions import ReadTimeout
 import socket
+# import ssl
+import io
+
+# ssl._create_default_https_context = ssl._create_unverified_context
+
 
 MAX_WORKERS = 10
 USE_PROXY = True
-PROXY_UPDATE_INTERVAL = 300
+PROXY_UPDATE_INTERVAL = 2300
 TIMEOUT_PER_LINK = 120
 MAX_RETRIES = 5
 RETRY_BACKOFF = 2
@@ -48,21 +53,21 @@ def update_proxies():
     print("[INFO] Обновление списка прокси...")
     try:
         key = os.getenv("KEY")
-        r = requests.get(f"https://api.best-proxies.ru/proxylist.csv?key={key}&type=https&limit=1000", timeout=10)
+        link = f"https://api.best-proxies.ru/proxylist.csv?key={key}&type=https&limit=1000"
+        r = requests.get(link, timeout=30)
         if r.ok:
-            df = pd.read_csv(pd.compat.StringIO(r.text), sep=";", encoding="cp1251")
+            df = pd.read_csv(io.StringIO(r.text), sep=";", encoding="cp1251")
             proxies = [f"{ip}:{port}" for ip, port in zip(df["ip"], df["port"])]
             print(f"[INFO] Получено {len(proxies)} прокси, валидация...")
             valid = [p for p in proxies[:100] if validate_proxy(p)]
             print(f"[INFO] Пройдено валидацию: {len(valid)}")
-            with proxy_lock:
-                proxy_pool = valid or [None]
-                proxy_cycle = cycle(proxy_pool)
-                last_proxy_update = time.time()
+            if valid:
+                with proxy_lock:
+                    proxy_pool = valid
+                    proxy_cycle = cycle(proxy_pool)
+                    last_proxy_update = time.time()
     except Exception as e:
-        print(f"[ERROR] Ошибка при обновлении прокси: {e}")
-        proxy_pool = [None]
-        proxy_cycle = cycle(proxy_pool)
+        print(f"[ERROR] Ошибка при обновлении прокси списка https://api.best-proxies.ru: {e}")
 
 def validate_proxy(proxy):
     try:
@@ -73,15 +78,16 @@ def validate_proxy(proxy):
 
 def get_proxy():
     global proxy_cycle, last_proxy_update
-    with proxy_lock:
-        if not proxy_pool or time.time() - last_proxy_update > PROXY_UPDATE_INTERVAL:
-            update_proxies()
-        try:
-            proxy = next(proxy_cycle)
-        except StopIteration:
-            proxy = None
-        print(f"[INFO] Используется прокси: {proxy}")
-        return proxy
+    while True:
+        with proxy_lock:
+            if not proxy_pool or time.time() - last_proxy_update > PROXY_UPDATE_INTERVAL:
+                update_proxies()
+            if proxy_pool:
+                proxy = next(proxy_cycle)
+                print(f"[INFO] Используется прокси: {proxy}")
+                return proxy
+        print("[WARNING] Нет валидных прокси. Ожидание 5 секунд перед повтором...")
+        time.sleep(5)
 
 driver_store = threading.local()
 
