@@ -1,4 +1,3 @@
-
 import os, re, time, uuid, shutil, tempfile, logging
 import pandas as pd
 from tqdm import tqdm
@@ -13,12 +12,14 @@ import requests
 from vacancy_content_parser import parse_job_info
 import threading
 from itertools import cycle
+from requests.exceptions import ReadTimeout
+import socket
 
 MAX_WORKERS = 10
 USE_PROXY = True
 PROXY_UPDATE_INTERVAL = 300
 TIMEOUT_PER_LINK = 120
-MAX_RETRIES = 3
+MAX_RETRIES = 5
 RETRY_BACKOFF = 2
 MAX_PAGE_RETRIES = 3
 
@@ -71,12 +72,14 @@ def validate_proxy(proxy):
         return False
 
 def get_proxy():
-    print("[INFO] Получение прокси...")
     global proxy_cycle, last_proxy_update
     with proxy_lock:
         if not proxy_pool or time.time() - last_proxy_update > PROXY_UPDATE_INTERVAL:
             update_proxies()
-        proxy = next(proxy_cycle)
+        try:
+            proxy = next(proxy_cycle)
+        except StopIteration:
+            proxy = None
         print(f"[INFO] Используется прокси: {proxy}")
         return proxy
 
@@ -136,34 +139,45 @@ def get_max_page(driver, link):
 
 def try_process_link(link, proxy):
     print(f"[INFO] Обработка страницы: {link}")
-    driver = get_driver(proxy)
-    links = set()
-    try:
-        max_page = get_max_page(driver, link)
-        print(f"[INFO] Найдено {max_page} страниц")
-        for page in range(1, max_page + 1):
-            page_url = f"{link}?page={page}"
-            print(f"[INFO] Загрузка страницы {page_url}")
-            for _ in range(MAX_RETRIES):
-                try:
-                    driver.get(page_url)
-                    WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'a[href*="/vakansii/"]')))
-                    a_tags = driver.find_elements(By.CSS_SELECTOR, 'a[href*="/vakansii/"]')
-                    urls = [a.get_attribute('href') for a in a_tags if a.get_attribute('href')]
-                    for url in set(filter(lambda u: re.search(r'\d+\.html$', u), urls)):
-                        try:
-                            print(f"[INFO] Парсинг вакансии: {url}")
-                            data = parse_job_info(driver, url)
-                            save_vacancy(data, url)
-                            links.add(url)
-                        except Exception as e:
-                            print(f"[WARNING] Ошибка при парсинге вакансии {url}: {e}")
-                    break
-                except:
-                    time.sleep(1)
-    except Exception as e:
-        print(f"[ERROR] Ошибка при обработке {link}: {e}")
-    return list(links)
+    attempts = 0
+    max_attempts = MAX_RETRIES
+    while attempts < max_attempts:
+        try:
+            driver = get_driver(proxy)
+            links = set()
+            max_page = get_max_page(driver, link)
+            print(f"[INFO] Найдено {max_page} страниц")
+            for page in range(1, max_page + 1):
+                page_url = f"{link}?page={page}"
+                print(f"[INFO] Загрузка страницы {page_url}")
+                for _ in range(MAX_RETRIES):
+                    try:
+                        driver.get(page_url)
+                        WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'a[href*="/vakansii/"]')))
+                        a_tags = driver.find_elements(By.CSS_SELECTOR, 'a[href*="/vakansii/"]')
+                        urls = [a.get_attribute('href') for a in a_tags if a.get_attribute('href')]
+                        for url in set(filter(lambda u: re.search(r'\d+\.html$', u), urls)):
+                            try:
+                                print(f"[INFO] Парсинг вакансии: {url}")
+                                data = parse_job_info(driver, url)
+                                save_vacancy(data, url)
+                                links.add(url)
+                            except Exception as e:
+                                print(f"[WARNING] Ошибка при парсинге вакансии {url}: {e}")
+                        break
+                    except Exception as e_inner:
+                        print(f"[WARNING] Ошибка загрузки страницы {page_url}: {e_inner}")
+                        time.sleep(1)
+            return list(links)
+        except (ReadTimeout, socket.timeout, requests.exceptions.ConnectionError) as e:
+            print(f"[WARNING] Timeout или ошибка соединения при обработке {link}: {e}. Меняем прокси и повторяем...")
+            proxy = get_proxy()
+            attempts += 1
+            time.sleep(RETRY_BACKOFF * attempts)
+        except Exception as e:
+            print(f"[ERROR] Ошибка при обработке {link}: {e}")
+            break
+    return []
 
 def read_csv_set(path, col):
     print(f"[INFO] Чтение CSV: {path} колонка: {col}")
