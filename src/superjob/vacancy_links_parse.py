@@ -117,7 +117,7 @@ def get_max_page(driver, link):
     for _ in range(MAX_PAGE_RETRIES):
         try:
             driver.get(link)
-            WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//*[contains(text(), 'Дальше')]")))
+            WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.XPATH, "//*[contains(text(), 'Дальше')]")))
             elems = driver.find_elements(By.XPATH, "//a[@title and ancestor::div[contains(.,'Дальше')]]")
             return max([int(e.get_attribute("title")) for e in elems if e.get_attribute("title").isdigit()] or [1])
         except:
@@ -134,7 +134,7 @@ def try_process_link(link, proxy):
             for _ in range(MAX_RETRIES):
                 try:
                     driver.get(page_url)
-                    WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'a[href*="/vakansii/"]')))
+                    WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'a[href*="/vakansii/"]')))
                     a_tags = driver.find_elements(By.CSS_SELECTOR, 'a[href*="/vakansii/"]')
                     urls = [a.get_attribute('href') for a in a_tags if a.get_attribute('href')]
                     for url in set(filter(lambda u: re.search(r'\d+\.html$', u), urls)):
@@ -169,6 +169,7 @@ def process_link(link):
 def main():
     update_proxies()
     df = pd.read_csv(os.path.join(result_path, "level_0_links.csv"))
+    print(df)
     links = df["level_0_link"].dropna().tolist()
     processed = read_csv_set(progress_file, 'link')
     to_process = [l for l in links if l not in processed]
