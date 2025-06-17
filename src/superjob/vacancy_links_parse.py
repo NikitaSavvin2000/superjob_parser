@@ -53,7 +53,8 @@ def update_proxies():
     print("[INFO] Обновление списка прокси...")
     try:
         key = os.getenv("KEY")
-        link = f"https://api.best-proxies.ru/proxylist.csv?key={key}&type=https&limit=1000"
+        link = f"http://api.best-proxies.ru/proxylist.csv?key={key}&type=https&limit=1000"
+
         r = requests.get(link, timeout=30)
         if r.ok:
             df = pd.read_csv(io.StringIO(r.text), sep=";", encoding="cp1251")
@@ -71,7 +72,7 @@ def update_proxies():
 
 def validate_proxy(proxy):
     try:
-        r = requests.get("https://www.google.com", proxies={"https": f"http://{proxy}"}, timeout=5)
+        r = requests.get("https://www.google.com", proxies={"https": f"https://{proxy}"}, timeout=10)
         return r.ok
     except:
         return False
