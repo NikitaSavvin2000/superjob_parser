@@ -20,7 +20,7 @@ import io
 # ssl._create_default_https_context = ssl._create_unverified_context
 
 
-MAX_WORKERS = 10
+MAX_WORKERS = 2
 USE_PROXY = True
 PROXY_UPDATE_INTERVAL = 2300
 TIMEOUT_PER_LINK = 120
@@ -60,7 +60,13 @@ def update_proxies():
             df = pd.read_csv(io.StringIO(r.text), sep=";", encoding="cp1251")
             proxies = [f"{ip}:{port}" for ip, port in zip(df["ip"], df["port"])]
             print(f"[INFO] Получено {len(proxies)} прокси, валидация...")
-            valid = [p for p in proxies[:100] if validate_proxy(p)]
+            valid = []
+            for p in proxies[:100]:
+                if validate_proxy(p):
+                    valid.append(p)
+                    print(f"[SUCCESS] Прокси {p}")
+                    continue
+                print(f"[FAIL] Прокси {p}")
             print(f"[INFO] Пройдено валидацию: {len(valid)}")
             if valid:
                 with proxy_lock:
@@ -72,7 +78,7 @@ def update_proxies():
 
 def validate_proxy(proxy):
     try:
-        r = requests.get("https://www.google.com", proxies={"https": f"https://{proxy}"}, timeout=10)
+        r = requests.get("https://www.google.com", proxies={"https": f"http://{proxy}"}, timeout=2)
         return r.ok
     except:
         return False
