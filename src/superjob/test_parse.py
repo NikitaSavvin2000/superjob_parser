@@ -1,14 +1,26 @@
+import os
+import re
 import time
-
+import uuid
+import shutil
 import tempfile
+import logging
 import pandas as pd
-from selenium import webdriver
+from tqdm import tqdm
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-import re
-
-import os
+import requests
+from vacancy_content_parser import parse_job_info
+import threading
+from itertools import cycle
+from requests.exceptions import ReadTimeout, ConnectionError
+import socket
+import io
 
 cwd = os.getcwd()
 
@@ -26,6 +38,10 @@ def create_driver(proxy=None):
     if proxy:
         options.add_argument(f'--proxy-server=http://{proxy}')
     return webdriver.Chrome(service=Service(driver_path), options=options)
+
+
+
+
 
 path_to_city = os.path.join(cwd, "src", "superjob", "data", "city.csv")
 
@@ -47,59 +63,48 @@ driver_path = ChromeDriverManager().install()
 
 driver = create_driver(proxy=None)
 
-link = "https://russia.superjob.ru/vakansii/uborschica-posudomojschica-50584872.html"
-driver.get(link)
-time.sleep(0.1)
+MAX_PAGE_RETRIES = 3
 
-page_text = driver.find_element("tag name", "body").text
+# def get_max_page(driver, link):
+#     print(f"Получение количества страниц для: {link}")
+#     for _ in range(MAX_PAGE_RETRIES):
+#         try:
+#             driver.get(link)
+#             WebDriverWait(driver, 45).until(EC.presence_of_element_located((By.XPATH, "//*[contains(text(), 'Дальше')]")))
+#             elems = driver.find_elements(By.XPATH, "//a[@title and ancestor::div[contains(.,'Дальше')]]")
+#             pages = [int(e.get_attribute("title")) for e in elems if e.get_attribute("title") and e.get_attribute("title").isdigit()]
+#             return max(pages) if pages else 1
+#         except Exception:
+#             time.sleep(1)
+#     return 1
 
-elem = driver.find_element(By.XPATH, "//button[.//span[text()='Откликнуться']]")
-parent_div = elem.find_element(By.XPATH, "./ancestor::div[7]")
+import requests
+from bs4 import BeautifulSoup
+import time
 
-text = parent_div.text
-lines = text.split('\n')
-lines = lines[6:-5]
-# print(lines)
-perhaps_salary_position = lines[1:7]
-salary = [x for x in perhaps_salary_position if re.search(r'\d', x)][0]
+MAX_PAGE_RETRIES = 3
 
-perhaps_title_index = perhaps_salary_position.index(salary)
-title = perhaps_salary_position[perhaps_title_index-1]
+def get_max_page(link):
+    print(f"Получение количества страниц для: {link}")
+    for _ in range(MAX_PAGE_RETRIES):
+        try:
+            headers = {
+                "User-Agent": "Mozilla/5.0"
+            }
+            response = requests.get(link, headers=headers, timeout=10)
+            response.raise_for_status()
 
-perhaps_location_position = lines[2:9]
-perhaps_experience_busyness_position = lines[2:20]
-pattern = re.compile(r'.*опыт.*', re.IGNORECASE)
-
-busyness_pattern = re.compile(r'занятость', re.I)
-
-print(perhaps_experience_busyness_position)
-busyness_pattern = re.compile(r'занятость', re.I)
-busyness = next((s for s in perhaps_experience_busyness_position if busyness_pattern.search(s)), None)
-if busyness is not None:
-    if ',' in busyness:
-        busyness = busyness.split(',')[1].strip()
-    else:
-        busyness = busyness.strip()
-
-
-experience_busyness = [s for s in perhaps_experience_busyness_position if pattern.match(s)]
-experience_busyness_parts = [part.strip() for part in experience_busyness[0].split(',')] if ',' in experience_busyness[0] else [experience_busyness[0]]
-exp = next((s for s in experience_busyness_parts if re.search(r'опыт', s, re.I)), None)
-
-if busyness is None:
-    busyness = next((s for s in experience_busyness_parts if re.search(r'занят|занятость|работа', s, re.I)), None)
-
-location = next((s for s in perhaps_location_position if city_pattern.search(s)), None)
-
-description = ' '.join(lines)
-
-print(title)
-print(salary)
-print(exp)
-print(busyness)
-print(location)
-print(description)
+            soup = BeautifulSoup(response.text, "html.parser")
+            elems = soup.select("a[title]")
+            pages = [int(e['title']) for e in elems if e['title'].isdigit()]
+            return max(pages) if pages else 1
+        except Exception:
+            time.sleep(1)
+    return 1
 
 
+link = "https://russia.superjob.ru/vakansii/specialist-po-obucheniyu.html"
+# max_page = get_max_page(driver=driver, link=link)
+max_page = get_max_page(link=link)
 
-
+print(f"max_page = {max_page}")

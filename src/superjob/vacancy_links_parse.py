@@ -1,4 +1,10 @@
-import os, re, time, uuid, shutil, tempfile, logging
+import os
+import re
+import time
+import uuid
+import shutil
+import tempfile
+import logging
 import pandas as pd
 from tqdm import tqdm
 from selenium.webdriver.common.by import By
@@ -12,12 +18,15 @@ import requests
 from vacancy_content_parser import parse_job_info
 import threading
 from itertools import cycle
-from requests.exceptions import ReadTimeout
+from requests.exceptions import ReadTimeout, ConnectionError
 import socket
-# import ssl
 import io
+import requests
+from bs4 import BeautifulSoup
+import time
 
-# ssl._create_default_https_context = ssl._create_unverified_context
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 MAX_WORKERS = 2
@@ -26,7 +35,7 @@ PROXY_UPDATE_INTERVAL = 2300
 TIMEOUT_PER_LINK = 120
 MAX_RETRIES = 5
 RETRY_BACKOFF = 2
-MAX_PAGE_RETRIES = 3
+MAX_PAGE_RETRIES = 5
 
 cwd = os.getcwd()
 result_path = os.path.join(cwd, "src", "superjob", "results")
@@ -50,35 +59,32 @@ proxy_lock = threading.Lock()
 
 def update_proxies():
     global proxy_pool, proxy_cycle, last_proxy_update
-    print("[INFO] Обновление списка прокси...")
+    logger.info("Обновление списка прокси...")
     try:
         key = os.getenv("KEY")
         link = f"http://api.best-proxies.ru/proxylist.csv?key={key}&type=https&limit=1000"
-
         r = requests.get(link, timeout=30)
         if r.ok:
             df = pd.read_csv(io.StringIO(r.text), sep=";", encoding="cp1251")
             proxies = [f"{ip}:{port}" for ip, port in zip(df["ip"], df["port"])]
-            print(f"[INFO] Получено {len(proxies)} прокси, валидация...")
             valid = []
             for p in proxies[:100]:
                 if validate_proxy(p):
                     valid.append(p)
-                    print(f"[SUCCESS] Прокси {p}")
-                    continue
-                print(f"[FAIL] Прокси {p}")
-            print(f"[INFO] Пройдено валидацию: {len(valid)}")
             if valid:
                 with proxy_lock:
                     proxy_pool = valid
                     proxy_cycle = cycle(proxy_pool)
                     last_proxy_update = time.time()
+                logger.info(f"Получено и валидировано {len(valid)} прокси")
+            else:
+                logger.warning("Нет валидных прокси после проверки")
     except Exception as e:
-        print(f"[ERROR] Ошибка при обновлении прокси списка https://api.best-proxies.ru: {e}")
+        logger.error(f"Ошибка при обновлении прокси списка: {e}")
 
 def validate_proxy(proxy):
     try:
-        r = requests.get("https://www.google.com", proxies={"https": f"http://{proxy}"}, timeout=2)
+        r = requests.get("https://www.google.com", proxies={"https": f"http://{proxy}"}, timeout=3)
         return r.ok
     except:
         return False
@@ -91,18 +97,17 @@ def get_proxy():
                 update_proxies()
             if proxy_pool:
                 proxy = next(proxy_cycle)
-                print(f"[INFO] Используется прокси: {proxy}")
+                logger.info(f"Используется прокси: {proxy}")
                 return proxy
-        print("[WARNING] Нет валидных прокси. Ожидание 5 секунд перед повтором...")
+        logger.warning("Нет валидных прокси. Ожидание 5 секунд перед повтором...")
         time.sleep(5)
 
 driver_store = threading.local()
 
 def create_driver(proxy=None):
-    print(f"[INFO] Создание драйвера (proxy={proxy})")
+    logger.info(f"Создание драйвера (proxy={proxy})")
     options = webdriver.ChromeOptions()
     options.add_argument("--headless")
-    options.add_argument("--remote-debugging-port=9222")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--window-size=1920,1080")
@@ -113,18 +118,18 @@ def create_driver(proxy=None):
     user_dir = os.path.join(tempfile.gettempdir(), f"chrome_{uuid.uuid4()}")
     options.add_argument(f"--user-data-dir={user_dir}")
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    driver.set_page_load_timeout(60)
     driver.implicitly_wait(1)
     return driver, user_dir
 
 def get_driver(proxy):
-    if not hasattr(driver_store, 'driver') or driver_store.proxy != proxy:
-        print("[INFO] Новый драйвер создаётся...")
-        if hasattr(driver_store, 'driver'):
-            try:
+    if not hasattr(driver_store, 'driver') or getattr(driver_store, 'proxy', None) != proxy:
+        try:
+            if hasattr(driver_store, 'driver'):
                 driver_store.driver.quit()
                 shutil.rmtree(driver_store.user_data_dir, ignore_errors=True)
-            except:
-                pass
+        except Exception:
+            pass
         driver_store.driver, driver_store.user_data_dir = create_driver(proxy)
         driver_store.proxy = proxy
     return driver_store.driver
@@ -134,93 +139,118 @@ vacancy_lock = threading.Lock()
 def save_vacancy(data, link):
     if not data or not isinstance(data, dict) or not any(data.values()):
         return
-    print(f"[INFO] Сохраняется вакансия: {link}")
+    logger.info(f"Сохраняется вакансия: {link}")
     row = pd.DataFrame([{**data, "link": link}])
     with vacancy_lock:
         row.to_csv(vacancy_path, mode='a', header=not os.path.exists(vacancy_path), index=False)
 
+# def get_max_page(driver, link):
+#     logger.info(f"Получение количества страниц для: {link}")
+#     for _ in range(MAX_PAGE_RETRIES):
+#         try:
+#             driver.get(link)
+#             WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.XPATH, "//*[contains(text(), 'Дальше')]")))
+#             elems = driver.find_elements(By.XPATH, "//a[@title and ancestor::div[contains(.,'Дальше')]]")
+#             pages = [int(e.get_attribute("title")) for e in elems if e.get_attribute("title") and e.get_attribute("title").isdigit()]
+#             return max(pages) if pages else 1
+#         except Exception:
+#             time.sleep(1)
+#     logger.warning(f"Не нашли пагинацию для: {link}")
+#     return 1
+
+
 def get_max_page(driver, link):
-    print(f"[INFO] Получение количества страниц для: {link}")
+    print(f"Получение количества страниц для: {link}")
     for _ in range(MAX_PAGE_RETRIES):
         try:
-            driver.get(link)
-            WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.XPATH, "//*[contains(text(), 'Дальше')]")))
-            elems = driver.find_elements(By.XPATH, "//a[@title and ancestor::div[contains(.,'Дальше')]]")
-            return max([int(e.get_attribute("title")) for e in elems if e.get_attribute("title").isdigit()] or [1])
-        except:
+            headers = {
+                "User-Agent": "Mozilla/5.0"
+            }
+            response = requests.get(link, headers=headers, timeout=10)
+            response.raise_for_status()
+            soup = BeautifulSoup(response.text, "html.parser")
+            elems = soup.select("a[title]")
+            pages = [int(e['title']) for e in elems if e['title'].isdigit()]
+            return max(pages) if pages else 1
+        except Exception:
             time.sleep(1)
     return 1
 
+
 def try_process_link(link, proxy):
-    print(f"[INFO] Обработка страницы: {link}")
+    logger.info(f"Обработка страницы: {link}")
     attempts = 0
-    max_attempts = MAX_RETRIES
-    while attempts < max_attempts:
+    while attempts < MAX_RETRIES:
         try:
             driver = get_driver(proxy)
             links = set()
             max_page = get_max_page(driver, link)
-            print(f"[INFO] Найдено {max_page} страниц")
+            logger.info(f"Найдено {max_page} страниц")
             for page in range(1, max_page + 1):
                 page_url = f"{link}?page={page}"
-                print(f"[INFO] Загрузка страницы {page_url}")
+                logger.info(f"Загрузка страницы {page_url}")
                 for _ in range(MAX_RETRIES):
                     try:
                         driver.get(page_url)
-                        WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'a[href*="/vakansii/"]')))
+                        WebDriverWait(driver, 15).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'a[href*="/vakansii/"]')))
                         a_tags = driver.find_elements(By.CSS_SELECTOR, 'a[href*="/vakansii/"]')
                         urls = [a.get_attribute('href') for a in a_tags if a.get_attribute('href')]
                         for url in set(filter(lambda u: re.search(r'\d+\.html$', u), urls)):
                             try:
-                                print(f"[INFO] Парсинг вакансии: {url}")
+                                logger.info(f"Парсинг вакансии: {url}")
                                 data = parse_job_info(driver, url)
                                 save_vacancy(data, url)
                                 links.add(url)
                             except Exception as e:
-                                print(f"[WARNING] Ошибка при парсинге вакансии {url}: {e}")
+                                logger.warning(f"Ошибка при парсинге вакансии {url}: {e}")
                         break
                     except Exception as e_inner:
-                        print(f"[WARNING] Ошибка загрузки страницы {page_url}: {e_inner}")
+                        logger.warning(f"Ошибка загрузки страницы {page_url}: {e_inner}")
                         time.sleep(1)
             return list(links)
-        except (ReadTimeout, socket.timeout, requests.exceptions.ConnectionError) as e:
-            print(f"[WARNING] Timeout или ошибка соединения при обработке {link}: {e}. Меняем прокси и повторяем...")
+        except (ReadTimeout, socket.timeout, ConnectionError) as e:
+            logger.warning(f"Timeout или ошибка соединения при обработке {link}: {e}. Меняем прокси и повторяем...")
             proxy = get_proxy()
             attempts += 1
             time.sleep(RETRY_BACKOFF * attempts)
         except Exception as e:
-            print(f"[ERROR] Ошибка при обработке {link}: {e}")
+            logger.error(f"Ошибка при обработке {link}: {e}")
             break
     return []
 
 def read_csv_set(path, col):
-    print(f"[INFO] Чтение CSV: {path} колонка: {col}")
+    logger.info(f"Чтение CSV: {path} колонка: {col}")
     if os.path.exists(path):
-        return set(pd.read_csv(path)[col].dropna().tolist())
+        try:
+            return set(pd.read_csv(path)[col].dropna().tolist())
+        except Exception as e:
+            logger.warning(f"Ошибка чтения {path}: {e}")
+            return set()
     return set()
 
 def append_links(links):
-    print(f"[INFO] Добавление новых ссылок...")
+    logger.info("Добавление новых ссылок...")
     existing = read_csv_set(result_file, 'vacancy_links')
     new_links = list(set(links) - existing)
-    print(f"[INFO] Новых ссылок: {len(new_links)}")
+    logger.info(f"Новых ссылок: {len(new_links)}")
     if new_links:
         pd.DataFrame(new_links, columns=['vacancy_links']).to_csv(result_file, mode='a', header=not os.path.exists(result_file), index=False)
 
 def process_link(link):
-    print(f"[INFO] Запуск обработки: {link}")
-    proxy = get_proxy()
+    logger.info(f"Запуск обработки: {link}")
+    proxy = get_proxy() if USE_PROXY else None
     return link, try_process_link(link, proxy)
 
 def main():
-    print("[INFO] Запуск главного процесса...")
-    update_proxies()
+    logger.info("Запуск главного процесса...")
+    if USE_PROXY:
+        update_proxies()
     df = pd.read_csv(os.path.join(result_path, "level_0_links.csv"))
-    print("[INFO] Загружены начальные ссылки")
+    logger.info("Загружены начальные ссылки")
     links = df["level_0_link"].dropna().tolist()
     processed = read_csv_set(progress_file, 'link')
     to_process = [l for l in links if l not in processed]
-    print(f"[INFO] К обработке: {len(to_process)} ссылок")
+    logger.info(f"К обработке: {len(to_process)} ссылок")
     all_links, done = [], []
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
         futures = {pool.submit(process_link, link): link for link in to_process}
@@ -230,7 +260,7 @@ def main():
             done.append(link)
             pd.DataFrame(done, columns=['link']).to_csv(progress_file, index=False)
     append_links(all_links)
-    print("[INFO] Завершено")
+    logger.info("Завершено")
 
 if __name__ == '__main__':
     main()
