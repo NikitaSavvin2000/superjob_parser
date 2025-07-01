@@ -33,6 +33,9 @@ def init_city_pattern():
 
     return city_pattern
 
+city_pattern = init_city_pattern()
+
+
 def create_driver(proxy=None):
     options = webdriver.ChromeOptions()
     options.add_argument("--headless=new")
@@ -106,14 +109,82 @@ def parse_job_info(driver, link):
         }
     except Exception as e:
         raise e
+import requests
+import re
+import trafilatura
 
-city_pattern = init_city_pattern()
+import requests
+import re
+import trafilatura
 
-# driver = create_driver(proxy=None)
+def parse_job_info_trafilatura(link, proxy=None):
+    proxies = {"http": f"http://{proxy}", "https": f"http://{proxy}"} if proxy else None
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)"
+                      " Chrome/115.0.0.0 Safari/537.36"
+    }
+    r = requests.get(link, headers=headers, proxies=proxies, timeout=10)
+    r.raise_for_status()
+
+    content = trafilatura.extract(r.text, include_comments=False, include_tables=False)
+    if not content:
+        return None
+
+    lines = [line.strip() for line in content.split('\n') if line.strip()]
+
+    perhaps_salary_position = lines[:10]
+
+    salary = next((s for s in perhaps_salary_position if re.search(r'месяц', s, re.I)), None)
+    if salary is None:
+        salary = next((s for s in perhaps_salary_position if re.search(r'договор', s, re.I)), None)
+
+    perhaps_title_index = perhaps_salary_position.index(salary) if salary else None
+    title = perhaps_salary_position[perhaps_title_index-1] if perhaps_title_index and perhaps_title_index > 0 else None
+
+    perhaps_location_position = lines[:9]
+    if title in perhaps_location_position:
+        perhaps_location_position.remove(title)
+
+    perhaps_experience_busyness_position = lines[2:20]
+
+    experience_pattern = re.compile(r'.*опыт.*', re.I)
+    busyness_pattern = re.compile(r'занятость', re.I)
+
+    busyness = next((s for s in perhaps_experience_busyness_position if busyness_pattern.search(s)), None)
+    if busyness and ',' in busyness:
+        busyness_list = busyness.split(',')
+        busyness = next((s for s in busyness_list if re.search(r'занят', s, re.I)), None)
+
+    experience_busyness = [s for s in perhaps_experience_busyness_position if experience_pattern.match(s)]
+    experience_busyness_parts = experience_busyness[0].split(',') if experience_busyness else []
+    experience_busyness_parts = [part.strip() for part in experience_busyness_parts]
+
+    exp = next((s for s in experience_busyness_parts if re.search(r'опыт', s, re.I)), None)
+    if busyness is None:
+        busyness = next((s for s in experience_busyness_parts if re.search(r'занят|занятость|работа', s, re.I)), None)
+
+    location = None
+
+    description = ' '.join(lines)
+
+    return {
+        'title': title,
+        'salary': salary,
+        'experience': exp,
+        'busyness': busyness,
+        'location': location,
+        'description': description
+    }
+
+
+#
+# # driver = create_driver(proxy=None)
 # link = "https://russia.superjob.ru/vakansii/menedzher-aktivnyh-prodazh-50688082.html"
-# content = parse_job_info(driver=driver, link=link)
-#
-# print(content["location"])
-# print(content["salary"])
-#
+# # content = parse_job_info(driver=driver, link=link)
+# content = parse_job_info_trafilatura(link=link)
+# print(content)
+# #
+# # print(content["location"])
+# # print(content["salary"])
+# #
 

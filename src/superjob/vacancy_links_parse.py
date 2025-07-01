@@ -1,21 +1,8 @@
 import os
-import re
-import time
-import uuid
-import shutil
-import tempfile
 import logging
 import pandas as pd
 from tqdm import tqdm
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
-import requests
-from vacancy_content_parser import parse_job_info
 import threading
 from itertools import cycle
 from requests.exceptions import ReadTimeout, ConnectionError
@@ -24,18 +11,17 @@ import io
 import requests
 from bs4 import BeautifulSoup
 import time
-
-
+import re
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
-MAX_WORKERS = 2
+MAX_WORKERS = 10
 USE_PROXY = True
-PROXY_UPDATE_INTERVAL = 2300
+PROXY_UPDATE_INTERVAL = 1000
 TIMEOUT_PER_LINK = 120
-MAX_RETRIES = 5
-RETRY_BACKOFF = 2
-MAX_PAGE_RETRIES = 5
+MAX_RETRIES = 7
+RETRY_BACKOFF = 5
+MAX_PAGE_RETRIES = 7
 
 cwd = os.getcwd()
 result_path = os.path.join(cwd, "src", "superjob", "results")
@@ -68,7 +54,7 @@ def update_proxies():
             df = pd.read_csv(io.StringIO(r.text), sep=";", encoding="cp1251")
             proxies = [f"{ip}:{port}" for ip, port in zip(df["ip"], df["port"])]
             valid = []
-            for p in proxies[:100]:
+            for p in proxies[:150]:
                 if validate_proxy(p):
                     valid.append(p)
             if valid:
@@ -102,38 +88,6 @@ def get_proxy():
         logger.warning("Нет валидных прокси. Ожидание 5 секунд перед повтором...")
         time.sleep(5)
 
-driver_store = threading.local()
-
-def create_driver(proxy=None):
-    logger.info(f"Создание драйвера (proxy={proxy})")
-    options = webdriver.ChromeOptions()
-    options.add_argument("--headless")
-    options.add_argument("--no-sandbox")
-    options.add_argument("--disable-dev-shm-usage")
-    options.add_argument("--window-size=1920,1080")
-    prefs = {"profile.managed_default_content_settings.images": 2}
-    options.add_experimental_option("prefs", prefs)
-    if proxy:
-        options.add_argument(f'--proxy-server=http://{proxy}')
-    user_dir = os.path.join(tempfile.gettempdir(), f"chrome_{uuid.uuid4()}")
-    options.add_argument(f"--user-data-dir={user_dir}")
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
-    driver.set_page_load_timeout(60)
-    driver.implicitly_wait(1)
-    return driver, user_dir
-
-def get_driver(proxy):
-    if not hasattr(driver_store, 'driver') or getattr(driver_store, 'proxy', None) != proxy:
-        try:
-            if hasattr(driver_store, 'driver'):
-                driver_store.driver.quit()
-                shutil.rmtree(driver_store.user_data_dir, ignore_errors=True)
-        except Exception:
-            pass
-        driver_store.driver, driver_store.user_data_dir = create_driver(proxy)
-        driver_store.proxy = proxy
-    return driver_store.driver
-
 vacancy_lock = threading.Lock()
 
 def save_vacancy(data, link):
@@ -144,22 +98,9 @@ def save_vacancy(data, link):
     with vacancy_lock:
         row.to_csv(vacancy_path, mode='a', header=not os.path.exists(vacancy_path), index=False)
 
-# def get_max_page(driver, link):
-#     logger.info(f"Получение количества страниц для: {link}")
-#     for _ in range(MAX_PAGE_RETRIES):
-#         try:
-#             driver.get(link)
-#             WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.XPATH, "//*[contains(text(), 'Дальше')]")))
-#             elems = driver.find_elements(By.XPATH, "//a[@title and ancestor::div[contains(.,'Дальше')]]")
-#             pages = [int(e.get_attribute("title")) for e in elems if e.get_attribute("title") and e.get_attribute("title").isdigit()]
-#             return max(pages) if pages else 1
-#         except Exception:
-#             time.sleep(1)
-#     logger.warning(f"Не нашли пагинацию для: {link}")
-#     return 1
 
 
-def get_max_page(driver, link):
+def get_max_page(link):
     print(f"Получение количества страниц для: {link}")
     for _ in range(MAX_PAGE_RETRIES):
         try:
@@ -177,36 +118,56 @@ def get_max_page(driver, link):
     return 1
 
 
+def get_urls_from_page(page_url, proxy=None):
+    proxies = {
+        'http': f'http://{proxy}',
+        'https': f'http://{proxy}'
+    } if proxy else None
+
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.7151.122 Safari/537.36'
+    }
+
+    response = requests.get(page_url, headers=headers, proxies=proxies, timeout=15)
+    soup = BeautifulSoup(response.text, 'html.parser')
+    return [a['href'] for a in soup.select('a[href*="/vakansii/"]') if a.get('href')]
+
+def append_urls_to_csv(urls: list[str]):
+    file_path = os.path.join(cwd, "src", "superjob", "results", "urls_vacancy.csv")
+    new_df = pd.DataFrame(urls, columns=['url'])
+    if os.path.exists(file_path) and os.path.getsize(file_path) > 0:
+        existing_df = pd.read_csv(file_path)
+        combined_df = pd.concat([existing_df, new_df]).drop_duplicates(subset=['url'], keep='first')
+    else:
+        combined_df = new_df
+    combined_df.to_csv(file_path, index=False)
+
 def try_process_link(link, proxy):
     logger.info(f"Обработка страницы: {link}")
     attempts = 0
     while attempts < MAX_RETRIES:
         try:
-            driver = get_driver(proxy)
             links = set()
-            max_page = get_max_page(driver, link)
+            max_page = get_max_page(link)
             logger.info(f"Найдено {max_page} страниц")
             for page in range(1, max_page + 1):
                 page_url = f"{link}?page={page}"
                 logger.info(f"Загрузка страницы {page_url}")
                 for _ in range(MAX_RETRIES):
                     try:
-                        driver.get(page_url)
-                        WebDriverWait(driver, 15).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'a[href*="/vakansii/"]')))
-                        a_tags = driver.find_elements(By.CSS_SELECTOR, 'a[href*="/vakansii/"]')
-                        urls = [a.get_attribute('href') for a in a_tags if a.get_attribute('href')]
-                        for url in set(filter(lambda u: re.search(r'\d+\.html$', u), urls)):
-                            try:
-                                logger.info(f"Парсинг вакансии: {url}")
-                                data = parse_job_info(driver, url)
-                                save_vacancy(data, url)
-                                links.add(url)
-                            except Exception as e:
-                                logger.warning(f"Ошибка при парсинге вакансии {url}: {e}")
+                        urls = get_urls_from_page(page_url=page_url, proxy=proxy)
+                        if len(urls) == 0:
+                            raise ValueError(f"Страница {page_url} не содержит ссылок")
+                        base_url = "https://russia.superjob.ru"
+                        full_urls = [base_url + url for url in urls if re.search(r"\d+\.html$", url)]
+                        logger.info(f"На {page_url} - {len(full_urls)} вакансий")
+                        append_urls_to_csv(urls=full_urls)
                         break
                     except Exception as e_inner:
+                        proxy = get_proxy()
                         logger.warning(f"Ошибка загрузки страницы {page_url}: {e_inner}")
-                        time.sleep(1)
+                        logger.warning(f"Используем новый прокси {proxy} попытка {_}")
+
             return list(links)
         except (ReadTimeout, socket.timeout, ConnectionError) as e:
             logger.warning(f"Timeout или ошибка соединения при обработке {link}: {e}. Меняем прокси и повторяем...")
