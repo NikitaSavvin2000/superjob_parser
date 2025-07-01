@@ -132,7 +132,7 @@ def get_urls_from_page(page_url, proxy=None):
     soup = BeautifulSoup(response.text, 'html.parser')
     return [a['href'] for a in soup.select('a[href*="/vakansii/"]') if a.get('href')]
 
-def append_urls_to_csv(urls: list[str]):
+def append_urls_to_csv(urls):
     file_path = os.path.join(cwd, "src", "superjob", "results", "urls_vacancy.csv")
     new_df = pd.DataFrame(urls, columns=['url'])
     if os.path.exists(file_path) and os.path.getsize(file_path) > 0:
