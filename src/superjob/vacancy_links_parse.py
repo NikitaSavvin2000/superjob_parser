@@ -19,9 +19,9 @@ MAX_WORKERS = 10
 USE_PROXY = True
 PROXY_UPDATE_INTERVAL = 1000
 TIMEOUT_PER_LINK = 120
-MAX_RETRIES = 7
+MAX_RETRIES = 15
 RETRY_BACKOFF = 5
-MAX_PAGE_RETRIES = 7
+MAX_PAGE_RETRIES = 15
 
 cwd = os.getcwd()
 result_path = os.path.join(cwd, "src", "superjob", "results")
@@ -82,7 +82,7 @@ def get_proxy():
     while True:
         logger.warning(">>> while True is working")
         with proxy_lock:
-            if not proxy_pool or time.time() - last_proxy_update > PROXY_UPDATE_INTERVAL:
+            if time.time() - last_proxy_update > PROXY_UPDATE_INTERVAL:
                 update_proxies()
                 logger.warning(">>> get_proxy - update_proxies() is working")
             if proxy_pool:
