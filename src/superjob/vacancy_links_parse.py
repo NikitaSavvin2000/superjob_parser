@@ -93,15 +93,19 @@ def get_proxy():
 
 threading.Thread(target=update_proxies_loop, daemon=True).start()
 
-vacancy_lock = threading.Lock()
 
 def save_vacancy(data, link):
     if not data or not isinstance(data, dict) or not any(data.values()):
         return
     logger.info(f"Сохраняется вакансия: {link}")
     row = pd.DataFrame([{**data, "link": link}])
-    with vacancy_lock:
-        row.to_csv(vacancy_path, mode='a', header=not os.path.exists(vacancy_path), index=False)
+
+    if os.path.exists(vacancy_path):
+        old_df = pd.read_csv(vacancy_path)
+        new_df = pd.concat([row, old_df], ignore_index=True)
+        new_df.to_csv(vacancy_path, index=False)
+    else:
+        row.to_csv(vacancy_path, index=False)
 
 
 
