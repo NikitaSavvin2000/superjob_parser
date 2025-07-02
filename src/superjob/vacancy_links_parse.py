@@ -76,11 +76,15 @@ def validate_proxy(proxy):
         return False
 
 def get_proxy():
+    logger.warning(">>> Запуск get_proxy")
+
     global proxy_cycle, last_proxy_update
     while True:
+        logger.warning(">>> while True is working")
         with proxy_lock:
             if not proxy_pool or time.time() - last_proxy_update > PROXY_UPDATE_INTERVAL:
                 update_proxies()
+                logger.warning(">>> get_proxy - update_proxies() is working")
             if proxy_pool:
                 proxy = next(proxy_cycle)
                 logger.info(f"Используется прокси: {proxy}")
