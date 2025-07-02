@@ -142,14 +142,14 @@ def get_urls_from_page(page_url, proxy=None):
     return [a['href'] for a in soup.select('a[href*="/vakansii/"]') if a.get('href')]
 
 def append_urls_to_csv(urls):
+    logger.info(f">>>>>>>>>>>>> append_urls_to_csv is working")
+
     file_path = os.path.join(cwd, "src", "superjob", "results", "urls_vacancy.csv")
     new_df = pd.DataFrame(urls, columns=['url'])
-    if os.path.exists(file_path) and os.path.getsize(file_path) > 0:
-        existing_df = pd.read_csv(file_path)
-        combined_df = pd.concat([existing_df, new_df]).drop_duplicates(subset=['url'], keep='first')
-    else:
-        combined_df = new_df
-    combined_df.to_csv(file_path, index=False)
+
+    file_exists = os.path.exists(file_path)
+    new_df.to_csv(file_path, mode='a', header=not file_exists, index=False)
+
 
 def try_process_link(link, proxy):
     logger.info(f"Обработка страницы: {link}")
