@@ -17,7 +17,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 
 MAX_WORKERS = 10
 USE_PROXY = True
-PROXY_UPDATE_INTERVAL = 1000
+PROXY_UPDATE_INTERVAL = 100
 TIMEOUT_PER_LINK = 120
 MAX_RETRIES = 15
 RETRY_BACKOFF = 5
@@ -43,30 +43,6 @@ proxy_pool, last_proxy_update = [], 0
 proxy_cycle = None
 proxy_lock = threading.Lock()
 
-def update_proxies():
-    global proxy_pool, proxy_cycle, last_proxy_update
-    logger.info("Обновление списка прокси...")
-    try:
-        key = os.getenv("KEY")
-        link = f"http://api.best-proxies.ru/proxylist.csv?key={key}&type=https&limit=1000"
-        r = requests.get(link, timeout=30)
-        if r.ok:
-            df = pd.read_csv(io.StringIO(r.text), sep=";", encoding="cp1251")
-            proxies = [f"{ip}:{port}" for ip, port in zip(df["ip"], df["port"])]
-            valid = []
-            for p in proxies[:150]:
-                if validate_proxy(p):
-                    valid.append(p)
-            if valid:
-                with proxy_lock:
-                    proxy_pool = valid
-                    proxy_cycle = cycle(proxy_pool)
-                    last_proxy_update = time.time()
-                logger.info(f"Получено и валидировано {len(valid)} прокси")
-            else:
-                logger.warning("Нет валидных прокси после проверки")
-    except Exception as e:
-        logger.error(f"Ошибка при обновлении прокси списка: {e}")
 
 def validate_proxy(proxy):
     try:
@@ -75,22 +51,47 @@ def validate_proxy(proxy):
     except:
         return False
 
-def get_proxy():
-    logger.warning(">>> Запуск get_proxy")
+def update_proxies_loop():
+    logger.info("update_proxies_loop is working")
 
-    global proxy_cycle, last_proxy_update
+    global last_proxy_update
     while True:
-        logger.warning(">>> while True is working")
-        with proxy_lock:
-            if time.time() - last_proxy_update > PROXY_UPDATE_INTERVAL:
-                update_proxies()
-                logger.warning(">>> get_proxy - update_proxies() is working")
-            if proxy_pool:
-                proxy = next(proxy_cycle)
-                logger.info(f"Используется прокси: {proxy}")
-                return proxy
-        logger.warning("Нет валидных прокси. Ожидание 5 секунд перед повтором...")
-        time.sleep(5)
+        update_proxies()
+        last_proxy_update = time.time()
+        time.sleep(PROXY_UPDATE_INTERVAL)
+
+
+def update_proxies():
+    logger.info("update_proxies is working")
+
+    global proxy_pool, proxy_cycle
+    try:
+        key = os.getenv("KEY")
+        link = f"http://api.best-proxies.ru/proxylist.csv?key={key}&type=https&limit=1000"
+        r = requests.get(link, timeout=30)
+        if r.ok:
+            df = pd.read_csv(io.StringIO(r.text), sep=";", encoding="cp1251")
+            proxies = [f"{ip}:{port}" for ip, port in zip(df["ip"], df["port"])]
+            valid = [p for p in proxies[:150] if validate_proxy(p)]
+            if valid:
+                with proxy_lock:
+                    proxy_pool = valid
+                    proxy_cycle = cycle(proxy_pool)
+            else:
+                logger.warning("Нет валидных прокси после проверки")
+    except Exception as e:
+        logger.error(f"Ошибка при обновлении прокси списка: {e}")
+
+def get_proxy():
+    logger.info("get_proxy is working")
+    with proxy_lock:
+        if proxy_pool:
+            return next(proxy_cycle)
+        else:
+            logger.warning("Прокси пул пуст")
+            return None
+
+threading.Thread(target=update_proxies_loop, daemon=True).start()
 
 vacancy_lock = threading.Lock()
 
@@ -132,7 +133,7 @@ def get_urls_from_page(page_url, proxy=None):
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.7151.122 Safari/537.36'
     }
 
-    response = requests.get(page_url, headers=headers, proxies=proxies, timeout=15)
+    response = requests.get(page_url, headers=headers, proxies=proxies, timeout=65)
     soup = BeautifulSoup(response.text, 'html.parser')
     return [a['href'] for a in soup.select('a[href*="/vakansii/"]') if a.get('href')]
 
