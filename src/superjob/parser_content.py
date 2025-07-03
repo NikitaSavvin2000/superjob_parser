@@ -14,7 +14,7 @@ from vacancy_content_parser import parse_job_info
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
-MAX_WORKERS = 2
+MAX_WORKERS = 10
 USE_PROXY = True
 PROXY_UPDATE_INTERVAL = 100
 TIMEOUT_PER_LINK = 120
@@ -108,7 +108,7 @@ def update_proxies():
         if r.ok:
             df = pd.read_csv(io.StringIO(r.text), sep=";", encoding="cp1251")
             proxies = [f"{ip}:{port}" for ip, port in zip(df["ip"], df["port"])]
-            valid = [p for p in proxies[:15] if validate_proxy(p)]
+            valid = [p for p in proxies[:150] if validate_proxy(p)]
             if valid:
                 with proxy_lock:
                     proxy_pool = valid
